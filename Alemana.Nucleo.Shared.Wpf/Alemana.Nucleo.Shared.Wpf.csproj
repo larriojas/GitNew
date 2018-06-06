@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1765697-0DEC-4B90-B4BE-12C6629BBF14}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alemana.Nucleo.Shared.Wpf</RootNamespace>
+    <AssemblyName>Alemana.Nucleo.Shared.Wpf</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>&lt;Project Location In Database&gt;</SccProjectName>
+    <SccLocalPath>&lt;Local Binding Root of Project&gt;</SccLocalPath>
+    <SccAuxPath>&lt;Source Control Database&gt;</SccAuxPath>
+    <SccProvider>Jazz Source Control Provider:{AC8810C5-F6E7-4145-83AA-FDFFF6F5506D}</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alemana.Nucleo.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Alemana.Nucleo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Alemana.Nucleo.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Alemana.Nucleo.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Blend.Interctivity.WPF.v4.0.1.0.3\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\..\Shell\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Blend.Interctivity.WPF.v4.0.1.0.3\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Windows.Controls, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Controls.RichTextBoxUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing, Version=2015.1.225.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Documents.Proofing.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\TextBoxInputRegExBehavior.cs" />
+    <Compile Include="Behaviors\UserControlUnloadingEventBehavior.cs" />
+    <Compile Include="Helpers\NotifcationHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Converts.cs" />
+    <Compile Include="Resources\RadRichTextBoxResources.Designer.cs" />
+    <Compile Include="Resources\RichTextControl.cs" />
+    <Compile Include="Resources\RichTextSelectionBehavior.cs" />
+    <Compile Include="Resources\SubstractionGetData.cs" />
+    <Compile Include="Resources\SubstractionConverter.cs" />
+    <Compile Include="Resources\VariableDefaults.cs" />
+    <Compile Include="ViewModels\AdministrarParrafosViewModel.cs" />
+    <Compile Include="ViewModels\AdvertenciaCierreModalViewModel.cs" />
+    <Compile Include="ViewModels\VariableAlfanumericaViewModel.cs" />
+    <Compile Include="ViewModels\VariableCampoBDViewModel.cs" />
+    <Compile Include="ViewModels\VariableCampoCalculadoViewModel.cs" />
+    <Compile Include="ViewModels\VariableFechaViewModel.cs" />
+    <Compile Include="ViewModels\VariableImagenViewModel.cs" />
+    <Compile Include="ViewModels\VariableMatrizViewModel.cs" />
+    <Compile Include="ViewModels\VariableNumericaViewModel.cs" />
+    <Compile Include="ViewModels\VariableSeleccionViewModel.cs" />
+    <Compile Include="ViewModels\VariableSubirArchivoViewModel.cs" />
+    <Compile Include="ViewModels\VariableTextoDescriptivoViewModel.cs" />
+    <Compile Include="ViewModels\VariableTextoLargoViewModel.cs" />
+    <Compile Include="ViewModels\VariableBaseViewModel.cs" />
+    <Compile Include="Resources\BindingProxy.cs" />
+    <Compile Include="Views\AdministrarParrafos.xaml.cs">
+      <DependentUpon>AdministrarParrafos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdvertenciaCierreModal.xaml.cs">
+      <DependentUpon>AdvertenciaCierreModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MessageBoxCorporativo.xaml.cs">
+      <DependentUpon>MessageBoxCorporativo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JustificacionImposibilidad.xaml.cs">
+      <DependentUpon>JustificacionImposibilidad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MessageBox.xaml.cs">
+      <DependentUpon>MessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableAlfanumerica.xaml.cs">
+      <DependentUpon>VariableAlfanumerica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableCampoBD.xaml.cs">
+      <DependentUpon>VariableCampoBD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableCampoCalculado.xaml.cs">
+      <DependentUpon>VariableCampoCalculado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableFecha.xaml.cs">
+      <DependentUpon>VariableFecha.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableImagen.xaml.cs">
+      <DependentUpon>VariableImagen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableMatriz.xaml.cs">
+      <DependentUpon>VariableMatriz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableNumerica.xaml.cs">
+      <DependentUpon>VariableNumerica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableSeleccion.xaml.cs">
+      <DependentUpon>VariableSeleccion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableSubirArchivo.xaml.cs">
+      <DependentUpon>VariableSubirArchivo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableTextoDescriptivo.xaml.cs">
+      <DependentUpon>VariableTextoDescriptivo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VariableTextoLargo.xaml.cs">
+      <DependentUpon>VariableTextoLargo.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Img\icon_vista_previa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\Estilos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\RecursosGraficos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\VariableConvertersDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdministrarParrafos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AdvertenciaCierreModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MessageBoxCorporativo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\JustificacionImposibilidad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\VariableAlfanumerica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariableCampoBD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariableCampoCalculado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariableFecha.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariableImagen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariableMatriz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariableNumerica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariableSeleccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariableSubirArchivo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariableTextoDescriptivo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VariableTextoLargo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Img\add_item.png" />
+    <Resource Include="Resources\Img\down_arrow.png" />
+    <Resource Include="Resources\Img\up_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Img\left_arrow_red.png" />
+    <Resource Include="Resources\Img\right_arrow_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Img\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Img\search_icon.png" />
+    <Resource Include="Resources\Img\trash_icon.png" />
+    <Resource Include="Resources\Img\document_icon.png" />
+    <Resource Include="Resources\Img\eraser_icon.png" />
+    <Resource Include="Resources\Img\lupa_icon.png" />
+    <Resource Include="Resources\Img\camara_icon.png" />
+    <Resource Include="Resources\Img\left_circular.png" />
+    <Resource Include="Resources\Img\right_circular.png" />
+    <Resource Include="Resources\Img\eye_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Iconos\Guardar.png" />
+    <Content Include="Resources\Iconos\Limpiar.png" />
+    <Content Include="Resources\Iconos\alerta_icon.png" />
+    <Content Include="Resources\Img\banner_bienvenida.jpg" />
+    <Content Include="Telerik.Windows.Documents.Flow.dll" />
+    <Resource Include="Resources\Img\check-icon.png" />
+    <Content Include="Resources\Img\logo.gif" />
+    <Resource Include="Resources\Img\x-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\RadRichTextBoxResources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alemana.Nucleo.Shared.Contrato\Alemana.Nucleo.Shared.Contrato.csproj">
+      <Project>{1e8c544d-4bb3-4506-8fac-40f800ea0d81}</Project>
+      <Name>Alemana.Nucleo.Shared.Contrato</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alemana.Nucleo.Shared.Servicio\Alemana.Nucleo.Shared.Servicio.csproj">
+      <Project>{7BD98B78-44FA-43BC-9119-8F316AC1D9AE}</Project>
+      <Name>Alemana.Nucleo.Shared.Servicio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alemana.Nucleo.Shared\Alemana.Nucleo.Shared.csproj">
+      <Project>{75050c62-2f9e-4d9b-8b04-a6c8bda25f43}</Project>
+      <Name>Alemana.Nucleo.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(ProjectName)*" "$(ProjectDir)\..\..\..\ModulesBin\" /Y
+xcopy "$(TargetDir)$(ProjectName)*" "$(ProjectDir)\..\..\..\Shell\" /Y
+</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

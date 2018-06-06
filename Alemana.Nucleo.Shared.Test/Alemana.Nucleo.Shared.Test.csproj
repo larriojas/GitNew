@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E93BC02-5708-4A2C-8576-6464C2E4807F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alemana.Nucleo.Shared.Test</RootNamespace>
+    <AssemblyName>Alemana.Nucleo.Shared.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>&lt;Project Location In Database&gt;</SccProjectName>
+    <SccLocalPath>&lt;Local Binding Root of Project&gt;</SccLocalPath>
+    <SccAuxPath>&lt;Source Control Database&gt;</SccAuxPath>
+    <SccProvider>Jazz Source Control Provider:{AC8810C5-F6E7-4145-83AA-FDFFF6F5506D}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alemana.Nucleo.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Alemana.Nucleo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Alemana.Nucleo.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Alemana.Nucleo.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="AgrupadorServiceUnitTest.cs" />
+    <Compile Include="BusquedaVariableServiceUnitTest.cs" />
+    <Compile Include="CambiarOrdenUnitTest.cs" />
+    <Compile Include="ExtensionsTests.cs" />
+    <Compile Include="PlantillasUnitTest.cs" />
+    <Compile Include="ModuloServiceUnitTest.cs" />
+    <Compile Include="CategoriasServiceUnitTest.cs" />
+    <Compile Include="SeguridadUnitTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ListaLinealUnitTest.cs" />
+    <Compile Include="Service References\wsResultadosLab\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UnitTest1.cs" />
+    <Compile Include="DocuWareTests.cs" />
+    <Compile Include="VariableServiceUnitTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspBusquedaFiltTiempoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspBusquedaFiltTiempoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspEmisoresLaboratorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspEmisoresLaboratorioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspGuardarEmisoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspGuardarEmisoresResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspGuardarResultadosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspGuardarResultadosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspRecCptoArbolExaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspRecCptoArbolExaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspRecFamiliasExaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspRecFamiliasExaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspRecFiltroTiempoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspRecFiltroTiempoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspRecGruposExaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspRecGruposExaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspRecuperaConceptosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspRecuperaConceptosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspRecuperaCredencialesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspRecuperaCredencialesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspRecuperaExamAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspRecuperaExamAreaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspRecuperaExamFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspRecuperaExamFechaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.rlbspRecuperaExamMicroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Test.wsResultadosLab.RlbspRecuperaExamMicroResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\WsgestionresultadoslabWebService.wsdl" />
+    <None Include="Service References\wsResultadosLab\WsgestionresultadoslabWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alemana.Nucleo.Shared.Contrato\Alemana.Nucleo.Shared.Contrato.csproj">
+      <Project>{12e80630-a7ef-48c4-9d1c-31c6b395e8f5}</Project>
+      <Name>Alemana.Nucleo.Shared.Contrato</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alemana.Nucleo.Shared.Servicio\Alemana.Nucleo.Shared.Servicio.csproj">
+      <Project>{8e439545-556d-41b5-96d2-599379bf5c31}</Project>
+      <Name>Alemana.Nucleo.Shared.Servicio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alemana.Nucleo.Shared\Alemana.Nucleo.Shared.csproj">
+      <Project>{75050c62-2f9e-4d9b-8b04-a6c8bda25f43}</Project>
+      <Name>Alemana.Nucleo.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\wsResultadosLab\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsResultadosLab\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsResultadosLab\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsResultadosLab\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F0FA3A0-08DA-43C0-B5A3-267607B22A0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alemana.Nucleo.Shared.Contrato</RootNamespace>
+    <AssemblyName>Alemana.Nucleo.Shared.Contrato</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>&lt;Project Location In Database&gt;</SccProjectName>
+    <SccLocalPath>&lt;Local Binding Root of Project&gt;</SccLocalPath>
+    <SccAuxPath>&lt;Source Control Database&gt;</SccAuxPath>
+    <SccProvider>Jazz Source Control Provider:{AC8810C5-F6E7-4145-83AA-FDFFF6F5506D}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alemana.Nucleo.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Alemana.Nucleo.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Alemana.Nucleo.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Alemana.Nucleo.Shared.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constantes\ConstantesSugerencia.cs" />
+    <Compile Include="Enums\GestionIndicacion\CasillaEstados.cs" />
+    <Compile Include="Enums\GestionIndicacion\CasillaGestion.cs" />
+    <Compile Include="Enums\GestionIndicacion\CasillaTipo.cs" />
+    <Compile Include="Enums\GestionIndicacion\Comando.cs" />
+    <Compile Include="Enums\GestionIndicacion\EstadoIndicacion.cs" />
+    <Compile Include="Enums\GestionIndicacion\EstadosCasillas.cs" />
+    <Compile Include="Enums\GestionIndicacion\EstadosDobleChequeo.cs" />
+    <Compile Include="Enums\GestionIndicacion\EstadoSolicitud.cs" />
+    <Compile Include="Enums\GestionIndicacion\EstadoSolicitudFarmacia.cs" />
+    <Compile Include="Enums\GestionIndicacion\Frecuencia.cs" />
+    <Compile Include="Enums\GestionIndicacion\Hora.cs" />
+    <Compile Include="Enums\GestionIndicacion\Modulos.cs" />
+    <Compile Include="Enums\GestionIndicacion\TipoIndicacion.cs" />
+    <Compile Include="Enums\GestionIndicacion\Turno.cs" />
+    <Compile Include="Enums\MenuMasterExamenes.cs" />
+    <Compile Include="Enums\NombreModulo.cs" />
+    <Compile Include="Enums\Notas\NotaAccion.cs" />
+    <Compile Include="Enums\RespuestaCierreModal.cs" />
+    <Compile Include="Helpers\EnumToList.cs" />
+    <Compile Include="Helpers\SugerenciaExamenesParametrosHelper.cs" />
+    <Compile Include="Helpers\TypeSwitch.cs" />
+    <Compile Include="Models\Agrupador.cs" />
+    <Compile Include="Models\Archivo.cs" />
+    <Compile Include="Models\Area.cs" />
+    <Compile Include="Models\CrearPacienteDto.cs" />
+    <Compile Include="Models\GestionIndicacion\AlertasModel.cs" />
+    <Compile Include="Models\GestionIndicacion\AuditoriaEnfermeriaModel.cs" />
+    <Compile Include="Models\GestionIndicacion\CasillaModel.cs" />
+    <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\GestionIndicacion\CategoriaIndicacionModel.cs" />
+    <Compile Include="Models\Concepto.cs" />
+    <Compile Include="Models\Dominio.cs" />
+    <Compile Include="Models\Empresa.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\Estado.cs" />
+    <Compile Include="Models\GestionIndicacion\DetalleInfusionModel.cs" />
+    <Compile Include="Models\GestionIndicacion\EpisodioIndicacionModel.cs" />
+    <Compile Include="Models\GestionIndicacion\EstadosExamenLaboratorio.cs" />
+    <Compile Include="Models\GestionIndicacion\EstadosGestionModel.cs" />
+    <Compile Include="Models\GestionIndicacion\EtiquetaModel.cs" />
+    <Compile Include="Models\GestionIndicacion\GestionIndicacionModel.cs" />
+    <Compile Include="Models\GestionIndicacion\GestionModel.cs" />
+    <Compile Include="Models\GestionIndicacion\GrupoSolicitudesLaboratorioModel.cs" />
+    <Compile Include="Models\GestionIndicacion\GrupoMuestraModel.cs" />
+    <Compile Include="Models\GestionIndicacion\IndicacionCasilla.cs" />
+    <Compile Include="Models\GestionIndicacion\IndicacionFarmaciaModel.cs" />
+    <Compile Include="Models\GestionIndicacion\InfusionModel.cs" />
+    <Compile Include="Models\GestionIndicacion\MaquinaDeEstadosModel.cs" />
+    <Compile Include="Models\GestionIndicacion\NotaModel.cs" />
+    <Compile Include="Models\GestionIndicacion\PacienteModel.cs" />
+    <Compile Include="Models\GestionIndicacion\RecomendacionModel.cs" />
+    <Compile Include="Models\HistorialTermino.cs" />
+    <Compile Include="Models\GestionIndicacion\IndicacionModel.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\GestionIndicacion\MenuContextualItemModel.cs" />
+    <Compile Include="Models\GestionIndicacion\MenuContextualModel.cs" />
+    <Compile Include="Models\GestionIndicacion\MuestraModel.cs" />
+    <Compile Include="Models\Parrafo.cs" />
+    <Compile Include="Models\ParrafosKey.cs" />
+    <Compile Include="Models\Sugerencia.cs" />
+    <Compile Include="Models\Termino.cs" />
+    <Compile Include="Models\GestionIndicacion\TipoMuestraModel.cs" />
+    <Compile Include="Models\GestionIndicacion\TipoMuestraSeccionModel.cs" />
+    <Compile Include="Models\ValorConceptoPaciente.cs" />
+    <Compile Include="Models\Variables\RelacionAgrupadorVariable.cs" />
+    <Compile Include="Models\Variables\TipoVariable.cs" />
+    <Compile Include="Models\Variables\VariableItem.cs" />
+    <Compile Include="Models\Modulo.cs" />
+    <Compile Include="Models\Plantilla.cs" />
+    <Compile Include="Models\Profesional.cs" />
+    <Compile Include="Models\ProfesionalArea.cs" />
+    <Compile Include="Models\Variables\Variable.cs" />
+    <Compile Include="Models\Variables\VariableBD.cs" />
+    <Compile Include="Models\Variables\VariableCampoCalculado.cs" />
+    <Compile Include="Models\Variables\VariableEntrada.cs" />
+    <Compile Include="Models\Variables\VariableImagen.cs" />
+    <Compile Include="Models\Variables\VariableItemMatriz.cs" />
+    <Compile Include="Models\Variables\VariableMatriz.cs" />
+    <Compile Include="Models\Variables\VariableList.cs" />
+    <Compile Include="Models\Variables\VariableTextoEnriquecido.cs" />
+    <Compile Include="Models\Variables\VariableUploadFile.cs" />
+    <Compile Include="Models\Variables\VariableNumerica.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInterfaces\IAgrupador.cs" />
+    <Compile Include="ServiceInterfaces\IArchivoService.cs" />
+    <Compile Include="ServiceInterfaces\IContingencia.cs" />
+    <Compile Include="ServiceInterfaces\IListaLinealOrdenService.cs" />
+    <Compile Include="ServiceInterfaces\ICategoriasService.cs" />
+    <Compile Include="ServiceInterfaces\IListaLinealService.cs" />
+    <Compile Include="ServiceInterfaces\IModuloService.cs" />
+    <Compile Include="ServiceInterfaces\INosologiaGestionService.cs" />
+    <Compile Include="ServiceInterfaces\IParrafoService.cs" />
+    <Compile Include="ServiceInterfaces\IPlantillaService.cs" />
+    <Compile Include="ServiceInterfaces\ISeguridadService.cs" />
+    <Compile Include="ServiceInterfaces\ISugerenciaExamenesParametrosService.cs" />
+    <Compile Include="ServiceInterfaces\ITerminologiaService.cs" />
+    <Compile Include="ServiceInterfaces\IVariableService.cs" />
+    <Compile Include="Validation\IVariableValidator.cs" />
+    <Compile Include="Validation\VariableValidationResult.cs" />
+    <Compile Include="XMLHelpers\RecomendacionXMLHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alemana.Nucleo.Shared\Alemana.Nucleo.Shared.csproj">
+      <Project>{75050c62-2f9e-4d9b-8b04-a6c8bda25f43}</Project>
+      <Name>Alemana.Nucleo.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\.jazzignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)..\..\ModulesBin\" /SY
+c:\windows\system32\xcopy "$(TargetDir)$(ProjectName)*" "$(ProjectDir)\..\..\..\Shell\ModulesBin\" /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

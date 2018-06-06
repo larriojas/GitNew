@@ -1,0 +1,2148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BD98B78-44FA-43BC-9119-8F316AC1D9AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alemana.Nucleo.Shared.Servicio</RootNamespace>
+    <AssemblyName>Alemana.Nucleo.Shared.Servicio</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>&lt;Project Location In Database&gt;</SccProjectName>
+    <SccLocalPath>&lt;Local Binding Root of Project&gt;</SccLocalPath>
+    <SccAuxPath>&lt;Source Control Database&gt;</SccAuxPath>
+    <SccProvider>Jazz Source Control Provider:{AC8810C5-F6E7-4145-83AA-FDFFF6F5506D}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alemana.Nucleo.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Alemana.Nucleo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Alemana.Nucleo.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Alemana.Nucleo.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Defaults.cs" />
+    <Compile Include="Implementation\AgrupadorService.cs" />
+    <Compile Include="Implementation\CategoriaService.cs" />
+    <Compile Include="Implementation\ArchivoService.cs" />
+    <Compile Include="Implementation\ContingenciaService.cs" />
+    <Compile Include="Implementation\ListaLinealOrdenService.cs" />
+    <Compile Include="Implementation\ListaLinealService.cs" />
+    <Compile Include="Implementation\ModuloService.cs" />
+    <Compile Include="Implementation\NosologiaGestionService.cs" />
+    <Compile Include="Implementation\ParrafoService.cs" />
+    <Compile Include="Implementation\PlantillaService.cs" />
+    <Compile Include="Implementation\SeguridadService.cs" />
+    <Compile Include="Implementation\SugerenciaExamenesParametrosService.cs" />
+    <Compile Include="Implementation\TerminologiaService.cs" />
+    <Compile Include="Implementation\VariableService.cs" />
+    <Compile Include="Implementation\VariableManager.cs" />
+    <Compile Include="MocksImplementation\MockAgrupadorService.cs" />
+    <Compile Include="MocksImplementation\MockCategoriaService.cs" />
+    <Compile Include="MocksImplementation\MockModuloService.cs" />
+    <Compile Include="MocksImplementation\MockPlantillaService.cs" />
+    <Compile Include="MocksImplementation\MockDataHelper.cs" />
+    <Compile Include="MocksImplementation\MockCambiarOrdenService.cs" />
+    <Compile Include="MocksImplementation\MockListaLinealService.cs" />
+    <Compile Include="MocksImplementation\MockSeguridadService.cs" />
+    <Compile Include="MocksImplementation\MockVariableService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CabeceraServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsAgrupador\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsCategoria\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsClasificacion_Documentos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsDocumentoIndice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsDocuware\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsDominio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsFichaPerinatal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsListaLinealOrden\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsListaLineal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsListaTipoVariable\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsModulo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsNosologiaGestion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsParrafosNew\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsPlantilla\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsResultadosLab\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsSeguridad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsSinCompresion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsTerm\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsVariable\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcefxEdadCabeceraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcefxEdadCabeceraResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcefxEdadEntreFechasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcefxEdadEntreFechasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcefxPerfilCabeceraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcefxPerfilCabeceraResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcefxRolCabeceraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcefxRolCabeceraResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcefxRolesProfesionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcefxRolesProfesionalResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespBuscarAccesosFilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespBuscarAccesosFilResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespCambiarEgresoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespCambiarEgresoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespCambiarMotivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespCambiarMotivoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespCohortesObtenerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespCohortesObtenerResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespDirectivasAnticipadasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespDirectivasAnticipadasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespGrabarNotificacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespGrabarNotificacionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespGuardarDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespGuardarDatosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtAccesosParcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtAccesosParcResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtCantAccesosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtCantAccesosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtDatosUrgResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtDatosUrgResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtenerAmbitosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtenerAmbitosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtenerAreasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtenerAreasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtenerInterconsultasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtenerInterconsultasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtenerRolesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtenerRolesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtFichaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtFichaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneActividadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneActividadResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneCamaServicioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneCamaServicioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneCiudadesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneCiudadesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneComunasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneComunasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneDatosPacDosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneDatosPacDosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneEgresosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneEgresosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneEstCivilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneEstCivilResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneEtniaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneEtniaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneInfoTempResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneInfoTempResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtienePrevisionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtienePrevisionesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtienePtimcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtienePtimcResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneRegionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneRegionesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtieneVarEntornoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtieneVarEntornoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespObtRolEpiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespObtRolEpiResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespPacienteDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespPacienteDatosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespPacienteDatosXFichaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespPacienteDatosXFichaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespPacienteEstAtencionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespPacienteEstAtencionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespPacienteParentescoPpnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespPacienteParentescoPpnResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespPacienteParentescoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespPacienteParentescoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespProfCabeceraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespProfCabeceraResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespProfesionalAccesoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespProfesionalAccesoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespProfesionalDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespProfesionalDatosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespRecuperarAccesosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespRecuperarAccesosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fcespRolCabeceraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FcespRolCabeceraResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fxAmbitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FxAmbitoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fxAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FxAreaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.fxLugarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.FxLugarResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.obtenerTiempoEsperaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\Alemana.Nucleo.Shared.Servicio.CabeceraServiceReference.ObtenerTiempoEsperaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CabeceraServiceReference\WsfcepgfcewscabeceraWebService.wsdl" />
+    <None Include="Service References\CabeceraServiceReference\WsfcepgfcewscabeceraWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsAgrupador\Alemana.Nucleo.Shared.Servicio.WsAgrupador.ptlspAgpDelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgrupador\Alemana.Nucleo.Shared.Servicio.WsAgrupador.PtlspAgpDelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgrupador\Alemana.Nucleo.Shared.Servicio.WsAgrupador.ptlspAgpInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgrupador\Alemana.Nucleo.Shared.Servicio.WsAgrupador.PtlspAgpInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgrupador\Alemana.Nucleo.Shared.Servicio.WsAgrupador.ptlspAgpSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgrupador\Alemana.Nucleo.Shared.Servicio.WsAgrupador.PtlspAgpSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgrupador\WsagrupadorWebService1.wsdl" />
+    <None Include="Service References\WsAgrupador\WsagrupadorWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsAgrupador\WsagrupadorWebService11.wsdl" />
+    <None Include="Service References\WsAgrupador\WsagrupadorWebService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsAgrupador\WsagrupadorwebWebService.wsdl" />
+    <None Include="Service References\WsAgrupador\WsagrupadorwebWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsCategoria\Alemana.Nucleo.Plantillas.Servicio.WsCategoria.ptlspCatUsuListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsCategoria\Alemana.Nucleo.Plantillas.Servicio.WsCategoria.PtlspCatUsuListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsCategoria\Alemana.Nucleo.Shared.Servicio.WsCategoria.ptlspCatInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsCategoria\Alemana.Nucleo.Shared.Servicio.WsCategoria.PtlspCatInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsCategoria\Alemana.Nucleo.Shared.Servicio.WsCategoria.ptlspCatSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsCategoria\Alemana.Nucleo.Shared.Servicio.WsCategoria.PtlspCatSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsCategoria\Alemana.Nucleo.Shared.Servicio.WsCategoria.ptlspCatUsuListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsCategoria\Alemana.Nucleo.Shared.Servicio.WsCategoria.PtlspCatUsuListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsCategoria\WscategoriaWebService.wsdl" />
+    <None Include="Service References\WsCategoria\WscategoriaWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsClasificacion_Documentos\Alemana.Nucleo.Shared.Servicio.WsClasificacion_Documentos.AuthenticationTicket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsClasificacion_Documentos\Alemana.Nucleo.Shared.Servicio.WsClasificacion_Documentos.DWDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsClasificacion_Documentos\Alemana.Nucleo.Shared.Servicio.WsClasificacion_Documentos.DwListDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsClasificacion_Documentos\Alemana.Nucleo.Shared.Servicio.WsClasificacion_Documentos.DwStoreDocumentResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsClasificacion_Documentos\Alemana.Nucleo.Shared.Servicio.WsClasificacion_Documentos.getDocumentBinaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsClasificacion_Documentos\Alemana.Nucleo.Shared.Servicio.WsClasificacion_Documentos.getListDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsClasificacion_Documentos\Alemana.Nucleo.Shared.Servicio.WsClasificacion_Documentos.LogOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsClasificacion_Documentos\Alemana.Nucleo.Shared.Servicio.WsClasificacion_Documentos.storeDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsClasificacion_Documentos\FichaClinicaWS.wsdl" />
+    <None Include="Service References\WsDocumentoIndice\Alemana.Nucleo.Shared.Servicio.WsDocumentoIndice.docspCreaIndicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocumentoIndice\Alemana.Nucleo.Shared.Servicio.WsDocumentoIndice.DocspCreaIndicesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocumentoIndice\Alemana.Nucleo.Shared.Servicio.WsDocumentoIndice.docspCreaIndicesSesionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocumentoIndice\Alemana.Nucleo.Shared.Servicio.WsDocumentoIndice.DocspCreaIndicesSesionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocumentoIndice\Alemana.Nucleo.Shared.Servicio.WsDocumentoIndice.docspCreaIndicesXFichaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocumentoIndice\Alemana.Nucleo.Shared.Servicio.WsDocumentoIndice.DocspCreaIndicesXFichaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocumentoIndice\Alemana.Nucleo.Shared.Servicio.WsDocumentoIndice.docspDocsXFichaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocumentoIndice\Alemana.Nucleo.Shared.Servicio.WsDocumentoIndice.DocspDocsXFichaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocumentoIndice\WsdocuwareWebService.wsdl" />
+    <None Include="Service References\WsDocumentoIndice\WsdocuwareWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsDocumentoIndice\WsdocuwareWebService1.wsdl" />
+    <None Include="Service References\WsDocumentoIndice\WsdocuwareWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsDocuware\Alemana.Nucleo.Shared.Servicio.WsDocuware.AuthenticationTicket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocuware\Alemana.Nucleo.Shared.Servicio.WsDocuware.DWDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocuware\Alemana.Nucleo.Shared.Servicio.WsDocuware.DwListDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocuware\Alemana.Nucleo.Shared.Servicio.WsDocuware.DwStoreDocumentResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocuware\Alemana.Nucleo.Shared.Servicio.WsDocuware.getDocumentBinaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocuware\Alemana.Nucleo.Shared.Servicio.WsDocuware.getListDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocuware\Alemana.Nucleo.Shared.Servicio.WsDocuware.LogOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocuware\Alemana.Nucleo.Shared.Servicio.WsDocuware.storeDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDocuware\NucleoWS.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsDominio\Alemana.Nucleo.Plantillas.Servicio.WsDominio.docspDominioSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDominio\Alemana.Nucleo.Plantillas.Servicio.WsDominio.DocspDominioSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDominio\Alemana.Nucleo.Shared.Servicio.WsDominio.docspDominioSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDominio\Alemana.Nucleo.Shared.Servicio.WsDominio.DocspDominioSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsDominio\WsdominioWebService.wsdl" />
+    <None Include="Service References\WsDominio\WsdominioWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.fpnspFichaPerinatalInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.FpnspFichaPerinatalInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.fpnspFichaPerinatalSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.FpnspFichaPerinatalSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.fpnspImpresionFichaSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.FpnspImpresionFichaSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.fpnspParamCliExamGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.FpnspParamCliExamGetResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.fpnspProgenitorInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.FpnspProgenitorInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.fpnspProgenitorSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\Alemana.Nucleo.Shared.Servicio.WsFichaPerinatal.FpnspProgenitorSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFichaPerinatal\WsfichaperinatalWebService1.wsdl" />
+    <None Include="Service References\WsFichaPerinatal\WsfichaperinatalWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\Alemana.Nucleo.Shared.Servicio.WsListaLinealOrden.ptlspAgpOrdenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\Alemana.Nucleo.Shared.Servicio.WsListaLinealOrden.PtlspAgpOrdenResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\Alemana.Nucleo.Shared.Servicio.WsListaLinealOrden.ptlspCatOrdenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\Alemana.Nucleo.Shared.Servicio.WsListaLinealOrden.PtlspCatOrdenResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\Alemana.Nucleo.Shared.Servicio.WsListaLinealOrden.ptlspMdlOrdenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\Alemana.Nucleo.Shared.Servicio.WsListaLinealOrden.PtlspMdlOrdenResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\Alemana.Nucleo.Shared.Servicio.WsListaLinealOrden.ptlspPtlOrdenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\Alemana.Nucleo.Shared.Servicio.WsListaLinealOrden.PtlspPtlOrdenResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\Alemana.Nucleo.Shared.Servicio.WsListaLinealOrden.ptlspVarOrdenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\Alemana.Nucleo.Shared.Servicio.WsListaLinealOrden.PtlspVarOrdenResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLinealOrden\WslistalinealordenwebWebService.wsdl" />
+    <None Include="Service References\WsListaLinealOrden\WslistalinealordenwebWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.ptlspAgpVarDelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.PtlspAgpVarDelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.ptlspAgrMdlListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.PtlspAgrMdlListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.ptlspCatEmpListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.PtlspCatEmpListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.ptlspEmpUsuListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.PtlspEmpUsuListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.ptlspMdlPtlListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.PtlspMdlPtlListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.ptlspPtlCatListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.PtlspPtlCatListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.ptlspVarAgrListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\Alemana.Nucleo.Shared.Servicio.WsListaLineal.PtlspVarAgrListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaLineal\WslistalinealWebService.wsdl" />
+    <None Include="Service References\WsListaLineal\WslistalinealWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsListaLineal\WslistalinealWebService1.wsdl" />
+    <None Include="Service References\WsListaLineal\WslistalinealWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsListaLineal\WslistalinealwebWebService.wsdl" />
+    <None Include="Service References\WsListaLineal\WslistalinealwebWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsListaTipoVariable\Alemana.Nucleo.Shared.Servicio.WsListaTipoVariable.ptlspTipoVarSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaTipoVariable\Alemana.Nucleo.Shared.Servicio.WsListaTipoVariable.PtlspTipoVarSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsListaTipoVariable\WslistatipovariableWebService.wsdl" />
+    <None Include="Service References\WsListaTipoVariable\WslistatipovariableWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsModulo\Alemana.Nucleo.Shared.Servicio.WsModulo.ptlspMdlInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsModulo\Alemana.Nucleo.Shared.Servicio.WsModulo.PtlspMdlInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsModulo\Alemana.Nucleo.Shared.Servicio.WsModulo.ptlspMdlSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsModulo\Alemana.Nucleo.Shared.Servicio.WsModulo.PtlspMdlSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsModulo\WsmoduloWebService.wsdl" />
+    <None Include="Service References\WsModulo\WsmoduloWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslfxTerminoFavoritoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslfxTerminoFavoritoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspActAlergiasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspActAlergiasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspAlergiasPorFichaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspAlergiasPorFichaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspCategoriasPorNegocioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspCategoriasPorNegocioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspDiagnosticosPorFichaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspDiagnosticosPorFichaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspEliminaNosologiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspEliminaNosologiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspEstadoAlergiasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspEstadoAlergiasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspGrabaAlergiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspGrabaAlergiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspGrabaFavoritoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspGrabaFavoritoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspGrabaNosologiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspGrabaNosologiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspGrabaNotificacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspGrabaNotificacionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspHistoriaTerminoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspHistoriaTerminoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspModificaEstadoAlergiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspModificaEstadoAlergiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspModificaNosologiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspModificaNosologiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspNosolPorEpiSeltResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspNosolPorEpiSeltResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspNosolPorEventoSelfResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspNosolPorEventoSelfResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspObtieneCategoriasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspObtieneCategoriasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspObtieneNosologiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspObtieneNosologiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspObtieneNotifEvtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspObtieneNotifEvtResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspObtieneNotifGesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspObtieneNotifGesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspObtieneNotificacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspObtieneNotificacionesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspObtieneTerminosEvolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspObtieneTerminosEvolResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.nslspObtieneTerminosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Plantillas.Servicio.WsNosologiaGestion.NslspObtieneTerminosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslfxTerminoFavoritoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslfxTerminoFavoritoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspActAlergiasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspActAlergiasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspAlergiasPorFichaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspAlergiasPorFichaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspCategoriasPorNegocioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspCategoriasPorNegocioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspDiagnosticoGesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspDiagnosticoGesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspDiagnosticosPorFichaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspDiagnosticosPorFichaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspEliminaNosologiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspEliminaNosologiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspEstadoAlergiasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspEstadoAlergiasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaAlergiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaAlergiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaFavoritoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaFavoritoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNosologiaProcResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaNosologiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNosologiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaNotificaAccInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNotificaAccInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaNotificaAccResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNotificaAccResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaNotificacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNotificacionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaNotificaEnoConfResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNotificaEnoConfResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaNotificaEnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNotificaEnoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaNotificaLesInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNotificaLesInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaNotificaLesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNotificaLesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaNotificaMetDiagResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNotificaMetDiagResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspGrabaNotificaUvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspGrabaNotificaUvResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspHistoriaTerminoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspHistoriaTerminoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspInformaDescIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspModificaEstadoAlergiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspModificaEstadoAlergiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspModificaNosologiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspModificaNosologiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspNosolPorEpiSeltResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspNosolPorEpiSeltResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspNosolPorEventoSelfResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspNosolPorEventoSelfResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtenerDataResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspObtieneCategoriasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneCategoriasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneCatSelecResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspObtieneNosologiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneNosologiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneNotifAccLesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspObtieneNotifEnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneNotifEnoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspObtieneNotifEvtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneNotifEvtResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspObtieneNotifGesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneNotifGesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspObtieneNotificacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneNotificacionesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspObtieneNotifUvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneNotifUvResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspObtienePaisesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtienePaisesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspObtieneTerminosEvolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneTerminosEvolResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneTerminosProcResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.nslspObtieneTerminosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\Alemana.Nucleo.Shared.Servicio.WsNosologiaGestion.NslspObtieneTerminosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsNosologiaGestion\WsnosologiagestionWebService1.wsdl" />
+    <None Include="Service References\WsNosologiaGestion\WsnosologiagestionWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsParrafosNew\Alemana.Nucleo.Shared.Servicio.WsParrafosNew.prfspParrafoEliResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsParrafosNew\Alemana.Nucleo.Shared.Servicio.WsParrafosNew.PrfspParrafoEliResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsParrafosNew\Alemana.Nucleo.Shared.Servicio.WsParrafosNew.prfspParrafoInsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsParrafosNew\Alemana.Nucleo.Shared.Servicio.WsParrafosNew.PrfspParrafoInsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsParrafosNew\Alemana.Nucleo.Shared.Servicio.WsParrafosNew.prfspParrafoKeysResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsParrafosNew\Alemana.Nucleo.Shared.Servicio.WsParrafosNew.PrfspParrafoKeysResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsParrafosNew\Alemana.Nucleo.Shared.Servicio.WsParrafosNew.prfspParrafoModResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsParrafosNew\Alemana.Nucleo.Shared.Servicio.WsParrafosNew.PrfspParrafoModResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsParrafosNew\Alemana.Nucleo.Shared.Servicio.WsParrafosNew.prfspParrafoSeltResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsParrafosNew\Alemana.Nucleo.Shared.Servicio.WsParrafosNew.PrfspParrafoSeltResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsParrafosNew\WsparrafoshospitalizadoWebService.wsdl" />
+    <None Include="Service References\WsParrafosNew\WsparrafoshospitalizadoWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Shared.Servicio.WsPlantilla.ptlspPtlInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Shared.Servicio.WsPlantilla.PtlspPtlInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Shared.Servicio.WsPlantilla.ptlspPtlSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Shared.Servicio.WsPlantilla.PtlspPtlSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\WsplantillaswebWebService.wsdl" />
+    <None Include="Service References\WsPlantilla\WsplantillaswebWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspBusquedaFiltTiempoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspBusquedaFiltTiempoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspEmisoresLaboratorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspEmisoresLaboratorioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspGuardarEmisoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspGuardarEmisoresResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspGuardarResultadosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspGuardarResultadosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspRecCptoArbolExaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspRecCptoArbolExaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspRecFamiliasExaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspRecFamiliasExaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspRecFiltroTiempoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspRecFiltroTiempoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspRecGruposExaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspRecGruposExaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspRecuperaConceptosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspRecuperaConceptosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspRecuperaCredencialesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspRecuperaCredencialesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspRecuperaExamAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspRecuperaExamAreaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspRecuperaExamFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspRecuperaExamFechaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.rlbspRecuperaExamMicroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\Alemana.Nucleo.Shared.Servicio.wsResultadosLab.RlbspRecuperaExamMicroResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsResultadosLab\WsgestionresultadoslabWebService.wsdl" />
+    <None Include="Service References\wsResultadosLab\WsgestionresultadoslabWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspAreaCatInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspAreaCatInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspAreaProfCatSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspAreaProfCatSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspAreaProfPtlSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspAreaProfPtlSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspAreaPtlInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspAreaPtlInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspAreasHijasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspAreasHijasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspAreasSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspAreasSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspProfCatDelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspProfCatDelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspProfCatInsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspProfCatInsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspProfesionalesSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspProfesionalesSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspProfesionalesTodosSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspProfesionalesTodosSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspProfPtlDelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspProfPtlDelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlspProfPtlInsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlspProfPtlInsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlsProfCatSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlsProfCatSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.ptlsProfPlantillaSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\Alemana.Nucleo.Shared.Servicio.WsSeguridad.PtlsProfPlantillaSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSeguridad\WsseguridadWebService.wsdl" />
+    <None Include="Service References\WsSeguridad\WsseguridadWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsSeguridad\WsseguridadWebService1.wsdl" />
+    <None Include="Service References\WsSeguridad\WsseguridadWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsSinCompresion\Alemana.Nucleo.Shared.Servicio.WsSinCompresion.AuthenticationTicket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSinCompresion\Alemana.Nucleo.Shared.Servicio.WsSinCompresion.DWDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSinCompresion\Alemana.Nucleo.Shared.Servicio.WsSinCompresion.DwListDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSinCompresion\Alemana.Nucleo.Shared.Servicio.WsSinCompresion.DwStoreDocumentResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSinCompresion\Alemana.Nucleo.Shared.Servicio.WsSinCompresion.getDocumentBinaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSinCompresion\Alemana.Nucleo.Shared.Servicio.WsSinCompresion.getListDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSinCompresion\Alemana.Nucleo.Shared.Servicio.WsSinCompresion.LogOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSinCompresion\Alemana.Nucleo.Shared.Servicio.WsSinCompresion.storeDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSinCompresion\FichaClinicaWS.wsdl" />
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.clasificador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.composicionFarmaco.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.composicionGenericoAmbulatorioCabecera.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.composicionPresentacionAmbulatorioCabecera.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.concept.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.descripcionDataAtributo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.descripcionSimilitud.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.descriptionAtributo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.familiar.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.informarDescripcionConsumidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.mapSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.member.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.modeladoPostCoordinacionHIBA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ObtenerAltaEfectoAdversoXHallazgoAgenteCausalYSeveridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerAtributosDeDescriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerAuditoriaTerminoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerClasificadorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerClasificadorUnicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ObtenerCodigoAltaEfectoAdversoXAgenteCausalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ObtenerCodigoAltaEfectoAdversoXAgenteCausalYSeveridadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerCodigoAltaEfectoAdversoXHallazgoYAgenteCausalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ObtenerCodigoAntecedenteFamiliarPorDescriptionIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ObtenerCodigoSNMapeoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerCodigoTesauroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerComposicionFarmacoXDescIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ObtenerComposicionGenericoAmbulatorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ObtenerComposicionPresentacionAmbulatorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerConceptXDescIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerDataDescriptionIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerFamiliaresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerGenericosPorTxtYSubsetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerGenericoXPresentacionComercialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerListaDeSubsetsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerMapSetsCorrientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerMedicamentoBasicoPorMedicamentoClinicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerMedicamentoClinicoPorMedicamentoBasicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerMembersCohorteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerMembersConceptoSubsetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerMembersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ObtenerModeladoHIBADescriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerOfertaSimilitudIndependienteSubsetConOfeSubsetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerOfertaSimilitudResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerOfertaSimilitudXFrecuenciaUsoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerOfertaTextosConCaducidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerOfertaTextosIndependienteSubsetConCaducidadYOfertaSubsetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerOfertaTextosIndependienteSubsetConOfeSubsetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerOfertaTextosIndependienteSubsetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerOfertaTextosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerPresentacionesComercialesXGenericoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerPromptingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.obtenerSubsetsXDescIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ofertaTextoCabecera.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ofertaTextoCabeceraConCaducidad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ofertaTextoCabeceraConCaducidadConOfeSubset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.ofertaTextoCabeceraConSubset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.subset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.terminoAuditado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\Alemana.Nucleo.Shared.Servicio.wsTerm.terminoPostCoordinado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsTerm\TerminologiaWSService.wsdl" />
+    <None Include="Service References\wsTerm\TerminologiaWSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspAgpVarInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspAgpVarInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspPlantillasVariableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspPlantillasVariableResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarAgpSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarAgpSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarBdInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarBdInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarCmpcalculadoInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarCmpcalculadoInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarColumnaInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarColumnaInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarEntradaInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarEntradaInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarFilaClmnInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarFilaClmnInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarFilaInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarFilaInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarGrupoidSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarGrupoidSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarImgInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarImgInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarItemInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarItemInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarListInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarListInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarMtrzRddboxInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarMtrzRddboxInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarMtrzTxtInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarMtrzTxtInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarNumericoInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarNumericoInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarSearchSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarSearchSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarTextoInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarTextoInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.ptlspVarUploadInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Plantillas.Servicio.WsVariable.PtlspVarUploadInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspAgpVarInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspAgpVarInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspPlantillasVariableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspPlantillasVariableResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarAgpSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarAgpSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarBdInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarBdInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarCmpcalculadoInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarCmpcalculadoInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarColumnaInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarColumnaInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarEntradaInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarEntradaInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarFilaClmnInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarFilaClmnInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarFilaInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarFilaInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarGrupoidSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarGrupoidSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarImgInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarImgInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarItemInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarItemInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarListInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarListInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarMtrzRddboxInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarMtrzRddboxInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarMtrzTxtInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarMtrzTxtInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarNumericoInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarNumericoInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarSearchSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarSearchSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarTextoInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarTextoInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.ptlspVarUploadInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\Alemana.Nucleo.Shared.Servicio.WsVariable.PtlspVarUploadInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsVariable\WsvariableWebService1.wsdl" />
+    <None Include="Service References\WsVariable\WsvariableWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CabeceraServiceReference\" />
+    <WCFMetadataStorage Include="Service References\WsAgrupador\" />
+    <WCFMetadataStorage Include="Service References\WsCategoria\" />
+    <WCFMetadataStorage Include="Service References\WsClasificacion_Documentos\" />
+    <WCFMetadataStorage Include="Service References\WsDocumentoIndice\" />
+    <WCFMetadataStorage Include="Service References\WsDocuware\" />
+    <WCFMetadataStorage Include="Service References\WsDominio\" />
+    <WCFMetadataStorage Include="Service References\WsFichaPerinatal\" />
+    <WCFMetadataStorage Include="Service References\WsListaLinealOrden\" />
+    <WCFMetadataStorage Include="Service References\WsListaLineal\" />
+    <WCFMetadataStorage Include="Service References\WsListaTipoVariable\" />
+    <WCFMetadataStorage Include="Service References\WsModulo\" />
+    <WCFMetadataStorage Include="Service References\WsNosologiaGestion\" />
+    <WCFMetadataStorage Include="Service References\WsParrafosNew\" />
+    <WCFMetadataStorage Include="Service References\WsPlantilla\" />
+    <WCFMetadataStorage Include="Service References\wsResultadosLab\" />
+    <WCFMetadataStorage Include="Service References\WsSeguridad\" />
+    <WCFMetadataStorage Include="Service References\WsSinCompresion\" />
+    <WCFMetadataStorage Include="Service References\wsTerm\" />
+    <WCFMetadataStorage Include="Service References\WsVariable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsListaLineal\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsListaLineal\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsListaLineal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsListaLinealOrden\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsListaLinealOrden\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsListaLinealOrden\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsPlantilla\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsPlantilla\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsPlantilla\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsAgrupador\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsAgrupador\configuration.svcinfo">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsAgrupador\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsCategoria\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsCategoria\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsCategoria\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsVariable\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsVariable\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsVariable\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsSeguridad\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsSeguridad\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsSeguridad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsModulo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsModulo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsModulo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsListaTipoVariable\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsListaTipoVariable\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsListaTipoVariable\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsNosologiaGestion\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsNosologiaGestion\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsNosologiaGestion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsDominio\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsDominio\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsDominio\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alemana.Nucleo.Shared.Contrato\Alemana.Nucleo.Shared.Contrato.csproj">
+      <Project>{6f0fa3a0-08da-43c0-b5a3-267607b22a0e}</Project>
+      <Name>Alemana.Nucleo.Shared.Contrato</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alemana.Nucleo.Shared\Alemana.Nucleo.Shared.csproj">
+      <Project>{75050c62-2f9e-4d9b-8b04-a6c8bda25f43}</Project>
+      <Name>Alemana.Nucleo.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsResultadosLab\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsResultadosLab\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsResultadosLab\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsDocumentoIndice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsDocumentoIndice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsDocumentoIndice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsDocuware\NucleoWS.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsDocuware\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsDocuware\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsDocuware\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsTerm\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsTerm\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsTerm\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsFichaPerinatal\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsFichaPerinatal\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsFichaPerinatal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsSinCompresion\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsSinCompresion\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsSinCompresion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsClasificacion_Documentos\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsClasificacion_Documentos\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsClasificacion_Documentos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsParrafosNew\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsParrafosNew\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsParrafosNew\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CabeceraServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CabeceraServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CabeceraServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)..\..\ModulesBin\" /SY
+c:\windows\system32\xcopy "$(TargetDir)$(ProjectName)*" "$(ProjectDir)\..\..\..\Shell\ModulesBin\" /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

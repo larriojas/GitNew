@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="WslistalinealordenwebWebPortBinding" />
+        <binding name="WsplantillaswebWebPortBinding" />
+        <binding name="WsagrupadorwebWebPortBinding" />
+        <binding name="WsvariableWebPortBinding" />
+        <binding name="WslistatipovariableWebPortBinding" />
+        <binding name="WsseguridadWebPortBinding" />
+        <binding name="WscategoriaWebPortBinding" />
+        <binding name="WsmoduloWebPortBinding" />
+        <binding name="TerminologiaWSPortBinding" />
+        <binding name="WsnosologiagestionWebPortBinding" />
+        <binding name="WslistalinealWebPortBinding" />
+        <binding name="WsseguridadWebPortBinding1" />
+        <binding name="WsdominioWebPortBinding" />
+        <binding name="WslistatipovariableWebPortBinding1" />
+        <binding name="WsgestionresultadoslabWebPortBinding" />
+        <binding name="WsdocumentosWebPortBinding" />
+        <binding name="NucleoWSSoap" />
+      </basicHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://2.2.2.24:7001/wsVariableWeb/WsvariableWebService"
+        binding="basicHttpBinding" bindingConfiguration="WsvariableWebPortBinding"
+        contract="WsVariable.WsvariableWeb" name="WsvariableWebPort" />
+      <endpoint address="http://2.2.2.24:7001/wsAgrupadorWeb/WsagrupadorwebWebService"
+        binding="basicHttpBinding" bindingConfiguration="WsagrupadorwebWebPortBinding"
+        contract="WsAgrupador.WsagrupadorwebWeb" name="WsagrupadorwebWebPort" />
+      <endpoint address="http://2.2.2.24:7001/wsCategoriaWeb/WscategoriaWebService"
+        binding="basicHttpBinding" bindingConfiguration="WscategoriaWebPortBinding"
+        contract="WsCategoria.WscategoriaWeb" name="WscategoriaWebPort" />
+      <endpoint address="http://2.2.2.24:7001/wsListaLinealOrdenWeb/WslistalinealordenwebWebService"
+        binding="basicHttpBinding" bindingConfiguration="WslistalinealordenwebWebPortBinding"
+        contract="WsListaLinealOrden.WslistalinealordenwebWeb" name="WslistalinealordenwebWebPort" />
+      <endpoint address="http://2.2.2.24:7001/wsModuloWeb/WsmoduloWebService"
+        binding="basicHttpBinding" bindingConfiguration="WsmoduloWebPortBinding"
+        contract="WsModulo.WsmoduloWeb" name="WsmoduloWebPort" />
+      <endpoint address="http://10.70.6.136:80/TerminologiaWSMultiContexto/TerminologiaWSService"
+        binding="basicHttpBinding" bindingConfiguration="TerminologiaWSPortBinding"
+        contract="WsTerminologia.TerminologiaWS" name="TerminologiaWSPort" />
+      <endpoint address="http://2.2.2.24:7001/wsPlantillasWeb/WsplantillaswebWebService"
+        binding="basicHttpBinding" bindingConfiguration="WsplantillaswebWebPortBinding"
+        contract="WsPlantilla.WsplantillaswebWeb" name="WsplantillaswebWebPort" />
+      <endpoint address="http://2.2.2.24:7001/WsSeguridadWeb/WsseguridadWebService"
+        binding="basicHttpBinding" bindingConfiguration="WsseguridadWebPortBinding1"
+        contract="WsSeguridad.WsseguridadWeb" name="WsseguridadWebPort" />
+      <endpoint address="http://2.2.2.24:7001/wsDominioWeb/WsdominioWebService"
+        binding="basicHttpBinding" bindingConfiguration="WsdominioWebPortBinding"
+        contract="WsDominio.WsdominioWeb" name="WsdominioWebPort" />
+      <endpoint address="http://2.2.2.24:7001/wsListaTipoVariableWeb/WslistatipovariableWebService"
+        binding="basicHttpBinding" bindingConfiguration="WslistatipovariableWebPortBinding"
+        contract="WsListaTipoVariable.WslistatipovariableWeb" name="WslistatipovariableWebPortBinding" />
+      <endpoint address="http://2.2.2.24:7001/WsNosologiaGestionWeb/WsnosologiagestionWebService"
+        binding="basicHttpBinding" bindingConfiguration="WsnosologiagestionWebPortBinding"
+        contract="WsNosologiaGestion.WsnosologiagestionWeb" name="WsnosologiagestionWebPort" />
+      <endpoint address="http://2.2.2.24:7001/wsGestionResultadosLabWeb/WsgestionresultadoslabWebService"
+        binding="basicHttpBinding" bindingConfiguration="WsgestionresultadoslabWebPortBinding"
+        contract="wsResultadosLab.WsgestionresultadoslabWeb" name="WsgestionresultadoslabWebPort" />
+      <endpoint address="http://10.70.6.135:7031/wsDocumentosWeb/WsdocumentosWebService"
+        binding="basicHttpBinding" bindingConfiguration="WsdocumentosWebPortBinding"
+        contract="WsDocumentoIndice.WsdocumentosWeb" name="WsdocumentosWebPort" />
+      <endpoint address="http://maitencillo/Valuetech.Nucleo/NucleoWS.asmx"
+        binding="basicHttpBinding" bindingConfiguration="NucleoWSSoap"
+        contract="WsDocuware.NucleoWSSoap" name="NucleoWSSoap" />
+      <endpoint address="http://2.2.2.24:7001/wsListaLinealWeb/WslistalinealWebService"
+        binding="basicHttpBinding" bindingConfiguration="WslistalinealWebPortBinding"
+        contract="WsListaLineal.WslistalinealWeb" name="WslistalinealWebPort" />
+    </client>
+  </system.serviceModel>
+</configuration>

@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75050C62-2F9E-4D9B-8B04-A6C8BDA25F43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alemana.Nucleo.Shared</RootNamespace>
+    <AssemblyName>Alemana.Nucleo.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>&lt;Project Location In Database&gt;</SccProjectName>
+    <SccLocalPath>&lt;Local Binding Root of Project&gt;</SccLocalPath>
+    <SccAuxPath>&lt;Source Control Database&gt;</SccAuxPath>
+    <SccProvider>Jazz Source Control Provider:{AC8810C5-F6E7-4145-83AA-FDFFF6F5506D}</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Alemana.Nucleo.Estadisticas\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alemana.Nucleo.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Alemana.Nucleo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Alemana.Nucleo.Impresion.Wpf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Alemana.Nucleo.Impresion.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Alemana.Nucleo.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Alemana.Nucleo.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Alemana.Nucleo.Shared.Contrato">
+      <HintPath>..\..\..\Shell\ModulesBin\Alemana.Nucleo.Shared.Contrato.dll</HintPath>
+    </Reference>
+    <Reference Include="Alemana.Nucleo.Shared.Servicio, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Alemana.Nucleo.Shared.Servicio.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.0.5.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Windows.Controls, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data">
+      <HintPath>..\..\..\Shell\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Telerik.Windows.Controls.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView">
+      <HintPath>..\..\..\Shell\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI">
+      <HintPath>..\..\..\Shell\Telerik.Windows.Controls.RichTextBoxUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html">
+      <HintPath>..\..\..\Shell\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing, Version=2013.3.1320.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ModulesBin\Telerik.Windows.Documents.Proofing.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configurations\BoxEstados.cs" />
+    <Compile Include="Configurations\ColorMessages.cs" />
+    <Compile Include="Configurations\ConceptoCte.cs" />
+    <Compile Include="Configurations\Tarjetero.cs" />
+    <Compile Include="Configurations\Docuware.cs" />
+    <Compile Include="Configurations\GestionIndicaciones.cs" />
+    <Compile Include="Configurations\ImpresionReceta.cs" />
+    <Compile Include="Configurations\IndiceMaestroIndicaciones.cs" />
+    <Compile Include="Configurations\LugaresClinica.cs" />
+    <Compile Include="Configurations\MensajeEmergente.cs" />
+    <Compile Include="Configurations\Menus\MenuCommand.cs" />
+    <Compile Include="Configurations\Menus\MenuPacienteShellProvider.cs" />
+    <Compile Include="Configurations\Menus\MenuProfesionalShellProvider.cs" />
+    <Compile Include="Configurations\Menus\PortalCommand.cs" />
+    <Compile Include="Configurations\Menus\Shell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configurations\Menus\Tab.cs" />
+    <Compile Include="Configurations\PacienteShellMenuOrder.cs" />
+    <Compile Include="Configurations\RangoParametros.cs" />
+    <Compile Include="Configurations\RolUsuarios.cs" />
+    <Compile Include="Configurations\SwitchShellKeys.cs" />
+    <Compile Include="Configurations\VisorUrgencia.cs" />
+    <Compile Include="Contracts\ABMClasificacionDoc\ComunSharedDto.cs" />
+    <Compile Include="Contracts\ABMClasificacionDoc\IComunSharedService.cs" />
+    <Compile Include="Contracts\FieldType.cs" />
+    <Compile Include="Contracts\Mantenedores\ConceptoDto.cs" />
+    <Compile Include="Contracts\Mantenedores\ConceptoGrpDto.cs" />
+    <Compile Include="Contracts\Mantenedores\IConceptoSharedService.cs" />
+    <Compile Include="Contracts\Models\NotificationModel.cs" />
+    <Compile Include="Contracts\Models\QueryItemModel.cs" />
+    <Compile Include="Controls\AutoFilteredComboBox.cs" />
+    <Compile Include="Controls\FilteredComboBox.cs" />
+    <Compile Include="Controls\MultiSelectComboBox.xaml.cs">
+      <DependentUpon>MultiSelectComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Spellcheck\RadEsESDictionary.cs" />
+    <Compile Include="Controls\Spellcheck\SharedSpellchecker.cs" />
+    <Compile Include="Controls\TextBlockWithHighlight.cs" />
+    <Compile Include="CurrentData\CurrentAmbitoData.cs" />
+    <Compile Include="CurrentData\CurrentEncuentroData.cs" />
+    <Compile Include="CurrentData\CurrentPacienteData.cs" />
+    <Compile Include="CurrentData\CurrentProfesionalData.cs" />
+    <Compile Include="CurrentData\CurrentRolesData.cs" />
+    <Compile Include="CurrentData\WsindpgindwspanelindicacionesWebClient.cs" />
+    <Compile Include="Entities\AmbitoModel.cs" />
+    <Compile Include="Entities\CacheModel.cs" />
+    <Compile Include="Entities\CheckableFilterModel.cs" />
+    <Compile Include="Entities\CheckIsThreeState.cs" />
+    <Compile Include="Entities\EntregaReporteModel.cs" />
+    <Compile Include="Entities\EntregasModel.cs" />
+    <Compile Include="Entities\Enums.cs" />
+    <Compile Include="Entities\EpisodioCerradoModel.cs" />
+    <Compile Include="Entities\Etiqueta.cs" />
+    <Compile Include="Entities\MasterExamenes.cs" />
+    <Compile Include="Entities\Paciente.cs" />
+    <Compile Include="Entities\PlanesCuidados\DetalleActividadEnfermeria.cs" />
+    <Compile Include="Entities\PlanesCuidados\ComandoEnfermeria.cs" />
+    <Compile Include="Entities\PlanesCuidados\DetallePlan.cs" />
+    <Compile Include="Entities\ReporteHistoricoSharedModel.cs" />
+    <Compile Include="Entities\Rut.cs" />
+    <Compile Include="Entities\RutBase.cs" />
+    <Compile Include="Entities\SubHistoricoEntrega.cs" />
+    <Compile Include="Entities\SubHistoricoRecepcion.cs" />
+    <Compile Include="Events\ActualizaEInvasivoNotaChangedEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Events\ActualizaInventarioPacienteEvent.cs" />
+    <Compile Include="Events\ActualizaMotivoConsultaDesdeAltaHosp.cs" />
+    <Compile Include="Events\ActualizaNotaEInvasivoChangedEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Events\ActualizaParametroCliValoracionEvent.cs" />
+    <Compile Include="Events\ActualizarCampoCalculadoEvent.cs" />
+    <Compile Include="Events\ActualizarDatosPacienteChangedEvent.cs" />
+    <Compile Include="Events\ActualizarEstadoAlergiaEvent.cs" />
+    <Compile Include="Events\ActualizarEventoGenericoChangedEvent.cs" />
+    <Compile Include="Events\ActualizarFichaPerinatalNotasChangedEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Events\ActualizarGrupoFisiologicoEvent.cs" />
+    <Compile Include="Events\ActualizarGrupoParametrosClinicosEvent.cs" />
+    <Compile Include="Events\ActualizarLaboratorioFpnEvent.cs" />
+    <Compile Include="Events\ActualizarModuloNotasChangedEvent.cs" />
+    <Compile Include="Events\ActualizarNotaEInvasivoChangedEvent.cs" />
+    <Compile Include="Events\ActualizarNotasFichaPerinatalChangedEvent.cs" />
+    <Compile Include="Events\ActualizarParametrosClinicosEvent.cs" />
+    <Compile Include="Events\AgendaEliminaContadoresEvent.cs" />
+    <Compile Include="Events\AgendaTakyonEliminaContadoresEvent.cs" />
+    <Compile Include="Events\AgregarAtributoEvent.cs" />
+    <Compile Include="Events\AsignaCabeceraChangedEvent.cs" />
+    <Compile Include="Events\AsignaRolChangedEvent.cs" />
+    <Compile Include="Events\BoxUrgenciaChangedEvent.cs" />
+    <Compile Include="Events\AmbitoLugarAreaChangedEvent.cs" />
+    <Compile Include="Events\CabeceraEliminaContadoresEvent.cs" />
+    <Compile Include="Events\CargaMenuResumenFichaEvent.cs" />
+    <Compile Include="Events\CargarDocumentosEpisodioVisorAdministrativoEvent.cs" />
+    <Compile Include="Events\CohortesChangedEvent.cs" />
+    <Compile Include="Events\DatosTerminoNosologicoEvent.cs" />
+    <Compile Include="Events\EducacionChangedEvent.cs" />
+    <Compile Include="Events\ElementoInvasivoChangedEvent.cs" />
+    <Compile Include="Events\ElementoInvasivoTransladoEvent.cs" />
+    <Compile Include="Events\EntregaGavetaChangedEvent.cs" />
+    <Compile Include="Events\EstadisticaEvents\EstadisticaCanalesChangedEvent.cs" />
+    <Compile Include="Events\EstadisticaEvents\EstadisticaDiagnosticosChangedEvent.cs" />
+    <Compile Include="Events\EstadisticaEvents\EstadisticaIndicacionesChangedEvent.cs" />
+    <Compile Include="Events\EstadisticaEvents\EstadisticaPacientesChangedEvent.cs" />
+    <Compile Include="Events\EstafetaModalEvent.cs" />
+    <Compile Include="Events\EtiquetasChangedEvent.cs" />
+    <Compile Include="Events\EvolucionChangedEvent.cs" />
+    <Compile Include="Events\ExpanderCollapsedInfoChangedEvent.cs" />
+    <Compile Include="Events\GestionIndicacionesChangedEvent.cs" />
+    <Compile Include="Events\GestionIndicacionesEliminaContadoresEvent.cs" />
+    <Compile Include="Events\GrabarInfeccionHeridaOperatoriaPacienteEvent.cs" />
+    <Compile Include="Events\GrabarNotaEvent.cs" />
+    <Compile Include="Events\GuardarConfiguracionEvent.cs" />
+    <Compile Include="Events\IndicacionesChangedEvent.cs" />
+    <Compile Include="Events\MenusChangedEvent.cs" />
+    <Compile Include="Events\NotificaAccidenteEvent.cs" />
+    <Compile Include="Events\NotificacionGestionPlanesCuidadGesInd.cs" />
+    <Compile Include="Events\NotificaGestionPlanesCuidadoEvent.cs" />
+    <Compile Include="Events\NotificaGestionPlanesCuidadoIndicaciones.cs" />
+    <Compile Include="Events\NotificaProcedimientoAgregadoEvent.cs" />
+    <Compile Include="Events\NotificaShellProfesionalEvent.cs" />
+    <Compile Include="Events\PlanesCuidadosEvents\ActividadPlanChangedEvent.cs" />
+    <Compile Include="Events\PortalEvents\AgendaChangedEvent.cs" />
+    <Compile Include="Events\PortalEvents\CanalesVirChangedEvent.cs" />
+    <Compile Include="Events\PortalEvents\GestionPortalchangedEvent.cs" />
+    <Compile Include="Events\PortalEvents\InterconsultaChangedEvent.cs" />
+    <Compile Include="Events\MotivoConsultaChangedEvent.cs" />
+    <Compile Include="Events\NotificaAccesoEvolucionEvent.cs" />
+    <Compile Include="Events\NotificaMenuAgregadoEvent.cs" />
+    <Compile Include="Events\NotificaMenuEvent.cs" />
+    <Compile Include="Events\NotificaTerminoAgregadoEvent.cs" />
+    <Compile Include="Events\PacienteLlegoChangedEvent.cs" />
+    <Compile Include="Events\ParametroChangedEvent.cs" />
+    <Compile Include="Events\DropBehavior.cs" />
+    <Compile Include="Events\NosologiaChangedEvent.cs" />
+    <Compile Include="Events\PortalChangedEvent.cs" />
+    <Compile Include="Events\PortalEvents\MisEstadisticasChangedEvent.cs" />
+    <Compile Include="Events\PortalEvents\NoticiasChangedEvent.cs" />
+    <Compile Include="Events\PortalEvents\PacHospitalizadosChangedEvent.cs" />
+    <Compile Include="Events\PortalEvents\SelectedPortalEvent.cs" />
+    <Compile Include="Events\RefrescarEvent.cs" />
+    <Compile Include="Events\RefrescarVisorEvent.cs" />
+    <Compile Include="Events\ResultadoLabChangedEvent.cs" />
+    <Compile Include="Events\ReversaGavetaChangedEvent.cs" />
+    <Compile Include="Events\SeleccionCirugiaPacienteEvent.cs" />
+    <Compile Include="Events\SeleccionPartoPacienteEvent.cs" />
+    <Compile Include="Events\SelectedMenuEvent.cs" />
+    <Compile Include="Events\SelectedTabEvent.cs" />
+    <Compile Include="Events\VisorUrgenciaEliminaContadoresEvent.cs" />
+    <Compile Include="Extensions\CollectionExtensions.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Helpers\AutoCloseMessageBox.cs" />
+    <Compile Include="Helpers\ConfigurationHelper.cs" />
+    <Compile Include="Helpers\ContingenciaHelper.cs" />
+    <Compile Include="Helpers\DateHelper.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Helpers\LegacyWeakEventListener.cs" />
+    <Compile Include="Helpers\OracleHelper.cs" />
+    <Compile Include="Helpers\PerformanceRecorder.cs" />
+    <Compile Include="Helpers\RegexUtilities.cs" />
+    <Compile Include="Helpers\ServiceChannel.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
+    <Compile Include="Helpers\ThemeAmbitoPatient.cs" />
+    <Compile Include="Helpers\TransformerXml.cs" />
+    <Compile Include="Helpers\ValidacionesHelper.cs" />
+    <Compile Include="Helpers\WaitCursor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AmbitoEpisodio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SysdateOracle\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsPanelIndicaciones\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesImplementation\HelpersService.cs" />
+    <Compile Include="ServicesInterfaces\ICacheService.cs" />
+    <Compile Include="ServicesInterfaces\IEstadoPacienteService.cs" />
+    <Compile Include="ServicesInterfaces\IPacienteService.cs" />
+    <Compile Include="ServicesInterfaces\IRecuperaAmbitoService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\MultiSelectComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\NucleoButtonResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\NucleoGridResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\NucleoPaneResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\Spellcheck\es-ES.tdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\AmbitoEpisodio\Alemana.Nucleo.Shared.AmbitoEpisodio.fcespRecuperaAmbResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmbitoEpisodio\Alemana.Nucleo.Shared.AmbitoEpisodio.FcespRecuperaAmbResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmbitoEpisodio\WsgestiontransversalWebService.wsdl" />
+    <None Include="Service References\AmbitoEpisodio\WsgestiontransversalWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SysdateOracle\Alemana.Nucleo.Shared.SysdateOracle.fcespRecuperaSysdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SysdateOracle\Alemana.Nucleo.Shared.SysdateOracle.FcespRecuperaSysdateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SysdateOracle\WsfechahoraactualWebService.wsdl" />
+    <None Include="Service References\SysdateOracle\WsfechahoraactualWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspActualizarEstadoArrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspActualizarEstadoArrResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspActualizarEstadoIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspActualizarEstadoIndResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtFarmaEvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtFarmaEvResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtFarmNoevResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtFarmNoevResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtFarmOncoEvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtFarmOncoEvResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtFarmOncoNoevResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtFarmOncoNoevResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtFechasIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtFechasIndResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtGeneralesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtGeneralesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtImagenologiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtImagenologiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtInfoindiacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtInfoindiacionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtInfoPanelesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtInfoPanelesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtInterconsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtInterconsultaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtLaboratorioPrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtLaboratorioPrResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtLaboratorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtLaboratorioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtProcedimientosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtProcedimientosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtRangofechasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtRangofechasResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbObtRecetaIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbObtRecetaIndResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbObtRecetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbObtRecetaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbobtRehabilitacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbobtRehabilitacionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbRecetaCrearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbRecetaCrearResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspAmbRenovarRecetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspAmbRenovarRecetaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspCambioFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspCambioFechaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspCrearIndicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspCrearIndicacionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspDuracionIndicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspDuracionIndicacionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspEliminarIndicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspEliminarIndicacionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspExtenderArrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspExtenderArrResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspExtenderIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspExtenderIndResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspFuncionalidadAccionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspFuncionalidadAccionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspGenerarEncuentroIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspGenerarEncuentroIndResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspGrupoIndEpisodioArrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspGrupoIndEpisodioArrResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspGrupoIndEpisodioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspGrupoIndEpisodioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspGrupoIndLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspGrupoIndLoteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspIndDuplicadaLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspIndDuplicadaLoteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspIndDuplicadaPanelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspIndDuplicadaPanelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspIndDuplicadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspIndDuplicadaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspInfoAccIndicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspInfoAccIndicacionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspLlevarpresenteArrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspLlevarpresenteArrResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspLlevarpresenteIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspLlevarpresenteIndResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspLogIndicacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspLogIndicacionesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspModEstadoAlergiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspModEstadoAlergiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspNotifAccidenteCteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspNotifAccidenteCteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspNotifAccidenteIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspNotifAccidenteIndResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspNotifAccidentesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspNotifAccidentesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspNotifAccidenteUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspNotifAccidenteUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtAccionesIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtAccionesIndResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtAccionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtAccionesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtConstantesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtConstantesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtDiminiosLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtDiminiosLinkResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtFarmaEvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtFarmaEvResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtFarmNoevResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtFarmNoevResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtGeneralesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtGeneralesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtGrpIndicacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtGrpIndicacionesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtImagenologiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtImagenologiaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtIndicacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtIndicacionesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtIndicacionesTerminoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtIndicacionesTerminoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtIndicacionesTextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtIndicacionesTextResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtInterconsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtInterconsultaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtLaboratorioPrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtLaboratorioPrResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtLaboratorioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtLaboratorioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtMaestroIndicacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtMaestroIndicacionesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtMisFiltrosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtMisFiltrosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspObtProcedimientosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspObtProcedimientosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspRepetirArrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspRepetirArrResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspRepetirIndResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspRepetirIndResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.indspValidaIndDuplicadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\Alemana.Nucleo.Shared.WsPanelIndicaciones.IndspValidaIndDuplicadaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPanelIndicaciones\WsindpgindwspanelindicacionesWebService.wsdl" />
+    <None Include="Service References\WsPanelIndicaciones\WsindpgindwspanelindicacionesWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="Fonts\RopaSans-Regular.otf" />
+    <Resource Include="Fonts\TitilliumWeb-Black.ttf" />
+    <Resource Include="Fonts\TitilliumWeb-Bold.ttf" />
+    <Resource Include="Fonts\TitilliumWeb-BoldItalic.ttf" />
+    <Resource Include="Fonts\TitilliumWeb-ExtraLight.ttf" />
+    <Resource Include="Fonts\TitilliumWeb-ExtraLightItalic.ttf" />
+    <Resource Include="Fonts\TitilliumWeb-Italic.ttf" />
+    <Resource Include="Fonts\TitilliumWeb-Light.ttf" />
+    <Resource Include="Fonts\TitilliumWeb-LightItalic.ttf" />
+    <Resource Include="Fonts\TitilliumWeb-Regular.ttf" />
+    <Resource Include="Fonts\TitilliumWeb-SemiBold.ttf" />
+    <Resource Include="Fonts\TitilliumWeb-SemiBoldItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AmbitoEpisodio\" />
+    <WCFMetadataStorage Include="Service References\SysdateOracle\" />
+    <WCFMetadataStorage Include="Service References\WsPanelIndicaciones\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SysdateOracle\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SysdateOracle\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SysdateOracle\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsPanelIndicaciones\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsPanelIndicaciones\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsPanelIndicaciones\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmbitoEpisodio\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmbitoEpisodio\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmbitoEpisodio\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)..\..\Shell\" /SY
+xcopy "$(TargetDir)*" "$(SolutionDir)..\..\ModulesBin\" /SY
+xcopy "$(TargetDir)$(ProjectName)*" "$(ProjectDir)..\..\..\Shell\ModulesBin\" /SY</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

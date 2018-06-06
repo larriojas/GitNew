@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alemana.Nucleo.Shared", "Alemana.Nucleo.Shared\Alemana.Nucleo.Shared.csproj", "{75050C62-2F9E-4D9B-8B04-A6C8BDA25F43}"
+	GlobalSection(JazzSourceControlProviderSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alemana.Nucleo.Shared.Contrato", "Alemana.Nucleo.Shared.Contrato\Alemana.Nucleo.Shared.Contrato.csproj", "{6F0FA3A0-08DA-43C0-B5A3-267607B22A0E}"
+	GlobalSection(JazzSourceControlProviderSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alemana.Nucleo.Shared.Wpf", "Alemana.Nucleo.Shared.Wpf\Alemana.Nucleo.Shared.Wpf.csproj", "{B1765697-0DEC-4B90-B4BE-12C6629BBF14}"
+	GlobalSection(JazzSourceControlProviderSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6937DA74-DCF6-4676-91B5-C3E4600641D0}"
+	GlobalSection(JazzSourceControlProviderSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alemana.Nucleo.Shared.Servicio", "Alemana.Nucleo.Shared.Servicio\Alemana.Nucleo.Shared.Servicio.csproj", "{7BD98B78-44FA-43BC-9119-8F316AC1D9AE}"
+	GlobalSection(JazzSourceControlProviderSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+EndProject
+Global
+	GlobalSection(JazzSourceControlProviderSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75050C62-2F9E-4D9B-8B04-A6C8BDA25F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75050C62-2F9E-4D9B-8B04-A6C8BDA25F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75050C62-2F9E-4D9B-8B04-A6C8BDA25F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75050C62-2F9E-4D9B-8B04-A6C8BDA25F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F0FA3A0-08DA-43C0-B5A3-267607B22A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F0FA3A0-08DA-43C0-B5A3-267607B22A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F0FA3A0-08DA-43C0-B5A3-267607B22A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F0FA3A0-08DA-43C0-B5A3-267607B22A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1765697-0DEC-4B90-B4BE-12C6629BBF14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1765697-0DEC-4B90-B4BE-12C6629BBF14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1765697-0DEC-4B90-B4BE-12C6629BBF14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1765697-0DEC-4B90-B4BE-12C6629BBF14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BD98B78-44FA-43BC-9119-8F316AC1D9AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD98B78-44FA-43BC-9119-8F316AC1D9AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD98B78-44FA-43BC-9119-8F316AC1D9AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD98B78-44FA-43BC-9119-8F316AC1D9AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
