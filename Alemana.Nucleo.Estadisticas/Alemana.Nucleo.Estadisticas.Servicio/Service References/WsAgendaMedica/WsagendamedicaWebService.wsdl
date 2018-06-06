@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nucleo.alemana.cl/" name="WsagendamedicaWebService" targetNamespace="http://nucleo.alemana.cl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://2.2.2.24:7001/wsAgendaMedicaWeb/WsagendamedicaWebService?xsd=1" namespace="http://nucleo.alemana.cl/" />
+    </xsd:schema>
+  </types>
+  <message name="indspRecetaCrear">
+    <part name="parameters" element="tns:indspRecetaCrear" />
+  </message>
+  <message name="indspRecetaCrearResponse">
+    <part name="parameters" element="tns:indspRecetaCrearResponse" />
+  </message>
+  <message name="WsagendamedicaWebException">
+    <part name="fault" element="tns:faultInfo" />
+  </message>
+  <message name="indspRecetaExpirar">
+    <part name="parameters" element="tns:indspRecetaExpirar" />
+  </message>
+  <message name="indspRecetaExpirarResponse">
+    <part name="parameters" element="tns:indspRecetaExpirarResponse" />
+  </message>
+  <message name="indspRecetaIndicacionIns">
+    <part name="parameters" element="tns:indspRecetaIndicacionIns" />
+  </message>
+  <message name="indspRecetaIndicacionInsResponse">
+    <part name="parameters" element="tns:indspRecetaIndicacionInsResponse" />
+  </message>
+  <message name="indspRecetaIns">
+    <part name="parameters" element="tns:indspRecetaIns" />
+  </message>
+  <message name="indspRecetaInsResponse">
+    <part name="parameters" element="tns:indspRecetaInsResponse" />
+  </message>
+  <message name="indspRecetaRenovar">
+    <part name="parameters" element="tns:indspRecetaRenovar" />
+  </message>
+  <message name="indspRecetaRenovarResponse">
+    <part name="parameters" element="tns:indspRecetaRenovarResponse" />
+  </message>
+  <message name="intspCantidadEstados">
+    <part name="parameters" element="tns:intspCantidadEstados" />
+  </message>
+  <message name="intspCantidadEstadosResponse">
+    <part name="parameters" element="tns:intspCantidadEstadosResponse" />
+  </message>
+  <portType name="WsagendamedicaWeb">
+    <operation name="indspRecetaCrear">
+      <input message="tns:indspRecetaCrear" />
+      <output message="tns:indspRecetaCrearResponse" />
+      <fault name="WsagendamedicaWebException" message="tns:WsagendamedicaWebException" />
+    </operation>
+    <operation name="indspRecetaExpirar">
+      <input message="tns:indspRecetaExpirar" />
+      <output message="tns:indspRecetaExpirarResponse" />
+      <fault name="WsagendamedicaWebException" message="tns:WsagendamedicaWebException" />
+    </operation>
+    <operation name="indspRecetaIndicacionIns">
+      <input message="tns:indspRecetaIndicacionIns" />
+      <output message="tns:indspRecetaIndicacionInsResponse" />
+      <fault name="WsagendamedicaWebException" message="tns:WsagendamedicaWebException" />
+    </operation>
+    <operation name="indspRecetaIns">
+      <input message="tns:indspRecetaIns" />
+      <output message="tns:indspRecetaInsResponse" />
+      <fault name="WsagendamedicaWebException" message="tns:WsagendamedicaWebException" />
+    </operation>
+    <operation name="indspRecetaRenovar">
+      <input message="tns:indspRecetaRenovar" />
+      <output message="tns:indspRecetaRenovarResponse" />
+      <fault name="WsagendamedicaWebException" message="tns:WsagendamedicaWebException" />
+    </operation>
+    <operation name="intspCantidadEstados">
+      <input message="tns:intspCantidadEstados" />
+      <output message="tns:intspCantidadEstadosResponse" />
+      <fault name="WsagendamedicaWebException" message="tns:WsagendamedicaWebException" />
+    </operation>
+  </portType>
+  <binding name="WsagendamedicaWebPortBinding" type="tns:WsagendamedicaWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="indspRecetaCrear">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsagendamedicaWebException">
+        <soap:fault use="literal" name="WsagendamedicaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="indspRecetaExpirar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsagendamedicaWebException">
+        <soap:fault use="literal" name="WsagendamedicaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="indspRecetaIndicacionIns">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsagendamedicaWebException">
+        <soap:fault use="literal" name="WsagendamedicaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="indspRecetaIns">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsagendamedicaWebException">
+        <soap:fault use="literal" name="WsagendamedicaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="indspRecetaRenovar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsagendamedicaWebException">
+        <soap:fault use="literal" name="WsagendamedicaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="intspCantidadEstados">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsagendamedicaWebException">
+        <soap:fault use="literal" name="WsagendamedicaWebException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="WsagendamedicaWebService">
+    <port name="WsagendamedicaWebPort" binding="tns:WsagendamedicaWebPortBinding">
+      <soap:address location="http://2.2.2.24:7001/wsAgendaMedicaWeb/WsagendamedicaWebService" />
+    </port>
+  </service>
+</definitions>

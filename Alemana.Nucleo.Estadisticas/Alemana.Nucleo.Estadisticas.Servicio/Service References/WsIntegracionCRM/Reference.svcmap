@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3f2bef97-30e2-4fda-9046-2fd3e0366b46" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector/AL_INTEGRACION_NUCLEO.1.wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AL_CONS_REQXMED_RESUMEN_CREQ.xsd" MetadataType="Schema" ID="c96d55aa-3406-4853-a6ac-f95fc6591ebd" SourceId="1" SourceUrl="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector/AL_CONS_REQXMED_RESUMEN_CREQ.V1.xsd" />
+    <MetadataFile FileName="AL_CONS_REQXMED_RESUMEN_PREQ.xsd" MetadataType="Schema" ID="8481872b-1a4f-4a4b-88a2-8764b320260c" SourceId="1" SourceUrl="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector/AL_CONS_REQXMED_RESUMEN_PREQ.V1.xsd" />
+    <MetadataFile FileName="AL_INTEGRACION_NUCLEO.wsdl" MetadataType="Wsdl" ID="d1db2dbb-d721-4e3a-8bcd-a76beac6a5de" SourceId="1" SourceUrl="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector/AL_INTEGRACION_NUCLEO.1.wsdl" />
+    <MetadataFile FileName="AL_CONS_REQXMED_RESUMEN_CRES.xsd" MetadataType="Schema" ID="9bc156f4-472e-4c81-8e17-df8a3975fdc0" SourceId="1" SourceUrl="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector/AL_CONS_REQXMED_RESUMEN_CRES.V1.xsd" />
+    <MetadataFile FileName="AL_CONS_REQXMED_DETALLE_CREQ.xsd" MetadataType="Schema" ID="34b7d3e4-3011-4323-9ff8-adbf94be2193" SourceId="1" SourceUrl="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector/AL_CONS_REQXMED_DETALLE_CREQ.V1.xsd" />
+    <MetadataFile FileName="AL_CONS_REQXMED_RESUMEN_PRES.xsd" MetadataType="Schema" ID="d1a004f7-4e99-4f45-b586-f81f979e3e0b" SourceId="1" SourceUrl="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector/AL_CONS_REQXMED_RESUMEN_PRES.V1.xsd" />
+    <MetadataFile FileName="AL_CONS_REQXMED_DETALLE_PRES.xsd" MetadataType="Schema" ID="ff8c484a-0661-4be6-b27b-3c26b1889138" SourceId="1" SourceUrl="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector/AL_CONS_REQXMED_DETALLE_PRES.V1.xsd" />
+    <MetadataFile FileName="AL_CONS_REQXMED_DETALLE_PREQ.xsd" MetadataType="Schema" ID="b151ed6d-5e5c-4348-be35-be93131e6b4b" SourceId="1" SourceUrl="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector/AL_CONS_REQXMED_DETALLE_PREQ.V1.xsd" />
+    <MetadataFile FileName="AL_CONS_REQXMED_DETALLE_CRES.xsd" MetadataType="Schema" ID="05edb4f6-f066-4ccf-ad6b-defa04f4cb18" SourceId="1" SourceUrl="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector/AL_CONS_REQXMED_DETALLE_CRES.V1.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

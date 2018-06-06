@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:AL_CONS_REQXMED_RESUMEN_CRES.V1="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_RESUMEN_CRES.V1" xmlns:AL_CONS_REQXMED_DETALLE_CRES.V1="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_DETALLE_CRES.V1" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy" xmlns:tns="http://xmlns.alemana.cl/Enterprise/Tools/services/AL_INTEGRACION_NUCLEO.1" xmlns:AL_CONS_REQXMED_RESUMEN_CREQ.V1="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_RESUMEN_CREQ.V1" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:AL_CONS_REQXMED_DETALLE_CREQ.V1="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_DETALLE_CREQ.V1" name="AL_INTEGRACION_NUCLEO.1" targetNamespace="http://xmlns.alemana.cl/Enterprise/Tools/services/AL_INTEGRACION_NUCLEO.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:UsagePolicy wsdl:Required="true" />
+  <plnk:partnerLinkType name="AL_INTEGRACION_NUCLEO_PartnerLinkType">
+    <plnk:role name="AL_INTEGRACION_NUCLEO_Provider">
+      <plnk:portType name="tns:AL_INTEGRACION_NUCLEO_PortType" />
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="AL_CONS_REQXMED_DETALLE_CREQ.V1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_DETALLE_CREQ.V1" />
+      <xsd:import schemaLocation="AL_CONS_REQXMED_DETALLE_CRES.V1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_DETALLE_CRES.V1" />
+      <xsd:import schemaLocation="AL_CONS_REQXMED_RESUMEN_CREQ.V1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_RESUMEN_CREQ.V1" />
+      <xsd:import schemaLocation="AL_CONS_REQXMED_RESUMEN_CRES.V1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_RESUMEN_CRES.V1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AL_CONS_REQXMED_DETALLE_CREQ.V1">
+    <wsdl:documentation>Msj Req Cont ReqXMed Detalle</wsdl:documentation>
+    <wsdl:part name="parameter" element="AL_CONS_REQXMED_DETALLE_CREQ.V1:AL_CONS_REQXMED_DETALLE_CREQ" />
+  </wsdl:message>
+  <wsdl:message name="AL_CONS_REQXMED_DETALLE_CRES.V1">
+    <wsdl:documentation>Msj Res Cont ReqXMed Detalle</wsdl:documentation>
+    <wsdl:part name="parameter" element="AL_CONS_REQXMED_DETALLE_CRES.V1:AL_CONS_REQXMED_DETALLE_CRES" />
+  </wsdl:message>
+  <wsdl:message name="AL_CONS_REQXMED_RESUMEN_CREQ.V1">
+    <wsdl:documentation>Msj Req Cont ReqXMed Resumen</wsdl:documentation>
+    <wsdl:part name="parameter" element="AL_CONS_REQXMED_RESUMEN_CREQ.V1:AL_CONS_REQXMED_RESUMEN_CREQ" />
+  </wsdl:message>
+  <wsdl:message name="AL_CONS_REQXMED_RESUMEN_CRES.V1">
+    <wsdl:documentation>Msj Res Cont ReqXMed Resumen</wsdl:documentation>
+    <wsdl:part name="parameter" element="AL_CONS_REQXMED_RESUMEN_CRES.V1:AL_CONS_REQXMED_RESUMEN_CRES" />
+  </wsdl:message>
+  <wsdl:portType name="AL_INTEGRACION_NUCLEO_PortType">
+    <wsdl:operation name="AL_CONS_REQXMED_DETALLE">
+      <wsdl:documentation>Cons. Req. por Médico Detalle</wsdl:documentation>
+      <wsdl:input name="AL_CONS_REQXMED_DETALLE_CREQ.V1" message="tns:AL_CONS_REQXMED_DETALLE_CREQ.V1" />
+      <wsdl:output name="AL_CONS_REQXMED_DETALLE_CRES.V1" message="tns:AL_CONS_REQXMED_DETALLE_CRES.V1" />
+    </wsdl:operation>
+    <wsdl:operation name="AL_CONS_REQXMED_RESUMEN">
+      <wsdl:documentation>Cons. Req. por Médico Resumen</wsdl:documentation>
+      <wsdl:input name="AL_CONS_REQXMED_RESUMEN_CREQ.V1" message="tns:AL_CONS_REQXMED_RESUMEN_CREQ.V1" />
+      <wsdl:output name="AL_CONS_REQXMED_RESUMEN_CRES.V1" message="tns:AL_CONS_REQXMED_RESUMEN_CRES.V1" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AL_INTEGRACION_NUCLEO_Binding" type="tns:AL_INTEGRACION_NUCLEO_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AL_CONS_REQXMED_DETALLE">
+      <soap:operation soapAction="AL_CONS_REQXMED_DETALLE.v1" style="document" />
+      <wsp:Policy wsu:Id="UsernameTokenSecurityPolicyPasswordOptional" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsp:ExactlyOne>
+          <wsp:All>
+            <wsse:SecurityToken wsp:Usage="wsp:Required" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+              <wsse:TokenType>wsse:UserNameToken</wsse:TokenType>
+              <Claims>
+                <SubjectName MatchType="wsse:Exact" />
+                <UsePassword wsp:Usage="wsp:Optional" />
+              </Claims>
+            </wsse:SecurityToken>
+          </wsp:All>
+        </wsp:ExactlyOne>
+      </wsp:Policy>
+      <wsdl:input name="AL_CONS_REQXMED_DETALLE_CREQ.V1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="AL_CONS_REQXMED_DETALLE_CRES.V1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AL_CONS_REQXMED_RESUMEN">
+      <soap:operation soapAction="AL_CONS_REQXMED_RESUMEN.v1" style="document" />
+      <wsp:Policy wsu:Id="UsernameTokenSecurityPolicyPasswordOptional" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <wsp:ExactlyOne>
+          <wsp:All>
+            <wsse:SecurityToken wsp:Usage="wsp:Required" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+              <wsse:TokenType>wsse:UserNameToken</wsse:TokenType>
+              <Claims>
+                <SubjectName MatchType="wsse:Exact" />
+                <UsePassword wsp:Usage="wsp:Optional" />
+              </Claims>
+            </wsse:SecurityToken>
+          </wsp:All>
+        </wsp:ExactlyOne>
+      </wsp:Policy>
+      <wsdl:input name="AL_CONS_REQXMED_RESUMEN_CREQ.V1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="AL_CONS_REQXMED_RESUMEN_CRES.V1">
+        <soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AL_INTEGRACION_NUCLEO">
+    <wsdl:documentation>Integracion Nucleo</wsdl:documentation>
+    <wsdl:port name="AL_INTEGRACION_NUCLEO_Port" binding="tns:AL_INTEGRACION_NUCLEO_Binding">
+      <soap:address location="http://crmtst.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

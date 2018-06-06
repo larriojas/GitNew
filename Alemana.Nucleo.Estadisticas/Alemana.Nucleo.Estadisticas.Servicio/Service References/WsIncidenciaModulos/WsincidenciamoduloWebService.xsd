@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://nucleo.alemana.cl/" targetNamespace="http://nucleo.alemana.cl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="evpspDataFromBdSel" type="tns:evpspDataFromBdSel" />
+  <xs:element name="evpspDataFromBdSelResponse" type="tns:evpspDataFromBdSelResponse" />
+  <xs:element name="evpspIncModInsUpd" type="tns:evpspIncModInsUpd" />
+  <xs:element name="evpspIncModInsUpdResponse" type="tns:evpspIncModInsUpdResponse" />
+  <xs:element name="evpspIncModSel" type="tns:evpspIncModSel" />
+  <xs:element name="evpspIncModSelResponse" type="tns:evpspIncModSelResponse" />
+  <xs:element name="evpspVarIncModIns" type="tns:evpspVarIncModIns" />
+  <xs:element name="evpspVarIncModInsResponse" type="tns:evpspVarIncModInsResponse" />
+  <xs:element name="evpspVarIncModSel" type="tns:evpspVarIncModSel" />
+  <xs:element name="evpspVarIncModSelResponse" type="tns:evpspVarIncModSelResponse" />
+  <xs:element name="faultInfo" nillable="true" type="xs:string" />
+  <xs:complexType name="evpspVarIncModSel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piEvptmIncModId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evpspVarIncModSelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="evpspVarIncModSelResult" type="tns:EvpspVarIncModSelResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EvpspVarIncModSelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="variableIncidenciaModulo" nillable="true" type="tns:EvpspVarIncModSelTVariableIncidenciaModulo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProcedureResult" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="EvpspVarIncModSelTVariableIncidenciaModulo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="columna" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fila" type="xs:decimal" />
+      <xs:element minOccurs="0" name="id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="idAgrupador" type="xs:decimal" />
+      <xs:element minOccurs="0" name="idVariable" type="xs:decimal" />
+      <xs:element minOccurs="0" name="justificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="valor" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evpspVarIncModIns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piEvpnuIncidenciaModuloId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piVarnuVariableId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piVavnuAgrupadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piVavvaValor" type="xs:string" />
+      <xs:element minOccurs="0" name="piUsuarioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piFecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piVarnuFila" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piVarnuColumna" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piVavvaJustificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="piSessionId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piFicnuFichaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEpsnuEpisodioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pioConnuEncuentroId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evpspVarIncModInsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="evpspVarIncModInsResult" type="tns:EvpspVarIncModInsResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EvpspVarIncModInsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="pioConnuEncuentroId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+          <xs:element minOccurs="0" name="poVavnuVariableValorId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evpspDataFromBdSel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piSesnuSesionId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piTipoCampo" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evpspDataFromBdSelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="evpspDataFromBdSelResult" type="tns:EvpspDataFromBdSelResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EvpspDataFromBdSelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poData" type="xs:string" />
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evpspIncModSel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piPtlnuPltId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piFicnuFichaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEncnuEncuentroId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evpspIncModSelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="evpspIncModSelResult" type="tns:EvpspIncModSelResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EvpspIncModSelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="moduloVigente" nillable="true" type="tns:EvpspIncModSelTModuloVigente" />
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EvpspIncModSelTModuloVigente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="aliasUsuario" type="xs:string" />
+      <xs:element minOccurs="0" name="consolidado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="encuentro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="idArea" type="xs:decimal" />
+      <xs:element minOccurs="0" name="idModulo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sesionCreadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="vigente" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evpspIncModInsUpd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pioEvpnuIncidenciaModuloId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piMdlnuModuloId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piFicnuFichaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piArenuAreaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEvpnuConsolidado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEvpnuVigente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEvpnuSessionId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEpinuEpisodioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEvpdaFecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piEvpnuEliminarValores" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pioEncnuEncuentroId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evpspIncModInsUpdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="evpspIncModInsUpdResult" type="tns:EvpspIncModInsUpdResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EvpspIncModInsUpdResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="pioEncnuEncuentroId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="pioEvpnuIncidenciaModuloId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

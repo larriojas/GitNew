@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nucleo.alemana.cl/" name="WsincidenciamoduloWebService" targetNamespace="http://nucleo.alemana.cl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://2.2.2.24:7001/WsIncidenciaModuloWeb/WsincidenciamoduloWebService?xsd=1" namespace="http://nucleo.alemana.cl/" />
+    </xsd:schema>
+  </types>
+  <message name="evpspDataFromBdSel">
+    <part name="parameters" element="tns:evpspDataFromBdSel" />
+  </message>
+  <message name="evpspDataFromBdSelResponse">
+    <part name="parameters" element="tns:evpspDataFromBdSelResponse" />
+  </message>
+  <message name="WsincidenciamoduloWebException">
+    <part name="fault" element="tns:faultInfo" />
+  </message>
+  <message name="evpspIncModInsUpd">
+    <part name="parameters" element="tns:evpspIncModInsUpd" />
+  </message>
+  <message name="evpspIncModInsUpdResponse">
+    <part name="parameters" element="tns:evpspIncModInsUpdResponse" />
+  </message>
+  <message name="evpspIncModSel">
+    <part name="parameters" element="tns:evpspIncModSel" />
+  </message>
+  <message name="evpspIncModSelResponse">
+    <part name="parameters" element="tns:evpspIncModSelResponse" />
+  </message>
+  <message name="evpspVarIncModIns">
+    <part name="parameters" element="tns:evpspVarIncModIns" />
+  </message>
+  <message name="evpspVarIncModInsResponse">
+    <part name="parameters" element="tns:evpspVarIncModInsResponse" />
+  </message>
+  <message name="evpspVarIncModSel">
+    <part name="parameters" element="tns:evpspVarIncModSel" />
+  </message>
+  <message name="evpspVarIncModSelResponse">
+    <part name="parameters" element="tns:evpspVarIncModSelResponse" />
+  </message>
+  <portType name="WsincidenciamoduloWeb">
+    <operation name="evpspDataFromBdSel">
+      <input message="tns:evpspDataFromBdSel" />
+      <output message="tns:evpspDataFromBdSelResponse" />
+      <fault name="WsincidenciamoduloWebException" message="tns:WsincidenciamoduloWebException" />
+    </operation>
+    <operation name="evpspIncModInsUpd">
+      <input message="tns:evpspIncModInsUpd" />
+      <output message="tns:evpspIncModInsUpdResponse" />
+      <fault name="WsincidenciamoduloWebException" message="tns:WsincidenciamoduloWebException" />
+    </operation>
+    <operation name="evpspIncModSel">
+      <input message="tns:evpspIncModSel" />
+      <output message="tns:evpspIncModSelResponse" />
+      <fault name="WsincidenciamoduloWebException" message="tns:WsincidenciamoduloWebException" />
+    </operation>
+    <operation name="evpspVarIncModIns">
+      <input message="tns:evpspVarIncModIns" />
+      <output message="tns:evpspVarIncModInsResponse" />
+      <fault name="WsincidenciamoduloWebException" message="tns:WsincidenciamoduloWebException" />
+    </operation>
+    <operation name="evpspVarIncModSel">
+      <input message="tns:evpspVarIncModSel" />
+      <output message="tns:evpspVarIncModSelResponse" />
+      <fault name="WsincidenciamoduloWebException" message="tns:WsincidenciamoduloWebException" />
+    </operation>
+  </portType>
+  <binding name="WsincidenciamoduloWebPortBinding" type="tns:WsincidenciamoduloWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="evpspDataFromBdSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsincidenciamoduloWebException">
+        <soap:fault use="literal" name="WsincidenciamoduloWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="evpspIncModInsUpd">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsincidenciamoduloWebException">
+        <soap:fault use="literal" name="WsincidenciamoduloWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="evpspIncModSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsincidenciamoduloWebException">
+        <soap:fault use="literal" name="WsincidenciamoduloWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="evpspVarIncModIns">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsincidenciamoduloWebException">
+        <soap:fault use="literal" name="WsincidenciamoduloWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="evpspVarIncModSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsincidenciamoduloWebException">
+        <soap:fault use="literal" name="WsincidenciamoduloWebException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="WsincidenciamoduloWebService">
+    <port name="WsincidenciamoduloWebPort" binding="tns:WsincidenciamoduloWebPortBinding">
+      <soap:address location="http://2.2.2.24:7001/WsIncidenciaModuloWeb/WsincidenciamoduloWebService" />
+    </port>
+  </service>
+</definitions>

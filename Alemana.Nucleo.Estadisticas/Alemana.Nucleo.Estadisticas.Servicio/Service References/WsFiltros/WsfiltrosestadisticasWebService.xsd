@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://nucleo.alemana.cl/" targetNamespace="http://nucleo.alemana.cl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="estspAreaSel" type="tns:estspAreaSel" />
+  <xs:element name="estspAreaSelResponse" type="tns:estspAreaSelResponse" />
+  <xs:element name="estspProfesionalSel" type="tns:estspProfesionalSel" />
+  <xs:element name="estspProfesionalSelResponse" type="tns:estspProfesionalSelResponse" />
+  <xs:element name="faultInfo" nillable="true" type="xs:string" />
+  <xs:complexType name="estspAreaSel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piEstnuUsuarioId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estspAreaSelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estspAreaSelResult" type="tns:EstspAreaSelResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EstspAreaSelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="areas" nillable="true" type="tns:EstspAreaSelTAreas" />
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProcedureResult" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="EstspAreaSelTAreas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estspProfesionalSel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piEstnuUsuarioId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estspProfesionalSelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estspProfesionalSelResult" type="tns:EstspProfesionalSelResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EstspProfesionalSelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="profesionales" nillable="true" type="tns:EstspProfesionalSelTProfesionales" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EstspProfesionalSelTProfesionales">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidomaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidopaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+      <xs:element minOccurs="0" name="personaid" type="xs:decimal" />
+      <xs:element minOccurs="0" name="usuarioid" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

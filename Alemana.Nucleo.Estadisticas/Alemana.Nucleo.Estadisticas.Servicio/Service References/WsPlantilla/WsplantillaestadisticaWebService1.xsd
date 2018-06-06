@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://nucleo.alemana.cl/" targetNamespace="http://nucleo.alemana.cl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="estspIncsmoduloPacienteSel" type="tns:estspIncsmoduloPacienteSel" />
+  <xs:element name="estspIncsmoduloPacienteSelResponse" type="tns:estspIncsmoduloPacienteSelResponse" />
+  <xs:element name="estspIncsvariableModuloSel" type="tns:estspIncsvariableModuloSel" />
+  <xs:element name="estspIncsvariableModuloSelResponse" type="tns:estspIncsvariableModuloSelResponse" />
+  <xs:element name="estspPacientesPlantillaSel" type="tns:estspPacientesPlantillaSel" />
+  <xs:element name="estspPacientesPlantillaSelResponse" type="tns:estspPacientesPlantillaSelResponse" />
+  <xs:element name="estspPlantillasSel" type="tns:estspPlantillasSel" />
+  <xs:element name="estspPlantillasSelResponse" type="tns:estspPlantillasSelResponse" />
+  <xs:element name="faultInfo" nillable="true" type="xs:string" />
+  <xs:complexType name="estspIncsvariableModuloSel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piEstnuIncmouloId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estspIncsvariableModuloSelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estspIncsvariableModuloSelResult" type="tns:EstspIncsvariableModuloSelResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EstspIncsvariableModuloSelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="incidencias" nillable="true" type="tns:EstspIncsvariableModuloSelTIncidencias" />
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProcedureResult" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="EstspIncsvariableModuloSelTIncidencias">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="valor" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estspIncsmoduloPacienteSel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piEstnuPlantillaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEstnuPacienteId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEpsvaLstUsuarios" type="xs:string" />
+      <xs:element minOccurs="0" name="piEpsvaLstAreas" type="xs:string" />
+      <xs:element minOccurs="0" name="piEpsdtFechainicioId" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piEpsdtFechafinId" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piEpsdtTipofechaId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estspIncsmoduloPacienteSelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estspIncsmoduloPacienteSelResult" type="tns:EstspIncsmoduloPacienteSelResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EstspIncsmoduloPacienteSelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="incidencias" nillable="true" type="tns:EstspIncsmoduloPacienteSelTIncidencias" />
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EstspIncsmoduloPacienteSelTIncidencias">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estspPacientesPlantillaSel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piEstnuPlantillaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEpsvaLstUsuarios" type="xs:string" />
+      <xs:element minOccurs="0" name="piEpsvaLstAreas" type="xs:string" />
+      <xs:element minOccurs="0" name="piEpsdtFechainicioId" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piEpsdtFechafinId" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piEpsdtTipofechaId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estspPacientesPlantillaSelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estspPacientesPlantillaSelResult" type="tns:EstspPacientesPlantillaSelResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EstspPacientesPlantillaSelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="pacientes" nillable="true" type="tns:EstspPacientesPlantillaSelTPacientes" />
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EstspPacientesPlantillaSelTPacientes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="pacienteid" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estspPlantillasSel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piEpsvaLstUsuarios" type="xs:string" />
+      <xs:element minOccurs="0" name="piEpsvaLstAreas" type="xs:string" />
+      <xs:element minOccurs="0" name="piEpsdtFechainicioId" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piEpsdtFechafinId" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piEpsdtTipofechaId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estspPlantillasSelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estspPlantillasSelResult" type="tns:EstspPlantillasSelResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EstspPlantillasSelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="plantillas" nillable="true" type="tns:EstspPlantillasSelTPlantillas" />
+          <xs:element minOccurs="0" name="poFcenuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poFcevaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EstspPlantillasSelTPlantillas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

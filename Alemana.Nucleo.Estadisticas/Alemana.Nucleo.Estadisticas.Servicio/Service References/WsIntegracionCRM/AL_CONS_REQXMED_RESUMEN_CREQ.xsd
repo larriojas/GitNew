@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_RESUMEN_CREQ.V1" xmlns:AL_CONS_REQXMED_RESUMEN_PREQ.V1="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_RESUMEN_PREQ.V1" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_RESUMEN_CREQ.V1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="AL_CONS_REQXMED_RESUMEN_PREQ.V1.xsd" namespace="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_RESUMEN_PREQ.V1" />
+  <xsd:element name="AL_CONS_REQXMED_RESUMEN_CREQ" type="AL_CONS_REQXMED_RESUMEN_CREQType" />
+  <xsd:complexType name="AL_CONS_REQXMED_RESUMEN_CREQType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="AL_CONS_REQXMED_RESUMEN_PREQ" type="AL_CONS_REQXMED_RESUMEN_PREQ.V1:AL_CONS_REQXMED_RESUMEN_PREQ_TypeShape" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

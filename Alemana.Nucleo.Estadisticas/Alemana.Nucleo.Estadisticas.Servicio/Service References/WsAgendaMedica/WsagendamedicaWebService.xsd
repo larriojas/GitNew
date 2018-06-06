@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://nucleo.alemana.cl/" targetNamespace="http://nucleo.alemana.cl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="faultInfo" nillable="true" type="xs:string" />
+  <xs:element name="indspRecetaCrear" type="tns:indspRecetaCrear" />
+  <xs:element name="indspRecetaCrearResponse" type="tns:indspRecetaCrearResponse" />
+  <xs:element name="indspRecetaExpirar" type="tns:indspRecetaExpirar" />
+  <xs:element name="indspRecetaExpirarResponse" type="tns:indspRecetaExpirarResponse" />
+  <xs:element name="indspRecetaIndicacionIns" type="tns:indspRecetaIndicacionIns" />
+  <xs:element name="indspRecetaIndicacionInsResponse" type="tns:indspRecetaIndicacionInsResponse" />
+  <xs:element name="indspRecetaIns" type="tns:indspRecetaIns" />
+  <xs:element name="indspRecetaInsResponse" type="tns:indspRecetaInsResponse" />
+  <xs:element name="indspRecetaRenovar" type="tns:indspRecetaRenovar" />
+  <xs:element name="indspRecetaRenovarResponse" type="tns:indspRecetaRenovarResponse" />
+  <xs:element name="intspCantidadEstados" type="tns:intspCantidadEstados" />
+  <xs:element name="intspCantidadEstadosResponse" type="tns:intspCantidadEstadosResponse" />
+  <xs:complexType name="indspRecetaRenovar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piIndnuRecetaId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="indspRecetaRenovarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="indspRecetaRenovarResult" type="tns:IndspRecetaRenovarResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndspRecetaRenovarResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProcedureResult" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="indspRecetaExpirar">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="indspRecetaExpirarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="indspRecetaExpirarResult" type="tns:IndspRecetaExpirarResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndspRecetaExpirarResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="intspCantidadEstados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piIntvaIdAgenda" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piIntdaFechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piIntdaFechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piIntvaLstUsuarios" type="xs:string" />
+      <xs:element minOccurs="0" name="piIntvaLstAreas" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="intspCantidadEstadosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="intspCantidadEstadosResult" type="tns:IntspCantidadEstadosResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IntspCantidadEstadosResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poIntnuCantidad" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poIntnuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poIntvaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="indspRecetaIns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piIndnuReporteId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piInddaFechaReceta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piIndnuUsuarioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piIndnuCreadorId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="indspRecetaInsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="indspRecetaInsResult" type="tns:IndspRecetaInsResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndspRecetaInsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poIndnuRecetaId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="indspRecetaIndicacionIns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piIndnuRecetaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piIndnuIndicacionesId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piIndnuCreadorId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="indspRecetaIndicacionInsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="indspRecetaIndicacionInsResult" type="tns:IndspRecetaIndicacionInsResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndspRecetaIndicacionInsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poIndnuRecetaIndicacionId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="indspRecetaCrear">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piIndnuReporteId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piInddaFechaReceta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piIndnuUsuarioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piIndnuCreadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piIndvaIndicacionesArray" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="indspRecetaCrearResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="indspRecetaCrearResult" type="tns:IndspRecetaCrearResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndspRecetaCrearResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poIndnuRecetaId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

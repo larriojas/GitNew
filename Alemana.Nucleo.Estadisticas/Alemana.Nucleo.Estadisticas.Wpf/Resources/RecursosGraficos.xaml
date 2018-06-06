@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BitmapImage x:Key="IconVistaPrevia" UriSource="../Resources/Img/icon_vista_previa.png"></BitmapImage>
+    <BitmapImage x:Key="IconSubir" UriSource="../Resources/Img/up_arrow.png"></BitmapImage>
+    <BitmapImage x:Key="IconBajar" UriSource="../Resources/Img/down_arrow.png"></BitmapImage>
+    <BitmapImage x:Key="IconAgregar" UriSource="../Resources/Img/add_item.png"></BitmapImage>
+    <BitmapImage x:Key="IconFlechaVerdeDerecha" UriSource="../Resources/Img/right_circular.png"></BitmapImage>
+    <BitmapImage x:Key="IconFlechaRojaIzquierda" UriSource="../Resources/Img/left_circular.png"></BitmapImage>
+    <BitmapImage x:Key="IconEliminar" UriSource="../Resources/Img/delete.png"></BitmapImage>
+    <BitmapImage x:Key="IconLupa" UriSource="../Resources/Img/lupa_icon.png"></BitmapImage>
+    <BitmapImage x:Key="IconBorrador" UriSource="../Resources/Img/eraser_icon.png"></BitmapImage>
+    <BitmapImage x:Key="IconDocumento" UriSource="../Resources/Img/document_icon.png"></BitmapImage>
+    <BitmapImage x:Key="IconCamara" UriSource="../Resources/Img/camara_icon.png"></BitmapImage>
+    <BitmapImage x:Key="IconLogo" UriSource="../Resources/Img/logo.png"></BitmapImage>
+    <BitmapImage x:Key="IconVolver" UriSource="../Resources/Img/back-icon.png"></BitmapImage>
+    <BitmapImage x:Key="IconBuscar" UriSource="../Resources/Img/search_icon.png"></BitmapImage>
+    <BitmapImage x:Key="IconRemover" UriSource="../Resources/Img/trash_icon.png"></BitmapImage>
+    <BitmapImage x:Key="IconRefresh" UriSource="../Resources/Img/refresh_icon_bw.png" />
+</ResourceDictionary>

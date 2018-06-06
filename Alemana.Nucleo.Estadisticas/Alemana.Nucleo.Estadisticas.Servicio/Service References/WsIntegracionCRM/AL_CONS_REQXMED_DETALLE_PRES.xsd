@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_DETALLE_PRES.V1" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_DETALLE_PRES.V1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="AL_CONS_REQXMED_DETALLE_PRES" type="AL_CONS_REQXMED_DETALLE_PRES_TypeShape" />
+  <xsd:complexType name="AL_CONS_REQXMED_DETALLE_PRES_TypeShape">
+    <xsd:sequence>
+      <xsd:element name="AL_REQCDDTL_WKI" type="AL_REQCDDTL_WKIMsgDataRecord_TypeShape" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AL_REQCDDTL_WKIMsgDataRecord_TypeShape">
+    <xsd:sequence>
+      <xsd:element name="RC_SOURCE" type="RC_SOURCE_TypeDef" />
+      <xsd:element name="AL_RECEP_REQ" type="AL_RECEP_REQ_TypeDef" />
+      <xsd:element name="AL_ENTREGA_REQ" type="AL_ENTREGA_REQ_TypeDef" />
+      <xsd:element name="DESCR_SERVICIO" type="DESCR_SERVICIO_TypeDef" />
+      <xsd:element name="AL_FLAG_URG_CASE" type="AL_FLAG_URG_CASE_TypeDef" />
+      <xsd:element name="AGE" type="AGE_TypeDef" />
+      <xsd:element name="AL_FECH_NAC_P" type="AL_FECH_NAC_P_TypeDef" />
+      <xsd:element name="ADDRESS_DESCR" type="ADDRESS_DESCR_TypeDef" />
+      <xsd:element name="AL_FECH_NAC_H" type="AL_FECH_NAC_H_TypeDef" />
+      <xsd:element name="AL_MEDICAMENTO" type="AL_MEDICAMENTO_TypeDef" />
+      <xsd:element name="AL_MILIGRAMOS" type="AL_MILIGRAMOS_TypeDef" />
+      <xsd:element name="AL_DESDE_FECHA" type="AL_DESDE_FECHA_TypeDef" />
+      <xsd:element name="AL_SOL_LIC_DESDE" type="AL_SOL_LIC_DESDE_TypeDef" />
+      <xsd:element name="AL_FORM_REC_COM" type="AL_FORM_REC_COM_TypeDef" />
+      <xsd:element name="AL_RECETA" type="AL_RECETA_TypeDef" />
+      <xsd:element name="AL_CANTIDAD" type="AL_CANTIDAD_TypeDef" />
+      <xsd:element name="AL_FECH_ULT_REG" type="AL_FECH_ULT_REG_TypeDef" />
+      <xsd:element name="NOMBRE_MAMA_O_PAPA" type="NOMBRE_MAMA_O_PAPA_TypeDef" />
+      <xsd:element name="RUT_MAMA_O_PAPA" type="RUT_MAMA_O_PAPA_TypeDef" />
+      <xsd:element name="AL_FECH_ENTREGA" type="AL_FECH_ENTREGA_TypeDef" />
+    </xsd:sequence>
+    <xsd:attribute fixed="R" name="class" type="xsd:string" use="required" />
+  </xsd:complexType>
+  <xsd:simpleType name="RC_SOURCE_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="5" />
+      <xsd:whiteSpace value="preserve" />
+      <xsd:pattern value="([A-Z]|[0-9]|\p{Z}|\p{P}|\p{Lu})*" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_RECEP_REQ_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="2" />
+      <xsd:whiteSpace value="preserve" />
+      <xsd:pattern value="([A-Z]|[0-9]|\p{Z}|\p{P}|\p{Lu})*" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_ENTREGA_REQ_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="2" />
+      <xsd:whiteSpace value="preserve" />
+      <xsd:pattern value="([A-Z]|[0-9]|\p{Z}|\p{P}|\p{Lu})*" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DESCR_SERVICIO_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="30" />
+      <xsd:whiteSpace value="preserve" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_FLAG_URG_CASE_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1" />
+      <xsd:whiteSpace value="preserve" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AGE_TypeDef">
+    <xsd:restriction base="xsd:integer">
+      <xsd:totalDigits value="3" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_FECH_NAC_P_TypeDef">
+    <xsd:restriction base="xsd:date">
+      <xsd:pattern value="(\d{4}-\d{2}-\d{2})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ADDRESS_DESCR_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="80" />
+      <xsd:whiteSpace value="preserve" />
+      <xsd:pattern value="([A-Z]|[0-9]|\p{Z}|\p{P}|\p{Lu})*" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_FECH_NAC_H_TypeDef">
+    <xsd:restriction base="xsd:date">
+      <xsd:pattern value="(\d{4}-\d{2}-\d{2})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_MEDICAMENTO_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="80" />
+      <xsd:whiteSpace value="preserve" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_MILIGRAMOS_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="30" />
+      <xsd:whiteSpace value="preserve" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_DESDE_FECHA_TypeDef">
+    <xsd:restriction base="xsd:date">
+      <xsd:pattern value="(\d{4}-\d{2}-\d{2})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_SOL_LIC_DESDE_TypeDef">
+    <xsd:restriction base="xsd:date">
+      <xsd:pattern value="(\d{4}-\d{2}-\d{2})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_FORM_REC_COM_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1" />
+      <xsd:whiteSpace value="preserve" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_RECETA_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1" />
+      <xsd:whiteSpace value="preserve" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_CANTIDAD_TypeDef">
+    <xsd:restriction base="xsd:integer">
+      <xsd:totalDigits value="4" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_FECH_ULT_REG_TypeDef">
+    <xsd:restriction base="xsd:date">
+      <xsd:pattern value="(\d{4}-\d{2}-\d{2})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="NOMBRE_MAMA_O_PAPA_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="50" />
+      <xsd:whiteSpace value="preserve" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="RUT_MAMA_O_PAPA_TypeDef">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20" />
+      <xsd:whiteSpace value="preserve" />
+      <xsd:pattern value="([A-Z]|[0-9]|\p{Z}|\p{P}|\p{Lu})*" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AL_FECH_ENTREGA_TypeDef">
+    <xsd:restriction base="xsd:date">
+      <xsd:pattern value="(\d{4}-\d{2}-\d{2})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

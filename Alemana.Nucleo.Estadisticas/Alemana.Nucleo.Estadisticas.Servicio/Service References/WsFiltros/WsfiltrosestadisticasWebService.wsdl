@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nucleo.alemana.cl/" name="WsfiltrosestadisticasWebService" targetNamespace="http://nucleo.alemana.cl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://2.2.2.24:7001/WsFiltrosEstadisticas/WsfiltrosestadisticasWebService?xsd=1" namespace="http://nucleo.alemana.cl/" />
+    </xsd:schema>
+  </types>
+  <message name="estspAreaSel">
+    <part name="parameters" element="tns:estspAreaSel" />
+  </message>
+  <message name="estspAreaSelResponse">
+    <part name="parameters" element="tns:estspAreaSelResponse" />
+  </message>
+  <message name="WsfiltrosestadisticasWebException">
+    <part name="fault" element="tns:faultInfo" />
+  </message>
+  <message name="estspProfesionalSel">
+    <part name="parameters" element="tns:estspProfesionalSel" />
+  </message>
+  <message name="estspProfesionalSelResponse">
+    <part name="parameters" element="tns:estspProfesionalSelResponse" />
+  </message>
+  <portType name="WsfiltrosestadisticasWeb">
+    <operation name="estspAreaSel">
+      <input message="tns:estspAreaSel" />
+      <output message="tns:estspAreaSelResponse" />
+      <fault name="WsfiltrosestadisticasWebException" message="tns:WsfiltrosestadisticasWebException" />
+    </operation>
+    <operation name="estspProfesionalSel">
+      <input message="tns:estspProfesionalSel" />
+      <output message="tns:estspProfesionalSelResponse" />
+      <fault name="WsfiltrosestadisticasWebException" message="tns:WsfiltrosestadisticasWebException" />
+    </operation>
+  </portType>
+  <binding name="WsfiltrosestadisticasWebPortBinding" type="tns:WsfiltrosestadisticasWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="estspAreaSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsfiltrosestadisticasWebException">
+        <soap:fault use="literal" name="WsfiltrosestadisticasWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="estspProfesionalSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsfiltrosestadisticasWebException">
+        <soap:fault use="literal" name="WsfiltrosestadisticasWebException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="WsfiltrosestadisticasWebService">
+    <port name="WsfiltrosestadisticasWebPort" binding="tns:WsfiltrosestadisticasWebPortBinding">
+      <soap:address location="http://2.2.2.24:7001/WsFiltrosEstadisticas/WsfiltrosestadisticasWebService" />
+    </port>
+  </service>
+</definitions>

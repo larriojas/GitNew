@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_RESUMEN_PREQ.V1" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/Enterprise/Tools/schemas/AL_CONS_REQXMED_RESUMEN_PREQ.V1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="AL_CONS_REQXMED_RESUMEN_PREQ" type="AL_CONS_REQXMED_RESUMEN_PREQ_TypeShape" />
+  <xsd:complexType name="AL_CONS_REQXMED_RESUMEN_PREQ_TypeShape">
+    <xsd:sequence>
+      <xsd:element name="AL_PPN_PROF_WKI" type="AL_PPN_PROF_WKIMsgDataRecord_TypeShape" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AL_PPN_PROF_WKIMsgDataRecord_TypeShape">
+    <xsd:sequence>
+      <xsd:element name="AL_PPN_PROF" type="AL_PPN_PROF_TypeDef" />
+    </xsd:sequence>
+    <xsd:attribute fixed="R" name="class" type="xsd:string" use="required" />
+  </xsd:complexType>
+  <xsd:simpleType name="AL_PPN_PROF_TypeDef">
+    <xsd:restriction base="xsd:integer">
+      <xsd:totalDigits value="9" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

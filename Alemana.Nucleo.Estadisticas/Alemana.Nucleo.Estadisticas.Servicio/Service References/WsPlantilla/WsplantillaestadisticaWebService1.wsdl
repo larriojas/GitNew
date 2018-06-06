@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nucleo.alemana.cl/" name="WsplantillaestadisticaWebService" targetNamespace="http://nucleo.alemana.cl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://cwsnucleo2.alemana.cl:80/WsPlantillaEstadisticaWeb/WsplantillaestadisticaWebService?xsd=1" namespace="http://nucleo.alemana.cl/" />
+    </xsd:schema>
+  </types>
+  <message name="estspIncsmoduloPacienteSel">
+    <part name="parameters" element="tns:estspIncsmoduloPacienteSel" />
+  </message>
+  <message name="estspIncsmoduloPacienteSelResponse">
+    <part name="parameters" element="tns:estspIncsmoduloPacienteSelResponse" />
+  </message>
+  <message name="WsplantillaestadisticaWebException">
+    <part name="fault" element="tns:faultInfo" />
+  </message>
+  <message name="estspIncsvariableModuloSel">
+    <part name="parameters" element="tns:estspIncsvariableModuloSel" />
+  </message>
+  <message name="estspIncsvariableModuloSelResponse">
+    <part name="parameters" element="tns:estspIncsvariableModuloSelResponse" />
+  </message>
+  <message name="estspPacientesPlantillaSel">
+    <part name="parameters" element="tns:estspPacientesPlantillaSel" />
+  </message>
+  <message name="estspPacientesPlantillaSelResponse">
+    <part name="parameters" element="tns:estspPacientesPlantillaSelResponse" />
+  </message>
+  <message name="estspPlantillasSel">
+    <part name="parameters" element="tns:estspPlantillasSel" />
+  </message>
+  <message name="estspPlantillasSelResponse">
+    <part name="parameters" element="tns:estspPlantillasSelResponse" />
+  </message>
+  <portType name="WsplantillaestadisticaWeb">
+    <operation name="estspIncsmoduloPacienteSel">
+      <input message="tns:estspIncsmoduloPacienteSel" />
+      <output message="tns:estspIncsmoduloPacienteSelResponse" />
+      <fault name="WsplantillaestadisticaWebException" message="tns:WsplantillaestadisticaWebException" />
+    </operation>
+    <operation name="estspIncsvariableModuloSel">
+      <input message="tns:estspIncsvariableModuloSel" />
+      <output message="tns:estspIncsvariableModuloSelResponse" />
+      <fault name="WsplantillaestadisticaWebException" message="tns:WsplantillaestadisticaWebException" />
+    </operation>
+    <operation name="estspPacientesPlantillaSel">
+      <input message="tns:estspPacientesPlantillaSel" />
+      <output message="tns:estspPacientesPlantillaSelResponse" />
+      <fault name="WsplantillaestadisticaWebException" message="tns:WsplantillaestadisticaWebException" />
+    </operation>
+    <operation name="estspPlantillasSel">
+      <input message="tns:estspPlantillasSel" />
+      <output message="tns:estspPlantillasSelResponse" />
+      <fault name="WsplantillaestadisticaWebException" message="tns:WsplantillaestadisticaWebException" />
+    </operation>
+  </portType>
+  <binding name="WsplantillaestadisticaWebPortBinding" type="tns:WsplantillaestadisticaWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="estspIncsmoduloPacienteSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsplantillaestadisticaWebException">
+        <soap:fault use="literal" name="WsplantillaestadisticaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="estspIncsvariableModuloSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsplantillaestadisticaWebException">
+        <soap:fault use="literal" name="WsplantillaestadisticaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="estspPacientesPlantillaSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsplantillaestadisticaWebException">
+        <soap:fault use="literal" name="WsplantillaestadisticaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="estspPlantillasSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsplantillaestadisticaWebException">
+        <soap:fault use="literal" name="WsplantillaestadisticaWebException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="WsplantillaestadisticaWebService">
+    <port name="WsplantillaestadisticaWebPort" binding="tns:WsplantillaestadisticaWebPortBinding">
+      <soap:address location="http://cwsnucleo2.alemana.cl:80/WsPlantillaEstadisticaWeb/WsplantillaestadisticaWebService" />
+    </port>
+  </service>
+</definitions>

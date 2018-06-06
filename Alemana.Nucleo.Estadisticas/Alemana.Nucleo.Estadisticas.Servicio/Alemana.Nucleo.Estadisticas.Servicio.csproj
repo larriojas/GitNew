@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E439545-556D-41B5-96D2-599379BF5C31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alemana.Nucleo.Estadisticas.Servicio</RootNamespace>
+    <AssemblyName>Alemana.Nucleo.Estadisticas.Servicio</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>&lt;Project Location In Database&gt;</SccProjectName>
+    <SccLocalPath>&lt;Local Binding Root of Project&gt;</SccLocalPath>
+    <SccAuxPath>&lt;Source Control Database&gt;</SccAuxPath>
+    <SccProvider>Jazz Source Control Provider:{AC8810C5-F6E7-4145-83AA-FDFFF6F5506D}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alemana.Nucleo.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Shell\Alemana.Nucleo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implementation\ExportarPlantillaService.cs" />
+    <Compile Include="Implementation\FiltrosServices.cs" />
+    <Compile Include="Implementation\IndicadoresServices.cs" />
+    <Compile Include="MocksImplementation\DataHelper.cs" />
+    <Compile Include="MocksImplementation\MockExportarPlantillaService.cs" />
+    <Compile Include="MocksImplementation\MockFiltrosServices.cs" />
+    <Compile Include="MocksImplementation\MockIndicadoresServices.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WsAgendaMedica\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsFiltros\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsIncidenciaModulos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsIndicadores\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsIntegracionCRM\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsPlantilla\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Alemana.Nucleo.Shared\Alemana.Nucleo.Shared.Contrato\Alemana.Nucleo.Shared.Contrato.csproj">
+      <Project>{6f0fa3a0-08da-43c0-b5a3-267607b22a0e}</Project>
+      <Name>Alemana.Nucleo.Shared.Contrato</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Alemana.Nucleo.Shared\Alemana.Nucleo.Shared\Alemana.Nucleo.Shared.csproj">
+      <Project>{75050c62-2f9e-4d9b-8b04-a6c8bda25f43}</Project>
+      <Name>Alemana.Nucleo.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alemana.Nucleo.Estadisticas.Contrato\Alemana.Nucleo.Estadisticas.Contrato.csproj">
+      <Project>{12e80630-a7ef-48c4-9d1c-31c6b395e8f5}</Project>
+      <Name>Alemana.Nucleo.Estadisticas.Contrato</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.indspRecetaCrearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.IndspRecetaCrearResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.indspRecetaExpirarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.IndspRecetaExpirarResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.indspRecetaIndicacionInsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.IndspRecetaIndicacionInsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.indspRecetaInsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.IndspRecetaInsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.indspRecetaRenovarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.IndspRecetaRenovarResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.intspCantidadEstadosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\Alemana.Nucleo.Estadisticas.Servicio.WsAgendaMedica.IntspCantidadEstadosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAgendaMedica\WsagendamedicaWebService.wsdl" />
+    <None Include="Service References\WsAgendaMedica\WsagendamedicaWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsFiltros\Alemana.Nucleo.Estadisticas.Servicio.WsFiltros.estspAreaSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFiltros\Alemana.Nucleo.Estadisticas.Servicio.WsFiltros.EstspAreaSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFiltros\Alemana.Nucleo.Estadisticas.Servicio.WsFiltros.estspProfesionalSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFiltros\Alemana.Nucleo.Estadisticas.Servicio.WsFiltros.EstspProfesionalSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsFiltros\WsfiltrosestadisticasWebService.wsdl" />
+    <None Include="Service References\WsFiltros\WsfiltrosestadisticasWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\Alemana.Nucleo.Estadisticas.Servicio.WsIncidenciaModulos.evpspDataFromBdSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\Alemana.Nucleo.Estadisticas.Servicio.WsIncidenciaModulos.EvpspDataFromBdSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\Alemana.Nucleo.Estadisticas.Servicio.WsIncidenciaModulos.evpspIncModInsUpdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\Alemana.Nucleo.Estadisticas.Servicio.WsIncidenciaModulos.EvpspIncModInsUpdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\Alemana.Nucleo.Estadisticas.Servicio.WsIncidenciaModulos.evpspIncModSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\Alemana.Nucleo.Estadisticas.Servicio.WsIncidenciaModulos.EvpspIncModSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\Alemana.Nucleo.Estadisticas.Servicio.WsIncidenciaModulos.evpspVarIncModInsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\Alemana.Nucleo.Estadisticas.Servicio.WsIncidenciaModulos.EvpspVarIncModInsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\Alemana.Nucleo.Estadisticas.Servicio.WsIncidenciaModulos.evpspVarIncModSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\Alemana.Nucleo.Estadisticas.Servicio.WsIncidenciaModulos.EvpspVarIncModSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIncidenciaModulos\WsincidenciamoduloWebService.wsdl" />
+    <None Include="Service References\WsIncidenciaModulos\WsincidenciamoduloWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.estspIndCanVirtualSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.EstspIndCanVirtualSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.estspIndDiagnosticoSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.EstspIndDiagnosticoSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.estspIndIndicadoresSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.EstspIndIndicadoresSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.estspIndPacienteSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.EstspIndPacienteSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.estspPacientesDiagSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.EstspPacientesDiagSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.estspPpnidPacientesSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\Alemana.Nucleo.Estadisticas.Servicio.WsIndicadores.EstspPpnidPacientesSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIndicadores\WsindicadoresestadisticasWebService.wsdl" />
+    <None Include="Service References\WsIndicadores\WsindicadoresestadisticasWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\Alemana.Nucleo.Estadisticas.Servicio.WsIntegracionCRM.AL_CONS_REQXMED_DETALLE_CRESV1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\Alemana.Nucleo.Estadisticas.Servicio.WsIntegracionCRM.AL_CONS_REQXMED_DETALLE_PRES_TypeShape.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\Alemana.Nucleo.Estadisticas.Servicio.WsIntegracionCRM.AL_CONS_REQXMED_RESUMEN_CRESV1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\Alemana.Nucleo.Estadisticas.Servicio.WsIntegracionCRM.AL_CONS_REQXMED_RESUMEN_PRES_TypeShape.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\AL_CONS_REQXMED_DETALLE_CREQ.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\AL_CONS_REQXMED_DETALLE_CRES.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\AL_CONS_REQXMED_DETALLE_PREQ.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\AL_CONS_REQXMED_DETALLE_PRES.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\AL_CONS_REQXMED_RESUMEN_CREQ.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\AL_CONS_REQXMED_RESUMEN_CRES.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\AL_CONS_REQXMED_RESUMEN_PREQ.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\AL_CONS_REQXMED_RESUMEN_PRES.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsIntegracionCRM\AL_INTEGRACION_NUCLEO.wsdl" />
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Estadisticas.Servicio.WsPlantilla.estspIncsmoduloPacienteSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Estadisticas.Servicio.WsPlantilla.EstspIncsmoduloPacienteSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Estadisticas.Servicio.WsPlantilla.estspIncsvariableModuloSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Estadisticas.Servicio.WsPlantilla.EstspIncsvariableModuloSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Estadisticas.Servicio.WsPlantilla.estspPacientesPlantillaSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Estadisticas.Servicio.WsPlantilla.EstspPacientesPlantillaSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Estadisticas.Servicio.WsPlantilla.estspPlantillasSelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\Alemana.Nucleo.Estadisticas.Servicio.WsPlantilla.EstspPlantillasSelResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPlantilla\WsplantillaestadisticaWebService1.wsdl" />
+    <None Include="Service References\WsPlantilla\WsplantillaestadisticaWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WsAgendaMedica\" />
+    <WCFMetadataStorage Include="Service References\WsFiltros\" />
+    <WCFMetadataStorage Include="Service References\WsIncidenciaModulos\" />
+    <WCFMetadataStorage Include="Service References\WsIndicadores\" />
+    <WCFMetadataStorage Include="Service References\WsIntegracionCRM\" />
+    <WCFMetadataStorage Include="Service References\WsPlantilla\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsFiltros\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsFiltros\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsFiltros\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsIndicadores\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsIndicadores\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsIndicadores\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsPlantilla\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsPlantilla\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsPlantilla\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsIncidenciaModulos\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsIncidenciaModulos\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsIncidenciaModulos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsIntegracionCRM\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsIntegracionCRM\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsIntegracionCRM\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsAgendaMedica\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsAgendaMedica\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WsAgendaMedica\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

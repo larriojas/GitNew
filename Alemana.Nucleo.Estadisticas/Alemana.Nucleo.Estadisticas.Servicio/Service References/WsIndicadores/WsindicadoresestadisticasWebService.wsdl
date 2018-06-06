@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nucleo.alemana.cl/" name="WsindicadoresestadisticasWebService" targetNamespace="http://nucleo.alemana.cl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://2.2.2.24:7001/WsindicadoresestadisticasWeb/WsindicadoresestadisticasWebService?xsd=1" namespace="http://nucleo.alemana.cl/" />
+    </xsd:schema>
+  </types>
+  <message name="estspIndCanVirtualSel">
+    <part name="parameters" element="tns:estspIndCanVirtualSel" />
+  </message>
+  <message name="estspIndCanVirtualSelResponse">
+    <part name="parameters" element="tns:estspIndCanVirtualSelResponse" />
+  </message>
+  <message name="WsindicadoresestadisticasWebException">
+    <part name="fault" element="tns:faultInfo" />
+  </message>
+  <message name="estspIndDiagnosticoSel">
+    <part name="parameters" element="tns:estspIndDiagnosticoSel" />
+  </message>
+  <message name="estspIndDiagnosticoSelResponse">
+    <part name="parameters" element="tns:estspIndDiagnosticoSelResponse" />
+  </message>
+  <message name="estspIndIndicadoresSel">
+    <part name="parameters" element="tns:estspIndIndicadoresSel" />
+  </message>
+  <message name="estspIndIndicadoresSelResponse">
+    <part name="parameters" element="tns:estspIndIndicadoresSelResponse" />
+  </message>
+  <message name="estspIndPacienteSel">
+    <part name="parameters" element="tns:estspIndPacienteSel" />
+  </message>
+  <message name="estspIndPacienteSelResponse">
+    <part name="parameters" element="tns:estspIndPacienteSelResponse" />
+  </message>
+  <message name="estspPacientesDiagSel">
+    <part name="parameters" element="tns:estspPacientesDiagSel" />
+  </message>
+  <message name="estspPacientesDiagSelResponse">
+    <part name="parameters" element="tns:estspPacientesDiagSelResponse" />
+  </message>
+  <message name="estspPpnidPacientesSel">
+    <part name="parameters" element="tns:estspPpnidPacientesSel" />
+  </message>
+  <message name="estspPpnidPacientesSelResponse">
+    <part name="parameters" element="tns:estspPpnidPacientesSelResponse" />
+  </message>
+  <portType name="WsindicadoresestadisticasWeb">
+    <operation name="estspIndCanVirtualSel">
+      <input message="tns:estspIndCanVirtualSel" />
+      <output message="tns:estspIndCanVirtualSelResponse" />
+      <fault name="WsindicadoresestadisticasWebException" message="tns:WsindicadoresestadisticasWebException" />
+    </operation>
+    <operation name="estspIndDiagnosticoSel">
+      <input message="tns:estspIndDiagnosticoSel" />
+      <output message="tns:estspIndDiagnosticoSelResponse" />
+      <fault name="WsindicadoresestadisticasWebException" message="tns:WsindicadoresestadisticasWebException" />
+    </operation>
+    <operation name="estspIndIndicadoresSel">
+      <input message="tns:estspIndIndicadoresSel" />
+      <output message="tns:estspIndIndicadoresSelResponse" />
+      <fault name="WsindicadoresestadisticasWebException" message="tns:WsindicadoresestadisticasWebException" />
+    </operation>
+    <operation name="estspIndPacienteSel">
+      <input message="tns:estspIndPacienteSel" />
+      <output message="tns:estspIndPacienteSelResponse" />
+      <fault name="WsindicadoresestadisticasWebException" message="tns:WsindicadoresestadisticasWebException" />
+    </operation>
+    <operation name="estspPacientesDiagSel">
+      <input message="tns:estspPacientesDiagSel" />
+      <output message="tns:estspPacientesDiagSelResponse" />
+      <fault name="WsindicadoresestadisticasWebException" message="tns:WsindicadoresestadisticasWebException" />
+    </operation>
+    <operation name="estspPpnidPacientesSel">
+      <input message="tns:estspPpnidPacientesSel" />
+      <output message="tns:estspPpnidPacientesSelResponse" />
+      <fault name="WsindicadoresestadisticasWebException" message="tns:WsindicadoresestadisticasWebException" />
+    </operation>
+  </portType>
+  <binding name="WsindicadoresestadisticasWebPortBinding" type="tns:WsindicadoresestadisticasWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="estspIndCanVirtualSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsindicadoresestadisticasWebException">
+        <soap:fault use="literal" name="WsindicadoresestadisticasWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="estspIndDiagnosticoSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsindicadoresestadisticasWebException">
+        <soap:fault use="literal" name="WsindicadoresestadisticasWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="estspIndIndicadoresSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsindicadoresestadisticasWebException">
+        <soap:fault use="literal" name="WsindicadoresestadisticasWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="estspIndPacienteSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsindicadoresestadisticasWebException">
+        <soap:fault use="literal" name="WsindicadoresestadisticasWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="estspPacientesDiagSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsindicadoresestadisticasWebException">
+        <soap:fault use="literal" name="WsindicadoresestadisticasWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="estspPpnidPacientesSel">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsindicadoresestadisticasWebException">
+        <soap:fault use="literal" name="WsindicadoresestadisticasWebException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="WsindicadoresestadisticasWebService">
+    <port name="WsindicadoresestadisticasWebPort" binding="tns:WsindicadoresestadisticasWebPortBinding">
+      <soap:address location="http://2.2.2.24:7001/WsindicadoresestadisticasWeb/WsindicadoresestadisticasWebService" />
+    </port>
+  </service>
+</definitions>

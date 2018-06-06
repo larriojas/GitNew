@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type telerik:RadButton}" x:Key="EstiloButton">
+        <Setter Property="Width" Value="88" />
+        <Setter Property="Height" Value="24" />
+        <Setter Property="FontWeight" Value="400" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontFamily" Value="Titillium Web" />
+        <Setter Property="Foreground" Value="#666666" />
+        <Setter Property="BorderBrush" Value="#666666" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="9,0" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Style.Resources>
+            <Style TargetType="{x:Type Image}">
+                <Setter Property="Width" Value="16" />
+                <Setter Property="Height" Value="16" />
+                <Setter Property="Margin" Value="0,0,7,0" />
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style TargetType="{x:Type telerik:RadDropDownButton}" x:Key="EstiloDropDown">
+        <Setter Property="Height" Value="24" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontFamily" Value="Titillium Web" />
+        <Setter Property="Foreground" Value="#666666" />
+        <Setter Property="BorderBrush" Value="#CCCCCC" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Margin" Value="10,0" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Padding" Value="10,0" />
+        <Style.Resources>
+            <Style TargetType="{x:Type Image}">
+                <Setter Property="Width" Value="12" />
+                <Setter Property="Height" Value="12" />
+                <Setter Property="Margin" Value="8,0" />
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style TargetType="{x:Type Grid}">
+        <Setter Property="Margin" Value="10,10,10,0" />
+        <Style.Resources>
+            <Style TargetType="{x:Type telerik:RadButton}" BasedOn="{StaticResource EstiloButton}" />
+            <Style TargetType="{x:Type telerik:RadDropDownButton}" BasedOn="{StaticResource EstiloDropDown}" />
+        </Style.Resources>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Titillium Web" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="LightGray" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="FontFamily" Value="Titillium Web" />
+    </Style>
+</ResourceDictionary>
