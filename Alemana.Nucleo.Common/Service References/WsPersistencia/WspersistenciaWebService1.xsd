@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://nucleo.alemana.cl/" targetNamespace="http://nucleo.alemana.cl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="faultInfo" nillable="true" type="xs:string" />
+  <xs:element name="fcefxPpnXFicha" type="tns:fcefxPpnXFicha" />
+  <xs:element name="fcefxPpnXFichaResponse" type="tns:fcefxPpnXFichaResponse" />
+  <xs:element name="fcespAccesoPersistenciaIns" type="tns:fcespAccesoPersistenciaIns" />
+  <xs:element name="fcespAccesoPersistenciaInsResponse" type="tns:fcespAccesoPersistenciaInsResponse" />
+  <xs:element name="fcespAccesoPersistenciaMod" type="tns:fcespAccesoPersistenciaMod" />
+  <xs:element name="fcespAccesoPersistenciaModResponse" type="tns:fcespAccesoPersistenciaModResponse" />
+  <xs:element name="fcespAccesoPersistenciaSelt" type="tns:fcespAccesoPersistenciaSelt" />
+  <xs:element name="fcespAccesoPersistenciaSeltResponse" type="tns:fcespAccesoPersistenciaSeltResponse" />
+  <xs:element name="fcespPersistenciaUsofceIns" type="tns:fcespPersistenciaUsofceIns" />
+  <xs:element name="fcespPersistenciaUsofceInsResponse" type="tns:fcespPersistenciaUsofceInsResponse" />
+  <xs:element name="fcespPersistenciaUsofceMod" type="tns:fcespPersistenciaUsofceMod" />
+  <xs:element name="fcespPersistenciaUsofceModResponse" type="tns:fcespPersistenciaUsofceModResponse" />
+  <xs:element name="fcespPersistenciaUsofceSelt" type="tns:fcespPersistenciaUsofceSelt" />
+  <xs:element name="fcespPersistenciaUsofceSeltResponse" type="tns:fcespPersistenciaUsofceSeltResponse" />
+  <xs:element name="fcespValAccesoPersistencia" type="tns:fcespValAccesoPersistencia" />
+  <xs:element name="fcespValAccesoPersistenciaResponse" type="tns:fcespValAccesoPersistenciaResponse" />
+  <xs:element name="fcespValidadorGrabaEpisodio" type="tns:fcespValidadorGrabaEpisodio" />
+  <xs:element name="fcespValidadorGrabaEpisodioResponse" type="tns:fcespValidadorGrabaEpisodioResponse" />
+  <xs:element name="validadorGrabaEpisodio" type="tns:validadorGrabaEpisodio" />
+  <xs:element name="validadorGrabaEpisodioResponse" type="tns:validadorGrabaEpisodioResponse" />
+  <xs:complexType name="fcespPersistenciaUsofceIns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piPervaDescripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="piPernuOrden" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuVigente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuCreadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPerdaFechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piPernuModificadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPerdaFechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piPernuBajaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPerdaFechaBaja" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespPersistenciaUsofceInsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespPersistenciaUsofceInsResult" type="tns:FcespPersistenciaUsofceInsResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespPersistenciaUsofceInsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poPernuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPernuPersistenciaUsofce" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPervaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProcedureResult" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="fcespAccesoPersistenciaSelt">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="fcespAccesoPersistenciaSeltResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespAccesoPersistenciaSeltResult" type="tns:FcespAccesoPersistenciaSeltResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespAccesoPersistenciaSeltResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="listaAccesos" nillable="true" type="tns:FcespAccesoPersistenciaSeltAcceso" />
+          <xs:element minOccurs="0" name="poPernuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPervaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FcespAccesoPersistenciaSeltAcceso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="perdaFechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="perdaFechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="pernuCreadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pernuModificadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pernuObservacion" type="xs:string" />
+      <xs:element minOccurs="0" name="pernuPersistenciaUsofceId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pernuUsuarioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pernuVigente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pertdAccesoPersistenciaId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcefxPpnXFicha">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piFipnuFichaId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcefxPpnXFichaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcefxPpnXFichaResult" type="tns:FcefxPpnXFichaResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcefxPpnXFichaResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poIntnuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poIntvaDesret" type="xs:string" />
+          <xs:element minOccurs="0" name="returnValue" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespAccesoPersistenciaMod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piPertdAccesoPersistId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuPersistUsofceId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuUsuarioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuObservacion" type="xs:string" />
+      <xs:element minOccurs="0" name="piPernuFichaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuEpisodioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuVigente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuCreadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPerdaFechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piPernuModificadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPerdaFechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespAccesoPersistenciaModResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespAccesoPersistenciaModResult" type="tns:FcespAccesoPersistenciaModResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespAccesoPersistenciaModResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poPernuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPervaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespValidadorGrabaEpisodio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piSesnuSesionId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuPersonaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEpinuAmbito" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEpinuOrigenEpisodio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEpinuLugarFisico" type="xs:decimal" />
+      <xs:element minOccurs="0" name="poEpinuEpisodioId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespValidadorGrabaEpisodioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespValidadorGrabaEpisodioResult" type="tns:FcespValidadorGrabaEpisodioResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespValidadorGrabaEpisodioResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poEpinuEpisodioId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespValAccesoPersistencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piPernuLugarId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuSesionId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuUsuarioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuPersonaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuEpinuFichaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuReservaId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespValAccesoPersistenciaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespValAccesoPersistenciaResult" type="tns:FcespValAccesoPersistenciaResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespValAccesoPersistenciaResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poPernuAccesoPertinenciaId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPernuAmbitoId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPernuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPernuEncuentroId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPernuEpisodioId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPernuFichaId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPernuPertinente" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPervaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespPersistenciaUsofceMod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piPernuPersistenciaUsofce" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPervaDescripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="piPernuOrden" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuVigente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuCreadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPerdaFechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piPernuModificadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPerdaFechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piPernuBajaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPerdaFechaBaja" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespPersistenciaUsofceModResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespPersistenciaUsofceModResult" type="tns:FcespPersistenciaUsofceModResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespPersistenciaUsofceModResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poPernuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPervaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespAccesoPersistenciaIns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piPernuPersistUsofceId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuUsuarioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuObservacion" type="xs:string" />
+      <xs:element minOccurs="0" name="piPernuFichaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuEpisodioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuVigente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuAccesoPersLogId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuCreadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPerdaFechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piPernuModificadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPerdaFechaModificacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespAccesoPersistenciaInsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespAccesoPersistenciaInsResult" type="tns:FcespAccesoPersistenciaInsResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespAccesoPersistenciaInsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poPernuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPertdAccesoPersistId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPervaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="validadorGrabaEpisodio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piSesnuSesionId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuPersonaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEpinuOrigenEpisodio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piEpinuLugarFisico" type="xs:decimal" />
+      <xs:element minOccurs="0" name="poEpinuEpisodioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="poEpinuAmbito" type="xs:decimal" />
+      <xs:element minOccurs="0" name="poEpinuFichaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="poEncnuEncuentroId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validadorGrabaEpisodioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="validadorGrabaEpisodioResult" type="tns:ValidadorGrabaEpisodioResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidadorGrabaEpisodioResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poEncnuEncuentroId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poEpinuAmbito" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poEpinuEpisodioId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poEpinuFichaId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespPersistenciaUsofceSelt">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="fcespPersistenciaUsofceSeltResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespPersistenciaUsofceSeltResult" type="tns:FcespPersistenciaUsofceSeltResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespPersistenciaUsofceSeltResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="listaPersistencia" nillable="true" type="tns:FcespPersistenciaUsofceSeltPersistencia" />
+          <xs:element minOccurs="0" name="poPernuCodret" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poPervaDesret" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FcespPersistenciaUsofceSeltPersistencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="perdaFechaBaja" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="perdaFechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="perdaFechaModificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="pernuBajaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pernuCreadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pernuModificadorId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pernuOrden" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pernuPersistenciaUsofceId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pernuVigente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pervaDescripcion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

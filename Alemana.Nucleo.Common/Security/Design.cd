@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Alemana.Nucleo.Common.Security.ClaimDictionary">
+    <Position X="7.75" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CCIAAABAAAAEABAQCAAABAQAAAAAAAAAAAAgAABQIAA=</HashCode>
+      <FileName>Security\ClaimDictionary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.DbCredentials">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAACAQAAAAAAAAA=</HashCode>
+      <FileName>Security\DbCredentials.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.SecurityManagerConfiguration">
+    <Position X="6.75" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAQAAAQAAAAAAAAAAAIAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Security\SecuirtyManagerConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.SecurityManager">
+    <Position X="4.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAoAIAAIAAAAAABBAAAAAAAAAAgA=</HashCode>
+      <FileName>Security\SecurityManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.AlemanaIdentity" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAgAAACAAAACAAAAAQgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Security\AlemanaIdentity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.AlemanaPrincipal" BaseTypeListCollapsed="true">
+    <Position X="6" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAEACAAAAAACAAAAAAAAAAAAAAAAAEAgAAAAAAA=</HashCode>
+      <FileName>Security\AlemanaPrincipal.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.Configuration.SecuritySection">
+    <Position X="4.75" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Security\Configuration\SecuritySection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Alemana.Nucleo.Common.Security.IChangePasswordProvider">
+    <Position X="9.75" Y="6.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Security\IChangePasswordProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Alemana.Nucleo.Common.Security.IClaimProvider">
+    <Position X="9.75" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Security\IClaimProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Alemana.Nucleo.Common.Security.AuthenticationStatus">
+    <Position X="9.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgEBABAAAABAAACAAAAgEAAAAAYAAAAAABAACAAAA=</HashCode>
+      <FileName>Security\AuthenticationStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

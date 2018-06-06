@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nucleo.alemana.cl/" name="WsnucsessionWebService" targetNamespace="http://nucleo.alemana.cl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://capawsnucleo.alemana.cl:80/wsNucSessionWeb/WsnucsessionWebService?xsd=1" namespace="http://nucleo.alemana.cl/" />
+    </xsd:schema>
+  </types>
+  <message name="fcefxAliasUsuarioSesion">
+    <part name="parameters" element="tns:fcefxAliasUsuarioSesion" />
+  </message>
+  <message name="fcefxAliasUsuarioSesionResponse">
+    <part name="parameters" element="tns:fcefxAliasUsuarioSesionResponse" />
+  </message>
+  <message name="WsnucsessionWebException">
+    <part name="fault" element="tns:faultInfo" />
+  </message>
+  <message name="fcespAliasUsuarioSesion">
+    <part name="parameters" element="tns:fcespAliasUsuarioSesion" />
+  </message>
+  <message name="fcespAliasUsuarioSesionResponse">
+    <part name="parameters" element="tns:fcespAliasUsuarioSesionResponse" />
+  </message>
+  <message name="fcespCambiaSesion">
+    <part name="parameters" element="tns:fcespCambiaSesion" />
+  </message>
+  <message name="fcespCambiaSesionResponse">
+    <part name="parameters" element="tns:fcespCambiaSesionResponse" />
+  </message>
+  <message name="fcespCierraSesionUsuario">
+    <part name="parameters" element="tns:fcespCierraSesionUsuario" />
+  </message>
+  <message name="fcespCierraSesionUsuarioResponse">
+    <part name="parameters" element="tns:fcespCierraSesionUsuarioResponse" />
+  </message>
+  <message name="fcespDatosSesion">
+    <part name="parameters" element="tns:fcespDatosSesion" />
+  </message>
+  <message name="fcespDatosSesionResponse">
+    <part name="parameters" element="tns:fcespDatosSesionResponse" />
+  </message>
+  <message name="fcespGrabaSesion">
+    <part name="parameters" element="tns:fcespGrabaSesion" />
+  </message>
+  <message name="fcespGrabaSesionResponse">
+    <part name="parameters" element="tns:fcespGrabaSesionResponse" />
+  </message>
+  <message name="fcespGrabaSesionSisalud">
+    <part name="parameters" element="tns:fcespGrabaSesionSisalud" />
+  </message>
+  <message name="fcespGrabaSesionSisaludResponse">
+    <part name="parameters" element="tns:fcespGrabaSesionSisaludResponse" />
+  </message>
+  <portType name="WsnucsessionWeb">
+    <operation name="fcefxAliasUsuarioSesion">
+      <input message="tns:fcefxAliasUsuarioSesion" />
+      <output message="tns:fcefxAliasUsuarioSesionResponse" />
+      <fault name="WsnucsessionWebException" message="tns:WsnucsessionWebException" />
+    </operation>
+    <operation name="fcespAliasUsuarioSesion">
+      <input message="tns:fcespAliasUsuarioSesion" />
+      <output message="tns:fcespAliasUsuarioSesionResponse" />
+      <fault name="WsnucsessionWebException" message="tns:WsnucsessionWebException" />
+    </operation>
+    <operation name="fcespCambiaSesion">
+      <input message="tns:fcespCambiaSesion" />
+      <output message="tns:fcespCambiaSesionResponse" />
+      <fault name="WsnucsessionWebException" message="tns:WsnucsessionWebException" />
+    </operation>
+    <operation name="fcespCierraSesionUsuario">
+      <input message="tns:fcespCierraSesionUsuario" />
+      <output message="tns:fcespCierraSesionUsuarioResponse" />
+      <fault name="WsnucsessionWebException" message="tns:WsnucsessionWebException" />
+    </operation>
+    <operation name="fcespDatosSesion">
+      <input message="tns:fcespDatosSesion" />
+      <output message="tns:fcespDatosSesionResponse" />
+      <fault name="WsnucsessionWebException" message="tns:WsnucsessionWebException" />
+    </operation>
+    <operation name="fcespGrabaSesion">
+      <input message="tns:fcespGrabaSesion" />
+      <output message="tns:fcespGrabaSesionResponse" />
+      <fault name="WsnucsessionWebException" message="tns:WsnucsessionWebException" />
+    </operation>
+    <operation name="fcespGrabaSesionSisalud">
+      <input message="tns:fcespGrabaSesionSisalud" />
+      <output message="tns:fcespGrabaSesionSisaludResponse" />
+      <fault name="WsnucsessionWebException" message="tns:WsnucsessionWebException" />
+    </operation>
+  </portType>
+  <binding name="WsnucsessionWebPortBinding" type="tns:WsnucsessionWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="fcefxAliasUsuarioSesion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsnucsessionWebException">
+        <soap:fault use="literal" name="WsnucsessionWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespAliasUsuarioSesion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsnucsessionWebException">
+        <soap:fault use="literal" name="WsnucsessionWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespCambiaSesion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsnucsessionWebException">
+        <soap:fault use="literal" name="WsnucsessionWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespCierraSesionUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsnucsessionWebException">
+        <soap:fault use="literal" name="WsnucsessionWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespDatosSesion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsnucsessionWebException">
+        <soap:fault use="literal" name="WsnucsessionWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespGrabaSesion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsnucsessionWebException">
+        <soap:fault use="literal" name="WsnucsessionWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespGrabaSesionSisalud">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsnucsessionWebException">
+        <soap:fault use="literal" name="WsnucsessionWebException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="WsnucsessionWebService">
+    <port name="WsnucsessionWebPort" binding="tns:WsnucsessionWebPortBinding">
+      <soap:address location="http://capawsnucleo.alemana.cl:80/wsNucSessionWeb/WsnucsessionWebService" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nucleo.alemana.cl/" name="WspersistenciaWebService" targetNamespace="http://nucleo.alemana.cl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://cwsnucleo2.alemana.cl:80/WsPersistenciaWeb/WspersistenciaWebService?xsd=1" namespace="http://nucleo.alemana.cl/" />
+    </xsd:schema>
+  </types>
+  <message name="fcefxPpnXFicha">
+    <part name="parameters" element="tns:fcefxPpnXFicha" />
+  </message>
+  <message name="fcefxPpnXFichaResponse">
+    <part name="parameters" element="tns:fcefxPpnXFichaResponse" />
+  </message>
+  <message name="WspersistenciaWebException">
+    <part name="fault" element="tns:faultInfo" />
+  </message>
+  <message name="fcespAccesoPersistenciaIns">
+    <part name="parameters" element="tns:fcespAccesoPersistenciaIns" />
+  </message>
+  <message name="fcespAccesoPersistenciaInsResponse">
+    <part name="parameters" element="tns:fcespAccesoPersistenciaInsResponse" />
+  </message>
+  <message name="fcespAccesoPersistenciaMod">
+    <part name="parameters" element="tns:fcespAccesoPersistenciaMod" />
+  </message>
+  <message name="fcespAccesoPersistenciaModResponse">
+    <part name="parameters" element="tns:fcespAccesoPersistenciaModResponse" />
+  </message>
+  <message name="fcespAccesoPersistenciaSelt">
+    <part name="parameters" element="tns:fcespAccesoPersistenciaSelt" />
+  </message>
+  <message name="fcespAccesoPersistenciaSeltResponse">
+    <part name="parameters" element="tns:fcespAccesoPersistenciaSeltResponse" />
+  </message>
+  <message name="fcespPersistenciaUsofceIns">
+    <part name="parameters" element="tns:fcespPersistenciaUsofceIns" />
+  </message>
+  <message name="fcespPersistenciaUsofceInsResponse">
+    <part name="parameters" element="tns:fcespPersistenciaUsofceInsResponse" />
+  </message>
+  <message name="fcespPersistenciaUsofceMod">
+    <part name="parameters" element="tns:fcespPersistenciaUsofceMod" />
+  </message>
+  <message name="fcespPersistenciaUsofceModResponse">
+    <part name="parameters" element="tns:fcespPersistenciaUsofceModResponse" />
+  </message>
+  <message name="fcespPersistenciaUsofceSelt">
+    <part name="parameters" element="tns:fcespPersistenciaUsofceSelt" />
+  </message>
+  <message name="fcespPersistenciaUsofceSeltResponse">
+    <part name="parameters" element="tns:fcespPersistenciaUsofceSeltResponse" />
+  </message>
+  <message name="fcespValAccesoPersistencia">
+    <part name="parameters" element="tns:fcespValAccesoPersistencia" />
+  </message>
+  <message name="fcespValAccesoPersistenciaResponse">
+    <part name="parameters" element="tns:fcespValAccesoPersistenciaResponse" />
+  </message>
+  <message name="fcespValidadorGrabaEpisodio">
+    <part name="parameters" element="tns:fcespValidadorGrabaEpisodio" />
+  </message>
+  <message name="fcespValidadorGrabaEpisodioResponse">
+    <part name="parameters" element="tns:fcespValidadorGrabaEpisodioResponse" />
+  </message>
+  <message name="validadorGrabaEpisodio">
+    <part name="parameters" element="tns:validadorGrabaEpisodio" />
+  </message>
+  <message name="validadorGrabaEpisodioResponse">
+    <part name="parameters" element="tns:validadorGrabaEpisodioResponse" />
+  </message>
+  <portType name="WspersistenciaWeb">
+    <operation name="fcefxPpnXFicha">
+      <input message="tns:fcefxPpnXFicha" />
+      <output message="tns:fcefxPpnXFichaResponse" />
+      <fault name="WspersistenciaWebException" message="tns:WspersistenciaWebException" />
+    </operation>
+    <operation name="fcespAccesoPersistenciaIns">
+      <input message="tns:fcespAccesoPersistenciaIns" />
+      <output message="tns:fcespAccesoPersistenciaInsResponse" />
+      <fault name="WspersistenciaWebException" message="tns:WspersistenciaWebException" />
+    </operation>
+    <operation name="fcespAccesoPersistenciaMod">
+      <input message="tns:fcespAccesoPersistenciaMod" />
+      <output message="tns:fcespAccesoPersistenciaModResponse" />
+      <fault name="WspersistenciaWebException" message="tns:WspersistenciaWebException" />
+    </operation>
+    <operation name="fcespAccesoPersistenciaSelt">
+      <input message="tns:fcespAccesoPersistenciaSelt" />
+      <output message="tns:fcespAccesoPersistenciaSeltResponse" />
+      <fault name="WspersistenciaWebException" message="tns:WspersistenciaWebException" />
+    </operation>
+    <operation name="fcespPersistenciaUsofceIns">
+      <input message="tns:fcespPersistenciaUsofceIns" />
+      <output message="tns:fcespPersistenciaUsofceInsResponse" />
+      <fault name="WspersistenciaWebException" message="tns:WspersistenciaWebException" />
+    </operation>
+    <operation name="fcespPersistenciaUsofceMod">
+      <input message="tns:fcespPersistenciaUsofceMod" />
+      <output message="tns:fcespPersistenciaUsofceModResponse" />
+      <fault name="WspersistenciaWebException" message="tns:WspersistenciaWebException" />
+    </operation>
+    <operation name="fcespPersistenciaUsofceSelt">
+      <input message="tns:fcespPersistenciaUsofceSelt" />
+      <output message="tns:fcespPersistenciaUsofceSeltResponse" />
+      <fault name="WspersistenciaWebException" message="tns:WspersistenciaWebException" />
+    </operation>
+    <operation name="fcespValAccesoPersistencia">
+      <input message="tns:fcespValAccesoPersistencia" />
+      <output message="tns:fcespValAccesoPersistenciaResponse" />
+      <fault name="WspersistenciaWebException" message="tns:WspersistenciaWebException" />
+    </operation>
+    <operation name="fcespValidadorGrabaEpisodio">
+      <input message="tns:fcespValidadorGrabaEpisodio" />
+      <output message="tns:fcespValidadorGrabaEpisodioResponse" />
+      <fault name="WspersistenciaWebException" message="tns:WspersistenciaWebException" />
+    </operation>
+    <operation name="validadorGrabaEpisodio">
+      <input message="tns:validadorGrabaEpisodio" />
+      <output message="tns:validadorGrabaEpisodioResponse" />
+      <fault name="WspersistenciaWebException" message="tns:WspersistenciaWebException" />
+    </operation>
+  </portType>
+  <binding name="WspersistenciaWebPortBinding" type="tns:WspersistenciaWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="fcefxPpnXFicha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WspersistenciaWebException">
+        <soap:fault use="literal" name="WspersistenciaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespAccesoPersistenciaIns">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WspersistenciaWebException">
+        <soap:fault use="literal" name="WspersistenciaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespAccesoPersistenciaMod">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WspersistenciaWebException">
+        <soap:fault use="literal" name="WspersistenciaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespAccesoPersistenciaSelt">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WspersistenciaWebException">
+        <soap:fault use="literal" name="WspersistenciaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespPersistenciaUsofceIns">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WspersistenciaWebException">
+        <soap:fault use="literal" name="WspersistenciaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespPersistenciaUsofceMod">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WspersistenciaWebException">
+        <soap:fault use="literal" name="WspersistenciaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespPersistenciaUsofceSelt">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WspersistenciaWebException">
+        <soap:fault use="literal" name="WspersistenciaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespValAccesoPersistencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WspersistenciaWebException">
+        <soap:fault use="literal" name="WspersistenciaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespValidadorGrabaEpisodio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WspersistenciaWebException">
+        <soap:fault use="literal" name="WspersistenciaWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="validadorGrabaEpisodio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WspersistenciaWebException">
+        <soap:fault use="literal" name="WspersistenciaWebException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="WspersistenciaWebService">
+    <port name="WspersistenciaWebPort" binding="tns:WspersistenciaWebPortBinding">
+      <soap:address location="http://cwsnucleo2.alemana.cl:80/WsPersistenciaWeb/WspersistenciaWebService" />
+    </port>
+  </service>
+</definitions>

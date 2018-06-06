@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://nucleo.alemana.cl/" targetNamespace="http://nucleo.alemana.cl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="faultInfo" nillable="true" type="xs:string" />
+  <xs:element name="fcespFcetmImpresionIns" type="tns:fcespFcetmImpresionIns" />
+  <xs:element name="fcespFcetmImpresionInsResponse" type="tns:fcespFcetmImpresionInsResponse" />
+  <xs:element name="fcespFinalizaAuditoria" type="tns:fcespFinalizaAuditoria" />
+  <xs:element name="fcespFinalizaAuditoriaResponse" type="tns:fcespFinalizaAuditoriaResponse" />
+  <xs:element name="fcespIniciaAuditoria" type="tns:fcespIniciaAuditoria" />
+  <xs:element name="fcespIniciaAuditoriaResponse" type="tns:fcespIniciaAuditoriaResponse" />
+  <xs:complexType name="fcespFinalizaAuditoria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piAudnuSesionId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespFinalizaAuditoriaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespFinalizaAuditoriaResult" type="tns:FcespFinalizaAuditoriaResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespFinalizaAuditoriaResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProcedureResult" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="fcespFcetmImpresionIns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piImpvaNombreReporte" type="xs:string" />
+      <xs:element minOccurs="0" name="piImpvaDatosReporte" type="xs:string" />
+      <xs:element minOccurs="0" name="piImpnuSesionId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piImpnuFichaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piImpnuEpisodioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piImpnuEncuentroId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespFcetmImpresionInsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespFcetmImpresionInsResult" type="tns:FcespFcetmImpresionInsResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespFcetmImpresionInsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poImpnuReporteId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespIniciaAuditoria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piAudvaModulo" type="xs:string" />
+      <xs:element minOccurs="0" name="piAudnuSesionId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piAudnuFichaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piAudnuEpisodioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piAudnuEncuentroId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespIniciaAuditoriaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespIniciaAuditoriaResult" type="tns:FcespIniciaAuditoriaResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespIniciaAuditoriaResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poAudnuAuditoriaId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://nucleo.alemana.cl/" targetNamespace="http://nucleo.alemana.cl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="faultInfo" nillable="true" type="xs:string" />
+  <xs:element name="spsusFuncSuserXRut" type="tns:spsusFuncSuserXRut" />
+  <xs:element name="spsusFuncSuserXRutResponse" type="tns:spsusFuncSuserXRutResponse" />
+  <xs:element name="spsusRolesSuserXRut" type="tns:spsusRolesSuserXRut" />
+  <xs:element name="spsusRolesSuserXRutResponse" type="tns:spsusRolesSuserXRutResponse" />
+  <xs:complexType name="spsusFuncSuserXRut">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piUsrRut" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="spsusFuncSuserXRutResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="spsusFuncSuserXRutResult" type="tns:SpsusFuncSuserXRutResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SpsusFuncSuserXRutResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="roles" nillable="true" type="tns:SpsusFuncSuserXRutRol" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProcedureResult" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="SpsusFuncSuserXRutRol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="funcionalidadDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="funcionalidadId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="grupoDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="grupoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rolDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="rolId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rut" type="xs:string" />
+      <xs:element minOccurs="0" name="sistemaDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="sistemaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="usuarioDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="usuarioId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="spsusRolesSuserXRut">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piUsrRut" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="spsusRolesSuserXRutResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="spsusRolesSuserXRutResult" type="tns:SpsusRolesSuserXRutResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SpsusRolesSuserXRutResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="roles" nillable="true" type="tns:SpsusRolesSuserXRutRol" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SpsusRolesSuserXRutRol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="rolDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="rolId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rut" type="xs:string" />
+      <xs:element minOccurs="0" name="sistemaDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="sistemaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="usuarioDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="usuarioId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

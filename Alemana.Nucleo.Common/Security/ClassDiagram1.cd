@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Alemana.Nucleo.Common.Security.SecurityManager">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IACEAAAQAoABAQQCAgAIACIgAAAAABACIEAAAAIiAAA=</HashCode>
+      <FileName>Security\SecurityManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.NucleoPrincipal">
+    <Position X="3.75" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAEACAABAAACAIAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Security\NucleoPrincipal.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.NucleoIdentity">
+    <Position X="6.5" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAIEAAAAAAAAAACAAAAAQgAAAAAAAAAAAAAABAAAI=</HashCode>
+      <FileName>Security\NucleoIdentity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.ClaimDictionary">
+    <Position X="0.5" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CAIAAABAAAAEABAQCAAABAQAAAAAAAAEAAAgAABQIAA=</HashCode>
+      <FileName>Security\ClaimDictionary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.Providers.ActiveDirectorySecurityProvider">
+    <Position X="3.5" Y="8" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAABAAQAAAAAAAAIAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Security\Providers\ActiveDirectorySecurityProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.Providers.MockSecurityProvider">
+    <Position X="6.75" Y="9.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIBAAAAAAAAAAAIAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Security\Providers\MockSecurityProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Security.AuditEvent">
+    <Position X="8.25" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAgAAAAAAAAAAAAAAAABAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Security\IAuditingProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Alemana.Nucleo.Common.Security.IAuthenticationProvider">
+    <Position X="3.75" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Security\IAuthenticationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Alemana.Nucleo.Common.Security.IAuthorizationProvider">
+    <Position X="6" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Security\IAuthorizationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Alemana.Nucleo.Common.Security.IPasswordProvider">
+    <Position X="6" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Security\IPasswordProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Alemana.Nucleo.Common.Security.IAuditingProvider">
+    <Position X="3.75" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Security\IAuditingProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Alemana.Nucleo.Common.Security.ChangePasswordResult">
+    <Position X="8.25" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAABAAAIAAA=</HashCode>
+      <FileName>Security\IPasswordProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

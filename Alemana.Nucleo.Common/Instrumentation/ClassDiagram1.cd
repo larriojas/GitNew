@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Alemana.Nucleo.Common.Instrumentation.InstrumentationProvider">
+    <Position X="0.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QAEQAAAAAIAIARAAAAAAAAAAAAAACAAEgAAMJAAAAAA=</HashCode>
+      <FileName>Instrumentation\InstrumentationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Instrumentation.PerformanceCounterContainer">
+    <Position X="4.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QCEQAAQACBAAAAAAAAAAAAAAAAABAAAAiAAoIAAQAAA=</HashCode>
+      <FileName>Instrumentation\PerformanceCounterContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Instrumentation.InstrumentationConfigurationManager">
+    <Position X="7.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAARAAAABACAAAAAAAAAAIAIACAgACAAA=</HashCode>
+      <FileName>Instrumentation\InstrumentationConfigurationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Instrumentation.Configuration.InstrumentationSection">
+    <Position X="7.5" Y="4.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instrumentation\Configuration\InstrumentationSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Instrumentation.Counter.CounterInstanceData">
+    <Position X="1" Y="5.25" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQIAAAEEAAAABQAAAAECAAAQAAEAEAAAAA=</HashCode>
+      <FileName>Instrumentation\Counter\CounterInstanceData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Instrumentation.Counter.CounterData">
+    <Position X="4" Y="5.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAiAwAAAAOAAAAAwABAgVAAAIAQAEAiAAAAQ=</HashCode>
+      <FileName>Instrumentation\Counter\CounterData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Instrumentation.Counter.CounterCategoryData">
+    <Position X="6.75" Y="6.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>wAEQAAAAATAgAAAAMIAAABQAAAAFAAAAgQAIIAAAAAA=</HashCode>
+      <FileName>Instrumentation\Counter\CounterCategoryData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alemana.Nucleo.Common.Instrumentation.Utils">
+    <Position X="1" Y="8.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAQAAAAADAAAAAAAAAABAA=</HashCode>
+      <FileName>Instrumentation\Utils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Alemana.Nucleo.Common.Instrumentation.AlemanaPerformanceCounterType">
+    <Position X="3.75" Y="9.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAACAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Instrumentation\AlemanaPerformanceCounterType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

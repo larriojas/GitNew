@@ -1,0 +1,457 @@
+﻿using Alemana.Nucleo.Common.Caching;
+using Alemana.Nucleo.Common.Caching.CacheManager;
+using Alemana.Nucleo.Common.ComponentModel;
+using Alemana.Nucleo.Common.ExceptionHandling;
+using Alemana.Nucleo.Common.Exceptions;
+using Alemana.Nucleo.Common.Security.Providers;
+using Alemana.Nucleo.Common.Tracing;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Threading;
+using System.Linq;
+using System.Security.Principal;
+using System.Threading.Tasks;
+
+namespace Alemana.Nucleo.Common.Security
+{
+    public static class SecurityManager
+    {
+        #region Contructor
+        static SecurityManager()
+        {
+            Initialize();
+        }
+        #endregion
+
+        #region Public
+
+        /// <summary>
+        /// Inicializa el administrador de seguridad.
+        /// </summary>
+        public static void Initialize()
+        {
+            if (IsInititalized)
+                return;
+
+            try
+            {
+                Logger.Verbose("SecurityManager: Inicializando."); 
+                
+                if (!ComponentContainer.IsInitialized)
+                    ComponentContainer.Initialize();
+
+                // Los mocks solo funcionan si el assembly se encuentra compilado en modo DEBUG.
+                // Esto evita que un assembly en modo release pueda utilizar mocks, aún cuando se haya configurado para que lo haga.
+                #if DEBUG
+                    InitDebugMode();
+                #else
+                    InitReleaseMode();
+                #endif
+
+                AuthenticationProvider = ComponentContainer.Instance.Resolve<IAuthenticationProvider>();
+                AuthorizationProvider = ComponentContainer.Instance.Resolve<IAuthorizationProvider>();
+                PasswordProvider = ComponentContainer.Instance.Resolve<IPasswordProvider>();
+                AuditingProvider = ComponentContainer.Instance.Resolve<IAuditingProvider>();
+
+                InitCache();
+                IsInititalized = true;
+            }
+            catch (Exception ex)
+            {
+                ExceptionPolicy.HandleException(ex, Defaults.DefaultExceptionPolicy);
+            }
+        }
+
+
+        /// <summary>
+        /// Indica si el administrador de seguridad se encuentra inicializados
+        /// </summary>
+        public static bool IsInititalized { get; private set; }
+
+        /// <summary>
+        /// Indica si la autenticación se encuentra en modo simulado
+        /// </summary>
+        public static bool MockAuthenticationEnabled
+        {
+            get
+            {
+                return GetBoolAppSetting(Defaults.MockAuthenticationSetting);
+            }
+        }
+
+        /// <summary>
+        /// Indica si la autenticación se encuentra en modo simulado
+        /// </summary>
+        public static bool MockAuthentication2Enabled
+        {
+            get
+            {
+                return GetBoolAppSetting(Defaults.MockAuthentication2Setting);
+            }
+        }
+
+
+        /// <summary>
+        /// Indica si la administración de contraseña se encuentra en modo simulado
+        /// </summary>
+        public static bool MockPasswordEnabled
+        {
+            get
+            {
+                return GetBoolAppSetting(Defaults.MockPasswordSetting);
+            }
+        }
+
+        /// <summary>
+        /// Indica si la autorización se encuentra en modo simulado
+        /// </summary>
+        public static bool MockAuthorizationEnabled
+        {
+            get
+            {
+                return GetBoolAppSetting(Defaults.MockAuthorizationSetting);
+            }
+        }
+
+        /// <summary>
+        /// Indica si la auditoría se encuentra en modo simulado
+        /// </summary>
+        public static bool MockAuditingEnabled
+        {
+            get
+            {
+                return GetBoolAppSetting(Defaults.MockAuditingSetting);
+            }
+        }
+
+        /// <summary>
+        /// Autentica la identidad del usuario, obtiene sus datos y crea el contexto de seguridad (Principal).
+        /// </summary>
+        /// <param name="userName">Nombre del Usuario</param>
+        /// <param name="password">Contraseña del Usuario</param>
+        /// <returns>Identidad del usuario</returns>
+        public static NucleoIdentity LogIn(string userName, string password)
+        {
+            var initialClaims = new Dictionary<string, object>();
+            initialClaims["UserName"] = userName;
+            initialClaims["Password"] = password;
+            return LogIn(initialClaims, true);
+        }
+        
+        /// <summary>
+        /// Autentica la identidad del usuario y obtiene sus datos.
+        /// </summary>
+        /// <param name="userName">Nombre del Usuario</param>
+        /// <param name="password">Contraseña del Usuario</param>
+        /// <param name="setContext">Especifica si se debe crear el contexto de seguridad (Principal)</param>
+        /// <returns>Identidad del usuario</returns>
+        public static NucleoIdentity LogIn(string userName, string password, bool setContext)
+        {
+            var initialClaims = new Dictionary<string, object>();
+            initialClaims["UserName"] = userName;
+            initialClaims["Password"] = password;
+            return LogIn(initialClaims, setContext);
+        }
+
+        /// <summary>
+        /// Autentica la identidad del usuario y obtiene sus datos.
+        /// </summary>
+        /// <param name="loginClaims">Diccionario con los elementos probatorios de la identidad del usuario</param>
+        /// <param name="setContext">Especifica si se debe crear el contexto de seguridad (Principal)</param>
+        /// <returns>Identidad del usuario</returns>
+        public static NucleoIdentity LogIn(Dictionary<string, object> loginClaims, bool setContext)
+        {
+            try
+            {
+                var userClaims = AuthenticationProvider.Authenticate(new ClaimDictionary(loginClaims));
+                var identity = new NucleoIdentity(userClaims);
+
+                if (setContext && identity.IsAuthenticated)
+                    SetPrincipalToContext(new NucleoPrincipal(identity));
+
+                return identity;
+            }
+            catch (Exception ex)
+            {
+                ExceptionPolicy.HandleException(ex, Defaults.DefaultExceptionPolicy);
+                throw ex;
+            }
+
+        }
+
+        /// <summary>
+        /// Autentica a un usuario en función de un ticket de autenticación encriptado y crea el contexto de seguridad.
+        /// </summary>
+        /// <param name="ticket">Ticket encriptado con el contexto de seguridad previo</param>
+        /// <returns>Identidad del usuario obtenida del contexto de seguridad</returns>
+        public static NucleoIdentity Authenticate(string ticket)
+        {
+            return Authenticate(ticket, true);
+        }
+        
+        /// <summary>
+        /// Método que genera el Principal con la cookie y el Identity
+        /// </summary>
+        /// <param name="ticket">Ticket encriptado con los datos de la cookie</param>
+        /// <param name="setContext">Especifica si debe crearse el contexto de seguridad (Principal)</param>
+        /// <returns>Retorna la identidad del usuario <see cref="NucleoIdentity"/></returns>
+        public static NucleoIdentity Authenticate(string ticket, bool setContext)
+        {
+            try
+            {
+                var principal = new NucleoPrincipal(ticket);
+
+                if (setContext)
+                    SetPrincipalToContext(principal);
+
+                return principal.NucleoIdentity;
+            }
+            catch (Exception ex)
+            {
+                ExceptionPolicy.HandleException(ex, Defaults.DefaultExceptionPolicy);
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad que obtiene el Principal del Usuario
+        /// </summary>
+        public static NucleoPrincipal CurrentUser
+        {
+            get;
+            //{
+            //    var principal = Thread.CurrentPrincipal as NucleoPrincipal;
+
+            //    if (principal == null)
+            //        principal = new NucleoPrincipal(new NucleoIdentity(WindowsIdentity.GetCurrent()));
+
+            //    return principal;
+            //}
+            private set;
+        }
+
+        /// <summary>
+        /// Método que realiza el LogOut del usuario
+        /// </summary>
+        public static void LogOut()
+        {
+            if (CurrentUser != null)
+                Logger.Information("El usuario [{0}] ha cerrado la sesión.", CurrentUser.Identity.Name);
+
+            Thread.CurrentPrincipal = null;
+        }
+
+        /// <summary>
+        /// Realiza el cambio de contraseña para una identidad de usuario autenticada.
+        /// </summary>
+        /// <param name="identity">Identidad del usuario autenticada correctamente (IsAuthenticated = true)</param>
+        /// <param name="password">Nueva contraseña</param>
+        /// <returns>Resultado del proceso de cambio de contraseña</returns>
+        public static ChangePasswordResult ChangeUserPassword(NucleoIdentity identity, string newPassword)
+        {
+            if (!identity.IsAuthenticated)
+                throw new NucleoCommonException("Se ha intentado cambiar la contraseña del usuario [{0}] pero la identidad asociada no se encuentra autenticada (IsAuthenticated == false)", identity.Name);
+
+            try
+            {
+                return SecurityManager.PasswordProvider.Change(identity, newPassword);
+            }
+            catch (Exception ex)
+            {
+                ExceptionPolicy.HandleException(ex, Defaults.DefaultExceptionPolicy);
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Verifica si la identidad se encuentra asociada a un rol específico.
+        /// </summary>
+        /// <param name="identity">Identidad del usuario</param>
+        /// <param name="role">Rol asociado</param>
+        /// <returns>Verdadero si la identidad se encuentra asociada al rol</returns>
+        public static bool IsUserInRole(NucleoIdentity identity, string role)
+        {
+            if (!identity.IsAuthenticated)
+                return false;
+
+            var permissions = PermissionsCache.GetOrAdd<IEnumerable<string>>(identity.Name, () =>
+                {
+                    return SecurityManager.AuthorizationProvider.GetPermissions(identity.Rut).ToList();
+                });
+
+            if (permissions == null)
+                return false;
+
+            return permissions.Contains(role);
+        }
+
+
+        public static bool Audit(int id, string eventText, params string[] args)
+        {
+            return Audit(id, new Dictionary<string, object>(), eventText, args);
+        }
+
+        public static bool Audit(int id, Dictionary<string, object> contextData, string eventText, params string[] args)
+        {
+            try
+            {
+                var auditEvent = new AuditEvent(id, String.Format(eventText, args), contextData);
+                AuditingProvider.Audit(auditEvent);
+            }
+            catch(Exception ex)
+            {
+                ExceptionPolicy.HandleException(ex, Defaults.DefaultExceptionPolicy); 
+            }
+
+            return true;
+        }
+
+        public static async Task<bool> AuditAsync(int id, Dictionary<string, object> contextData, string eventText, params string[] args)
+        {
+            var task = Task.Factory.StartNew<bool>( () =>
+                        {
+                            return Audit(id, contextData, eventText, args);
+                        });
+            await task;
+            return task.Result;
+        }
+
+        public static async Task<bool> AuditAsync(int id, string eventText, params string[] args)
+        {
+            var task = Task.Factory.StartNew<bool>(() =>
+            {
+                return Audit(id, eventText, args);
+            });
+            await task;
+            return task.Result;
+        }
+
+
+        #endregion
+
+        #region Private Stuff
+
+        private static ICacheManager PermissionsCache { get; set; }
+
+        private static void InitCache()
+        {
+            var cacheSetting = ConfigurationManager.AppSettings[Defaults.PermissionsCacheSetting];
+
+            if (!String.IsNullOrWhiteSpace(cacheSetting))
+            {
+                if (Cache.Instances[cacheSetting] != null)
+                {
+                    PermissionsCache = Cache.Instances[cacheSetting];
+                    return;
+                }
+            }
+            
+            PermissionsCache = new LocalCacheManager();
+        }
+
+        private static void InitReleaseMode()
+        {
+            // Registra proveedores reales
+            ComponentContainer.Instance.Register<IAuthenticationProvider, ActiveDirectorySecurityProvider>();
+            ComponentContainer.Instance.Register<IAuthorizationProvider, Suser2AuthorizationProvider>();
+            ComponentContainer.Instance.Register<IPasswordProvider, ActiveDirectorySecurityProvider>();
+            ComponentContainer.Instance.Register<IAuditingProvider, NucleoAuditingProvider>();
+        }
+
+        private static void InitDebugMode()
+        {
+            // Registra proveedores de simulación
+            Logger.Verbose("SecurityManager: Modo DEBUG detectado, verificando componentes simulados.");
+
+            if (MockAuthenticationEnabled)
+            {
+#if DEBUG
+                if (MockAuthentication2Enabled)
+                {
+                    ComponentContainer.Instance.Register<IAuthenticationProvider, MockSecurityProvider>();
+                    Logger.Verbose("SecurityManager: Registrando autenticación en modo simulación.");
+                }
+                else
+                {
+                    ComponentContainer.Instance.Register<IAuthenticationProvider, MockSecurityProvider>();
+                    Logger.Verbose("SecurityManager: Registrando autenticación en modo simulación.");
+                }
+
+#else
+                ComponentContainer.Instance.Register<IAuthenticationProvider, MockSecurityProvider>();
+                Logger.Verbose("SecurityManager: Registrando autenticación en modo simulación.");
+#endif
+            }
+            else
+            {
+                ComponentContainer.Instance.Register<IAuthenticationProvider, ActiveDirectorySecurityProvider>();
+                Logger.Verbose("SecurityManager: Registrando autenticación en modo real.");
+            }
+
+            if (MockAuthorizationEnabled)
+            {
+                ComponentContainer.Instance.Register<IAuthorizationProvider, MockSecurityProvider>();
+                Logger.Verbose("SecurityManager: Registrando autorización en modo simulación.");
+            }
+            else
+            {
+                ComponentContainer.Instance.Register<IAuthorizationProvider, Suser2AuthorizationProvider>();
+                Logger.Verbose("SecurityManager: Registrando autorización en modo real.");
+            }
+
+            if (MockPasswordEnabled)
+            {
+                ComponentContainer.Instance.Register<IPasswordProvider, MockSecurityProvider>();
+                Logger.Verbose("SecurityManager: Registrando manejo de constraseñas en modo simulación.");
+            }
+            else
+            {
+                ComponentContainer.Instance.Register<IPasswordProvider, ActiveDirectorySecurityProvider>();
+                Logger.Verbose("SecurityManager: Registrando manejo de constraseñas en modo real.");
+            }
+
+            if (MockAuditingEnabled)
+            {
+                ComponentContainer.Instance.Register<IAuditingProvider, MockSecurityProvider>();
+                Logger.Verbose("SecurityManager: Registrando proveedor de auditoría en modo simulación.");
+            }
+            else
+            {
+                ComponentContainer.Instance.Register<IAuditingProvider, NucleoAuditingProvider>();
+                Logger.Verbose("SecurityManager: Registrando proveedor de auditoría en modo real.");
+            }
+        }
+
+        private static bool GetBoolAppSetting(string key)
+        {
+            bool boolValue = false;
+            string value = ConfigurationManager.AppSettings[key];
+
+            if (!String.IsNullOrWhiteSpace(value))
+                Boolean.TryParse(value, out boolValue);
+
+            return boolValue;
+        }
+
+        private static IAuthenticationProvider AuthenticationProvider { get; set; }
+
+        private static IPasswordProvider PasswordProvider { get; set; }
+
+        private static IAuthorizationProvider AuthorizationProvider { get; set; }
+        
+        private static IAuditingProvider AuditingProvider { get; set; }
+
+        private static void SetPrincipalToContext(NucleoPrincipal principal)
+        {
+            AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
+            AppDomain.CurrentDomain.SetThreadPrincipal(principal);
+            //Thread.CurrentPrincipal = principal;
+            CurrentUser = principal;
+        }
+
+        #endregion
+
+
+    }
+}

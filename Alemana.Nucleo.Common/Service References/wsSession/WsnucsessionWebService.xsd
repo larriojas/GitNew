@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://nucleo.alemana.cl/" targetNamespace="http://nucleo.alemana.cl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="faultInfo" nillable="true" type="xs:string" />
+  <xs:element name="fcefxAliasUsuarioSesion" type="tns:fcefxAliasUsuarioSesion" />
+  <xs:element name="fcefxAliasUsuarioSesionResponse" type="tns:fcefxAliasUsuarioSesionResponse" />
+  <xs:element name="fcefxNombreUsuarioSesion" type="tns:fcefxNombreUsuarioSesion" />
+  <xs:element name="fcefxNombreUsuarioSesionResponse" type="tns:fcefxNombreUsuarioSesionResponse" />
+  <xs:element name="fcespAliasUsuarioSesion" type="tns:fcespAliasUsuarioSesion" />
+  <xs:element name="fcespAliasUsuarioSesionResponse" type="tns:fcespAliasUsuarioSesionResponse" />
+  <xs:element name="fcespCambiaSesion" type="tns:fcespCambiaSesion" />
+  <xs:element name="fcespCambiaSesion2" type="tns:fcespCambiaSesion2" />
+  <xs:element name="fcespCambiaSesion2Response" type="tns:fcespCambiaSesion2Response" />
+  <xs:element name="fcespCambiaSesionResponse" type="tns:fcespCambiaSesionResponse" />
+  <xs:element name="fcespCierraSesionUsuario" type="tns:fcespCierraSesionUsuario" />
+  <xs:element name="fcespCierraSesionUsuarioResponse" type="tns:fcespCierraSesionUsuarioResponse" />
+  <xs:element name="fcespDatosSesion" type="tns:fcespDatosSesion" />
+  <xs:element name="fcespDatosSesionResponse" type="tns:fcespDatosSesionResponse" />
+  <xs:element name="fcespGrabaSesion" type="tns:fcespGrabaSesion" />
+  <xs:element name="fcespGrabaSesionResponse" type="tns:fcespGrabaSesionResponse" />
+  <xs:element name="fcespGrabaSesionSisalud" type="tns:fcespGrabaSesionSisalud" />
+  <xs:element name="fcespGrabaSesionSisaludResponse" type="tns:fcespGrabaSesionSisaludResponse" />
+  <xs:complexType name="fcefxNombreUsuarioSesion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piSesnuSesionId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcefxNombreUsuarioSesionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcefxNombreUsuarioSesionResult" type="tns:FcefxNombreUsuarioSesionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcefxNombreUsuarioSesionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="returnValue" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProcedureResult" abstract="true">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="fcespCambiaSesion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piSesnuSesionIdOld" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piLugarId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piAreaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piAmbitoId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespCambiaSesionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespCambiaSesionResult" type="tns:FcespCambiaSesionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespCambiaSesionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poSesnuSesionIdNew" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespGrabaSesion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piPervaNumidentificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="piUsuvaLogin" type="xs:string" />
+      <xs:element minOccurs="0" name="piSesvaMac" type="xs:string" />
+      <xs:element minOccurs="0" name="piSesvaIpcliente" type="xs:string" />
+      <xs:element minOccurs="0" name="piSesnuLugarId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piSesvaSistOperativo" type="xs:string" />
+      <xs:element minOccurs="0" name="piSesvaResolPantalla" type="xs:string" />
+      <xs:element minOccurs="0" name="piSesvaPerfilSuser2" type="xs:string" />
+      <xs:element minOccurs="0" name="piSesnuRolId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piSesnuAreaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piSesnuAmbitoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piSesnuCargoId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespGrabaSesionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespGrabaSesionResult" type="tns:FcespGrabaSesionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespGrabaSesionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poSesnuSesionId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poUsunuUsuarioId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poUsuvaAliasNombre" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespCierraSesionUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piSesnuSesionId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespCierraSesionUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespCierraSesionUsuarioResult" type="tns:FcespCierraSesionUsuarioResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespCierraSesionUsuarioResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespCambiaSesion2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piSesnuSesionIdOld" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piLugarId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piAreaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piAmbitoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piUnidadId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespCambiaSesion2Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespCambiaSesion2Result" type="tns:FcespCambiaSesion2Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespCambiaSesion2Result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poSesnuSesionIdNew" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespAliasUsuarioSesion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piSesnuSesionId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespAliasUsuarioSesionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespAliasUsuarioSesionResult" type="tns:FcespAliasUsuarioSesionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespAliasUsuarioSesionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poUsuvaAliasNombre" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcefxAliasUsuarioSesion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piSesnuSesionId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcefxAliasUsuarioSesionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcefxAliasUsuarioSesionResult" type="tns:FcefxAliasUsuarioSesionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcefxAliasUsuarioSesionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="returnValue" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespGrabaSesionSisalud">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piPervaNumidentificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="piUsuvaLogin" type="xs:string" />
+      <xs:element minOccurs="0" name="piSesnuLugarId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piSesvaPerfilSuser2" type="xs:string" />
+      <xs:element minOccurs="0" name="piSesnuRolId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piSesnuAreaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piSesnuAmbitoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piSesnuCargoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piSesdaFechaAcceso" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piSesdaFechaDesconexion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="piPernuIdempresa" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuIdmaestrovirtual" type="xs:decimal" />
+      <xs:element minOccurs="0" name="piPernuTipoidentificacion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespGrabaSesionSisaludResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespGrabaSesionSisaludResult" type="tns:FcespGrabaSesionSisaludResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespGrabaSesionSisaludResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="poSesnuSesionId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poUsunuUsuarioId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="poUsuvaAliasNombre" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fcespDatosSesion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="piSesnuSesionId" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fcespDatosSesionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fcespDatosSesionResult" type="tns:FcespDatosSesionResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FcespDatosSesionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProcedureResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="poCursor" nillable="true" type="tns:FcespDatosSesionPoCursor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FcespDatosSesionPoCursor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arevaDescripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="arevaNombreCorto" type="xs:string" />
+      <xs:element minOccurs="0" name="lugvaNombreCorto" type="xs:string" />
+      <xs:element minOccurs="0" name="sesdaFechaAcceso" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sesdaFechaAccesoAmbiente" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sesdaFechaDesconexion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sesnuAmbitoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sesnuAreaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sesnuCargoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sesnuEstado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sesnuLugarId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sesnuRolId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sesnuSesionId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sesnuUsuarioId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sesvaIpcliente" type="xs:string" />
+      <xs:element minOccurs="0" name="sesvaMac" type="xs:string" />
+      <xs:element minOccurs="0" name="sesvaPerfilSuser2" type="xs:string" />
+      <xs:element minOccurs="0" name="sesvaResolPantalla" type="xs:string" />
+      <xs:element minOccurs="0" name="sesvaSistOperativo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

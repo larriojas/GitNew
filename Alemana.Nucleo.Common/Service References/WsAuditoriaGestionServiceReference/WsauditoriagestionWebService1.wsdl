@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nucleo.alemana.cl/" name="WsauditoriagestionWebService" targetNamespace="http://nucleo.alemana.cl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://capawsnucleo.alemana.cl:80/WsAuditoriaGestionWeb/WsauditoriagestionWebService?xsd=1" namespace="http://nucleo.alemana.cl/" />
+    </xsd:schema>
+  </types>
+  <message name="fcespFcetmImpresionIns">
+    <part name="parameters" element="tns:fcespFcetmImpresionIns" />
+  </message>
+  <message name="fcespFcetmImpresionInsResponse">
+    <part name="parameters" element="tns:fcespFcetmImpresionInsResponse" />
+  </message>
+  <message name="WsauditoriagestionWebException">
+    <part name="fault" element="tns:faultInfo" />
+  </message>
+  <message name="fcespFinalizaAuditoria">
+    <part name="parameters" element="tns:fcespFinalizaAuditoria" />
+  </message>
+  <message name="fcespFinalizaAuditoriaResponse">
+    <part name="parameters" element="tns:fcespFinalizaAuditoriaResponse" />
+  </message>
+  <message name="fcespIniciaAuditoria">
+    <part name="parameters" element="tns:fcespIniciaAuditoria" />
+  </message>
+  <message name="fcespIniciaAuditoriaResponse">
+    <part name="parameters" element="tns:fcespIniciaAuditoriaResponse" />
+  </message>
+  <portType name="WsauditoriagestionWeb">
+    <operation name="fcespFcetmImpresionIns">
+      <input message="tns:fcespFcetmImpresionIns" />
+      <output message="tns:fcespFcetmImpresionInsResponse" />
+      <fault name="WsauditoriagestionWebException" message="tns:WsauditoriagestionWebException" />
+    </operation>
+    <operation name="fcespFinalizaAuditoria">
+      <input message="tns:fcespFinalizaAuditoria" />
+      <output message="tns:fcespFinalizaAuditoriaResponse" />
+      <fault name="WsauditoriagestionWebException" message="tns:WsauditoriagestionWebException" />
+    </operation>
+    <operation name="fcespIniciaAuditoria">
+      <input message="tns:fcespIniciaAuditoria" />
+      <output message="tns:fcespIniciaAuditoriaResponse" />
+      <fault name="WsauditoriagestionWebException" message="tns:WsauditoriagestionWebException" />
+    </operation>
+  </portType>
+  <binding name="WsauditoriagestionWebPortBinding" type="tns:WsauditoriagestionWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="fcespFcetmImpresionIns">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsauditoriagestionWebException">
+        <soap:fault use="literal" name="WsauditoriagestionWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespFinalizaAuditoria">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsauditoriagestionWebException">
+        <soap:fault use="literal" name="WsauditoriagestionWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="fcespIniciaAuditoria">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WsauditoriagestionWebException">
+        <soap:fault use="literal" name="WsauditoriagestionWebException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="WsauditoriagestionWebService">
+    <port name="WsauditoriagestionWebPort" binding="tns:WsauditoriagestionWebPortBinding">
+      <soap:address location="http://capawsnucleo.alemana.cl:80/WsAuditoriaGestionWeb/WsauditoriagestionWebService" />
+    </port>
+  </service>
+</definitions>

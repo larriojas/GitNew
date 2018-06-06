@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4E7A2B33-9244-4A42-A0A9-1F89F36F97FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alemana.Nucleo.Common</RootNamespace>
+    <AssemblyName>Alemana.Nucleo.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>&lt;Project Location In Database&gt;</SccProjectName>
+    <SccLocalPath>&lt;Local Binding Root of Project&gt;</SccLocalPath>
+    <SccAuxPath>&lt;Source Control Database&gt;</SccAuxPath>
+    <SccProvider>Jazz Source Control Provider:{AC8810C5-F6E7-4145-83AA-FDFFF6F5506D}</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Tisal.Common.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Tisal.Common.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug64|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug64\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug64|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug64\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release64|AnyCPU'">
+    <OutputPath>bin\Release64\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release64|x64'">
+    <OutputPath>bin\x64\Release64\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug32|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug32\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug32|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug32\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug64|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug64\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release64|x86'">
+    <OutputPath>bin\x86\Release64\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug32|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug32\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alemana.Nucleo.Shared">
+      <HintPath>..\Alemana.Nucleo.Shell\ModulesBin\Alemana.Nucleo.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching, Version=2.12.0.0, Culture=neutral, PublicKeyToken=cec98615db04012e, processorArchitecture=MSIL">
+      <HintPath>..\Lib\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.4.0.5\lib\net20\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="fastJSON">
+      <HintPath>..\Lib\fastJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="FileCache, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FileCache.2.0.3\lib\FileCache.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Lib\Microsoft.ApplicationServer.Caching.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Lib\Microsoft.ApplicationServer.Caching.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Lib\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Lib\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sixeyed.Caching, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sixeyed.Caching.1.0.0.0\lib\net40\Sixeyed.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Lib\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\CacheManager\BinarySerializerCacheManager.cs" />
+    <Compile Include="Caching\CacheManager\FileCacheManager.cs" />
+    <Compile Include="Caching\CacheManager\ObjectBinder.cs" />
+    <Compile Include="ComponentModel\CachingInterceptionBehavior.cs" />
+    <Compile Include="ComponentModel\CachingNewInterceptionBehavior.cs" />
+    <Compile Include="ExceptionHandling\Configuration\NucleoExceptionHandling.cs" />
+    <Compile Include="Extensions\CollectionsExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Models\TipoIngreso.cs" />
+    <Compile Include="Security\ClaimEnums.cs" />
+    <Compile Include="Security\IAuditingProvider.cs" />
+    <Compile Include="Caching\CacheConfigurationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Cache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CacheManager\LocalCacheManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CacheManager\NoCacheManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\CachePolicyConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\CachePolicyElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\CachePolicyElementCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Configuration\CachingSection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\Enumerations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\ICacheManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\PolicyConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentModel\ComponentContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentModel\Custom\InstanceContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentModel\Custom\IProxyGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentModel\Custom\ProxyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentModel\Custom\RemotingProxyGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentModel\Custom\RemotingProxyInterceptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentModel\IComponentContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComponentModel\Unity\UnityInjectorContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionHandling\Configuration\ExceptionHandlingSection.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ExceptionPolicyElement.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ExceptionPolicyElementCollection.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ExceptionTypeElement.cs" />
+    <Compile Include="ExceptionHandling\Configuration\ExceptionTypeElementCollection.cs" />
+    <Compile Include="ExceptionHandling\ExceptionPolicy.cs" />
+    <Compile Include="ExceptionHandling\ExceptionPolicyConfiguration.cs" />
+    <Compile Include="ExceptionHandling\HandlingAction.cs" />
+    <Compile Include="ExceptionHandling\PolicyConfiguration.cs" />
+    <Compile Include="ExceptionHandling\Resource.Designer.cs" />
+    <Compile Include="Exceptions\NucleoBaseException.cs" />
+    <Compile Include="Exceptions\CacheException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\ExceptionHandlingException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\InstrumentationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\SecurityManagerException.cs" />
+    <Compile Include="Exceptions\TraceException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensions\ObjectToJSONExtension.cs" />
+    <Compile Include="Defaults.cs" />
+    <Compile Include="Instrumentation\Configuration\InstrumentationSection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterCategoryElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterCategoryElementCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterElementCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterInstanceElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\Configuration\PerformanceCounterInstanceElementCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\Counter\CounterCategoryData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\Counter\CounterData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\Counter\CounterInstanceData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\AlemanaPerformanceCounterType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\InstrumentationConfigurationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\InstrumentationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\PerformanceCounterContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrumentation\Utils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\NucleoCommonException.cs" />
+    <Compile Include="Policies\ExceptionPolicyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Policies\Handlers\ExceptionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Policies\Handlers\InstrumentationHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Policies\Handlers\TraceHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Policies\InstrumentationPolicyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Policies\TracePolicyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AuthenticationStatus.cs" />
+    <Compile Include="Security\ClaimDictionary.cs" />
+    <Compile Include="Security\ClaimKeys.cs" />
+    <Compile Include="Security\IAuthorizationProvider.cs" />
+    <Compile Include="Security\IPasswordProvider.cs" />
+    <Compile Include="Security\IAuthenticationProvider.cs" />
+    <Compile Include="Security\NucleoPrincipal.cs" />
+    <Compile Include="Security\Providers\ActiveDirectorySecurityProvider.cs" />
+    <Compile Include="Security\Providers\MockSecurityProvider.cs" />
+    <Compile Include="Security\Providers\MockSecurityProvider2.cs" />
+    <Compile Include="Security\Providers\NucleoAuditingProvider.cs" />
+    <Compile Include="Security\Providers\Suser2AuthorizationProvider.cs" />
+    <Compile Include="Security\RoleKeys.cs" />
+    <Compile Include="Security\RolModel.cs" />
+    <Compile Include="Security\SecurityManager.cs" />
+    <Compile Include="Security\NucleoIdentity.cs" />
+    <Compile Include="Service References\WsAuditoriaGestionServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsPersistencia\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsSession\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsSuser2Roles\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Tracing\Enumerations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracing\Logger.cs" />
+    <Compile Include="Tracing\TimeRolledListener.cs" />
+    <Compile Include="Tracing\Tracer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracing\TraceRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tracing\TraceSourceOffile.cs" />
+    <Compile Include="Utility\CryptoHelper.cs" />
+    <Compile Include="Utility\DataHolder.cs" />
+    <Compile Include="Utility\DataHolderFile.cs" />
+    <Compile Include="Utility\MD5HashGenerator.cs" />
+    <Compile Include="Utility\PerformanceCountersHelper.cs" />
+    <Compile Include="Utility\ReflectionHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Caching\App.config" />
+    <None Include="Instrumentation\ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Scripts\CreateEventSource.ps1" />
+    <None Include="Security\ClassDiagram1.cd" />
+    <None Include="Security\Design.cd" />
+    <None Include="Service References\WsAuditoriaGestionServiceReference\Alemana.Nucleo.Common.WsAuditoriaGestionServiceReference.fcespFcetmImpresionInsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAuditoriaGestionServiceReference\Alemana.Nucleo.Common.WsAuditoriaGestionServiceReference.FcespFcetmImpresionInsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAuditoriaGestionServiceReference\Alemana.Nucleo.Common.WsAuditoriaGestionServiceReference.fcespFinalizaAuditoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAuditoriaGestionServiceReference\Alemana.Nucleo.Common.WsAuditoriaGestionServiceReference.FcespFinalizaAuditoriaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAuditoriaGestionServiceReference\Alemana.Nucleo.Common.WsAuditoriaGestionServiceReference.fcespIniciaAuditoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAuditoriaGestionServiceReference\Alemana.Nucleo.Common.WsAuditoriaGestionServiceReference.FcespIniciaAuditoriaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsAuditoriaGestionServiceReference\WsauditoriagestionWebService.wsdl" />
+    <None Include="Service References\WsAuditoriaGestionServiceReference\WsauditoriagestionWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcefxPpnXFichaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcefxPpnXFichaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespAccesoPersistenciaInsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespAccesoPersistenciaInsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespAccesoPersistenciaInsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespAccesoPersistenciaInsResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespAccesoPersistenciaModResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespAccesoPersistenciaModResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespAccesoPersistenciaModResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespAccesoPersistenciaModResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespAccesoPersistenciaSeltResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespAccesoPersistenciaSeltResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespAccesoPersistenciaSeltResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespAccesoPersistenciaSeltResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespPersistenciaUsofceInsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespPersistenciaUsofceInsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespPersistenciaUsofceInsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespPersistenciaUsofceInsResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespPersistenciaUsofceModResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespPersistenciaUsofceModResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespPersistenciaUsofceModResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespPersistenciaUsofceModResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespPersistenciaUsofceSeltResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespPersistenciaUsofceSeltResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespPersistenciaUsofceSeltResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespPersistenciaUsofceSeltResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespValAccesoPersistenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespValAccesoPersistenciaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespValAccesoPersistenciaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespValAccesoPersistenciaResult1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.fcespValidadorGrabaEpisodioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.FcespValidadorGrabaEpisodioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.validadorGrabaEpisodioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\Alemana.Nucleo.Common.WsPersistencia.ValidadorGrabaEpisodioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsPersistencia\WspersistenciaWebService1.wsdl" />
+    <None Include="Service References\WsPersistencia\WspersistenciaWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsPersistencia\WspersistenciaWebService2.wsdl" />
+    <None Include="Service References\WsPersistencia\WspersistenciaWebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.fcefxAliasUsuarioSesionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.FcefxAliasUsuarioSesionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.fcefxNombreUsuarioSesionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.FcefxNombreUsuarioSesionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.fcespAliasUsuarioSesionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.FcespAliasUsuarioSesionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.fcespCambiaSesion2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.FcespCambiaSesion2Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.fcespCambiaSesionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.FcespCambiaSesionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.fcespCierraSesionUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.FcespCierraSesionUsuarioResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.fcespDatosSesionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.FcespDatosSesionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.fcespGrabaSesionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.FcespGrabaSesionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.fcespGrabaSesionSisaludResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\Alemana.Nucleo.Common.wsSession.FcespGrabaSesionSisaludResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsSession\WsnucsessionWebService.wsdl" />
+    <None Include="Service References\wsSession\WsnucsessionWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsSuser2Roles\Alemana.Nucleo.Common.WsSuser2Roles.spsusFuncSuserXRutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSuser2Roles\Alemana.Nucleo.Common.WsSuser2Roles.SpsusFuncSuserXRutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSuser2Roles\Alemana.Nucleo.Common.WsSuser2Roles.spsusRolesSuserXRutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSuser2Roles\Alemana.Nucleo.Common.WsSuser2Roles.SpsusRolesSuserXRutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WsSuser2Roles\Wssuser2rolesWebService.wsdl" />
+    <None Include="Service References\WsSuser2Roles\Wssuser2rolesWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExceptionHandling\Resource.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Security\Configuration\permissions.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Service References\WsPersistencia\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WsPersistencia\configuration.svcinfo" />
+    <None Include="Service References\WsPersistencia\configuration91.svcinfo" />
+    <None Include="Service References\WsSuser2Roles\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WsSuser2Roles\configuration.svcinfo" />
+    <None Include="Service References\WsSuser2Roles\configuration91.svcinfo" />
+    <None Include="Service References\WsAuditoriaGestionServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WsAuditoriaGestionServiceReference\configuration.svcinfo" />
+    <None Include="Service References\WsAuditoriaGestionServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\wsSession\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsSession\configuration.svcinfo" />
+    <None Include="Service References\wsSession\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WsAuditoriaGestionServiceReference\" />
+    <WCFMetadataStorage Include="Service References\WsPersistencia\" />
+    <WCFMetadataStorage Include="Service References\wsSession\" />
+    <WCFMetadataStorage Include="Service References\WsSuser2Roles\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(SolutionName)*" "$(SolutionDir)..\ModulesBin\" /SY
+xcopy "$(TargetDir)$(SolutionName)*" "$(SolutionDir)..\Shell\" /SY
+rmdir /S /Q "$(SolutionDir)..\..\Shell\app.publish"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

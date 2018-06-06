@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nucleo.alemana.cl/" name="Wssuser2rolesWebService" targetNamespace="http://nucleo.alemana.cl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://capawsnucleo.alemana.cl:80/WsSuser2RolesWeb/Wssuser2rolesWebService?xsd=1" namespace="http://nucleo.alemana.cl/" />
+    </xsd:schema>
+  </types>
+  <message name="spsusFuncSuserXRut">
+    <part name="parameters" element="tns:spsusFuncSuserXRut" />
+  </message>
+  <message name="spsusFuncSuserXRutResponse">
+    <part name="parameters" element="tns:spsusFuncSuserXRutResponse" />
+  </message>
+  <message name="Wssuser2rolesWebException">
+    <part name="fault" element="tns:faultInfo" />
+  </message>
+  <message name="spsusRolesSuserXRut">
+    <part name="parameters" element="tns:spsusRolesSuserXRut" />
+  </message>
+  <message name="spsusRolesSuserXRutResponse">
+    <part name="parameters" element="tns:spsusRolesSuserXRutResponse" />
+  </message>
+  <portType name="Wssuser2rolesWeb">
+    <operation name="spsusFuncSuserXRut">
+      <input message="tns:spsusFuncSuserXRut" />
+      <output message="tns:spsusFuncSuserXRutResponse" />
+      <fault name="Wssuser2rolesWebException" message="tns:Wssuser2rolesWebException" />
+    </operation>
+    <operation name="spsusRolesSuserXRut">
+      <input message="tns:spsusRolesSuserXRut" />
+      <output message="tns:spsusRolesSuserXRutResponse" />
+      <fault name="Wssuser2rolesWebException" message="tns:Wssuser2rolesWebException" />
+    </operation>
+  </portType>
+  <binding name="Wssuser2rolesWebPortBinding" type="tns:Wssuser2rolesWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="spsusFuncSuserXRut">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Wssuser2rolesWebException">
+        <soap:fault use="literal" name="Wssuser2rolesWebException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="spsusRolesSuserXRut">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Wssuser2rolesWebException">
+        <soap:fault use="literal" name="Wssuser2rolesWebException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="Wssuser2rolesWebService">
+    <port name="Wssuser2rolesWebPort" binding="tns:Wssuser2rolesWebPortBinding">
+      <soap:address location="http://capawsnucleo.alemana.cl:80/WsSuser2RolesWeb/Wssuser2rolesWebService" />
+    </port>
+  </service>
+</definitions>
