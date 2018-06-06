@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='Print\ProtocoloNoHeader.xsl'?>
+<impresion>
+  <footer footer="Impreso por: JCC 05/12/2013 22:21:22" page="4" pagecount="4" />
+  <body>
+    <grupo nombre="Planificación de medidas de seguridad" tipo="MultipleItemMultipleSelectionAlwaysEnabled">
+      <concepto nombre="1. Ayudar a la deambulación de la persona inestable" />
+      <concepto nombre="2. Acompañante                                                                                                     " />
+      <concepto nombre="3. Utilizar dispositivos en la cama que protejan al paciente" />
+      <concepto nombre="4. Cuna en &lt;5 años                                                                                          " />
+      <concepto nombre="5. Utilizar una alarma de cama que alerte al cuidador de que la persona salga de la cama" />
+      <concepto nombre="6. Enseñar al paciente dispositivos de ayuda a la marcha" />
+      <concepto nombre="7. Enseñar a la familia los factores de riesgo de las caídas y cómo disminuirlos" />
+    </grupo>
+    <grupo nombre="Toma de conocimiento de medidas de seguridad universales preventivas y educación" tipo="FreeFlowItem">
+      <concepto nombre="Quién toma conocimiento" />
+      <concepto nombre="Parentesco" />
+    </grupo>
+    <grupo nombre="¿Rechaza alguna medida?" tipo="MultipleItemMultipleSelection">
+      <concepto nombre="1" />
+      <concepto nombre="2" />
+      <concepto nombre="3" />
+      <concepto nombre="4" />
+      <concepto nombre="5" />
+      <concepto nombre="6" />
+      <concepto nombre="7" />
+    </grupo>
+  </body>
+</impresion>

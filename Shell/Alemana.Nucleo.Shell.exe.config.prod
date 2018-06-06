@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="exceptionHandlingSection" type="Alemana.Nucleo.Common.ExceptionHandling.Configuration.ExceptionHandlingSection, Alemana.Nucleo.Common" />
+    <section name="instrumentationSection" type="Alemana.Nucleo.Common.Instrumentation.Configuration.InstrumentationSection, Alemana.Nucleo.Common" />
+    <section name="cachingSection" type="Alemana.Nucleo.Common.Caching.Configuration.CachingSection, Alemana.Nucleo.Common" />
+  </configSections>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Telerik.Windows.Controls" culture="neutral" publicKeyToken="5803cfa389c90ce7"/>
+        <bindingRedirect oldVersion="0.0.0.0-65535.65535.65535.65535" newVersion="2013.3.1320.45"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Telerik.Windows.Controls.Input" culture="neutral" publicKeyToken="5803cfa389c90ce7"/>
+        <bindingRedirect oldVersion="0.0.0.0-65535.65535.65535.65535" newVersion="2013.3.1320.45"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Telerik.Windows.Controls.Navigation" culture="neutral" publicKeyToken="5803cfa389c90ce7"/>
+        <bindingRedirect oldVersion="0.0.0.0-65535.65535.65535.65535" newVersion="2013.3.1320.45"/>
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <system.net>
+    <defaultProxy enabled="false" useDefaultCredentials="false">
+      <proxy/>
+      <bypasslist/>
+      <module/>
+    </defaultProxy>
+  </system.net>
+
+  <appSettings>
+    <!-- LAGASH AUTENTICACION MOCK -->
+    <!-- <add key="Alemana.Nucleo.Common.Security.Authentication.MockMode" value="true"/>
+    <add key="Alemana.Nucleo.Common.Security.Authentication.MockMode2" value="true"/> -->
+
+    <!--El ID del conectionstring de LDAP es la prioridad. Mayor ID es mayor prioridad-->
+    <add key="Alemana.Nucleo.Common.Security.ActiveDirectory.ConnectionString3" value="LDAP://boreas.alemana.cl:389/OU=CAS,DC=alemana,DC=cl" />
+    <add key="Alemana.Nucleo.Common.Security.ActiveDirectory.ConnectionString2" value="LDAP://leda.alemana.cl:389/OU=CAS,DC=alemana,DC=cl" />
+    <add key="Alemana.Nucleo.Common.Security.ActiveDirectory.ConnectionString1" value="LDAP://anake.alemana.cl:389/OU=CAS,DC=alemana,DC=cl" />
+    <add key="Alemana.Nucleo.Common.Security.Password.MockMode" value="true" />
+    <add key="Alemana.Nucleo.Common.Security.Authorization.MockMode" value="true" />
+    <add key="Alemana.Nucleo.Common.Security.Auditing.MockMode" value="false" />
+    <!--<add key="Alemana.Nucleo.Shell.ModulesPath" value="C:\NUCLEO\MAIN_CNS\Proyecto .NET\ModulesBin\" />-->
+    <add key="Alemana.Nucleo.Shell.ModulesPath" value="ModulesBin\" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+
+    <add key="version_path" value="\\pellin\\nucleo\\" />
+    <add key="version_file" value="Versiones.xml" />
+    <add key="version_nodes" value="/versiones/version" />
+
+    <add key="AMBIENTE" value="DESA" />
+
+    <!-- WEBLOGIC DESARROLLO -->
+    <add key="@SERVCIO_WEBLOGIC" value="http://dev11g-nucleo.alemana.cl" />
+
+    <!-- WEBLOGIC CERTIFICACION -->
+    <!--<add key="@SERVCIO_WEBLOGIC" value="http://pwsnucleo.alemana.cl"/>-->
+
+    <!-- WEBLOGIC CAPACITACION -->
+    <!--<add key="@SERVCIO_WEBLOGIC" value="http://pwsnucleo.alemana.cl"/>-->
+
+    <!-- WEBLOGIC PRODUCCION -->
+    <!--<add key="@SERVCIO_WEBLOGIC" value="http://pwsnucleo.alemana.cl"/>-->
+
+    <!-- AMBIENTE -->
+    <add key="@AMBIENTE" value="Producción" />
+
+    <add key="Alemana.Nucleo.Impresion.Etiquetadora" value="Zebra" />
+    <add key="Alemana.Nucleo.Impresion.Reportes" value="Lexmark" />
+
+    <add key="Alemana.Nucleo.Plantillas.SubClaseLaboratorio" value="1001" />
+    <add key="Alemana.Nucleo.Plantillas.SubClaseParametrosClinicos" value="1002" />
+
+    <!-- /BEGIN VISTAS PARA NAVEGACION INTERMODULAR DESDE GESTOR DE SERVICIOS -->
+    <add key="Alemana.Nucleo.GestorServicios.PortletParametrosClinicos.EnlaceTitulo" value="ParametrosClinicos.GestionParametrosClinicos" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletParametrosClinicos.EnlaceTituloEsModal" value="true" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletParametrosClinicos.EnlaceTituloParametro" value="" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletParametrosClinicos.EnlaceBoton" value="ParametrosClinicos.GestionParametrosClinicos" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletParametrosClinicos.EnlaceBotonEsModal" value="true" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletParametrosClinicos.EnlaceBotonParametro" value="" />
+
+    <add key="Alemana.Nucleo.GestorServicios.PortletDiagnosticosAntecedentes.EnlaceTitulo" value="Nosologia.Principal" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletDiagnosticosAntecedentes.EnlaceTituloEsModal" value="false" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletDiagnosticosAntecedentes.EnlaceTituloParametro" value="" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletDiagnosticosAntecedentes.EnlaceBoton" value="Nosologia.TerminologiaModal" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletDiagnosticosAntecedentes.EnlaceBotonEsModal" value="true" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletDiagnosticosAntecedentes.EnlaceBotonParametro" value="2" />
+
+    <add key="Alemana.Nucleo.GestorServicios.PortletAlergiasReaccionesAdversas.EnlaceTitulo" value="Nosologia.Principal" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletAlergiasReaccionesAdversas.EnlaceTituloEsModal" value="false" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletAlergiasReaccionesAdversas.EnlaceTituloParametro" value="" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletAlergiasReaccionesAdversas.EnlaceBoton" value="Nosologia.TerminologiaModal" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletAlergiasReaccionesAdversas.EnlaceBotonEsModal" value="true" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletAlergiasReaccionesAdversas.EnlaceBotonParametro" value="alergia" />
+
+    <add key="Alemana.Nucleo.GestorServicios.PortletEvoluciones.EnlaceTitulo" value="Evoluciones.ListadoEvoluciones" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletEvoluciones.EnlaceTituloEsModal" value="false" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletEvoluciones.EnlaceTituloParametro" value="" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletEvoluciones.EnlaceBoton" value="Evoluciones.CrearNuevaEvolucion" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletEvoluciones.EnlaceBotonEsModal" value="false" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletEvoluciones.EnlaceBotonParametro" value="" />
+
+    <add key="Alemana.Nucleo.GestorServicios.PortletMedicamentos.EnlaceTitulo" value="Indicaciones.PanelIndicacionesContainer" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletMedicamentos.EnlaceTituloEsModal" value="false" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletMedicamentos.EnlaceTituloParametro" value="" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletMedicamentos.EnlaceBoton" value="Indicaciones.PanelIndicacionesContainer" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletMedicamentos.EnlaceBotonEsModal" value="false" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletMedicamentos.EnlaceBotonParametro" value="" />
+
+    <add key="Alemana.Nucleo.GestorServicios.PortletResultadosLaboratorio.EnlaceTitulo" value="ResultadosLaboratorio.GestionResultadosLaboratorio" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletResultadosLaboratorio.EnlaceTituloEsModal" value="false" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletResultadosLaboratorio.EnlaceTituloParametro" value="" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletResultadosLaboratorio.EnlaceBoton" value="ResultadosLaboratorio.GestionResultadosLaboratorio" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletResultadosLaboratorio.EnlaceBotonEsModal" value="false" />
+    <add key="Alemana.Nucleo.GestorServicios.PortletResultadosLaboratorio.EnlaceBotonParametro" value="" />
+    <!-- /END VISTAS PARA NAVEGACION INTERMODULAR DESDE GESTOR DE SERVICIOS -->
+
+    <!-- /BEGIN VISTAS PARA NAVEGACION DESDE PORTLET AGENDA EN PORTAL ASISTENCIAL -->
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionHistorialClinico.Enlace" value="GestorServicios.Portal" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionHistorialClinico.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionHistorialClinico.EnlaceParametro" value="" />
+
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionEvolucionesPrevias.Enlace" value="Evoluciones.ListadoEvoluciones" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionEvolucionesPrevias.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionEvolucionesPrevias.EnlaceParametro" value="" />
+
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionDiagnosticos.Enlace" value="Nosologia.Principal" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionDiagnosticos.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionDiagnosticos.EnlaceParametro" value="" />
+
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionIndicaciones.Enlace" value="Indicaciones.PanelIndicacionesContainer" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionIndicaciones.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionIndicaciones.EnlaceParametro" value="" />
+
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionPlantillas.Enlace" value="EvolucionPlantillas.Main" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionPlantillas.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionPlantillas.EnlaceParametro" value="" />
+
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionCertificados.Enlace" value="VisorDocumentos.Main" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionCertificados.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.PortalAsistencial.PortletAgendasAmbulatorias.OpcionCertificados.EnlaceParametro" value="" />
+    <!-- /END VISTAS PARA NAVEGACION DESDE PORTLET AGENDA EN PORTAL ASISTENCIAL -->
+
+    <!-- /BEGIN VISTAS PARA NAVEGACION DESDE MIS PACIENTES -->
+    <add key="Alemana.Nucleo.MisPacientes.HistorialClinico.EnlaceNombre" value="GestorServicios.Portal" />
+    <!-- /END VISTAS PARA NAVEGACION DESDE MIS PACIENTES -->
+
+    <!-- /BEGIN VISTAS PARA NAVEGACION DESDE PORTAL ASISTENCIAL -->
+    <add key="Alemana.Nucleo.PortalAsistencial.HistorialClinico.EnlaceNombre" value="GestorServicios.Portal" />
+    <!-- /END VISTAS PARA NAVEGACION DESDE PORTAL ASISTENCIAL -->
+
+    <!-- /BEGIN VISTAS PARA NAVEGACION DESDE SEGUIMIENTO DE COHORTES -->
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.PanelDatosCohorte.EnlaceNombre" value="Cohortes.PopUpPanelDatosCohorte" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.ListadoCohortesPorPersona.EnlaceNombre" value="Cohortes.PopUpListadoCohortesPorPersona" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.ActualizarNota.EnlaceNombre" value="Cohortes.PopUpActualizarNota" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.TabsGestionar.EnlaceNombre" value="Cohortes.TabsGestionar" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.Intervenir.EnlaceNombre" value="Cohortes.PopUpIntervenir" />
+
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.Evolucionar.EnlaceNombre" value="Evoluciones.CrearNuevaEvolucion" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.Evolucionar.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.Evolucionar.EnlaceParametro" value="" />
+
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.HistorialClinico.EnlaceNombre" value="GestorServicios.Portal" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.HistorialClinico.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.HistorialClinico.EnlaceParametro" value="true" />
+
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.Contactabilidad.EnlaceNombre" value="Cohortes.TabsContactabilidad" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.Contactabilidad.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.Contactabilidad.EnlaceParametro" value="true" />
+
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.EvolucionPlantillas.EnlaceNombre" value="EvolucionPlantillas.Main" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.EvolucionPlantillas.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.SeguimientoDeCohortes.EvolucionPlantillas.EnlaceParametro" value="true" />
+
+    <!-- /END VISTAS PARA NAVEGACION DESDE SEGUIMIENTO DE COHORTES -->
+
+    <!-- /BEGIN CONFIGURACIONES AGENDA AMBULATORIA -->
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.HistorialClinico.EnlaceNombre" value="GestorServicios.Portal" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.HistorialClinico.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.HistorialClinico.EnlaceParametro" value="true" />
+
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.EvualuacionesPrevias.EnlaceNombre" value="Evoluciones.ListadoEvoluciones" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.EvualuacionesPrevias.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.EvualuacionesPrevias.EnlaceParametro" value="true" />
+
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.AlergiasReaccionesAdversas.EnlaceNombre" value="Nosologia.Principal" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.AlergiasReaccionesAdversas.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.AlergiasReaccionesAdversas.EnlaceParametro" value="true" />
+
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Diagnosticos.EnlaceNombre" value="Nosologia.Principal" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Diagnosticos.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Diagnosticos.EnlaceParametro" value="true" />
+
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Indicaciones.EnlaceNombre" value="Indicaciones.PanelIndicacionesContainer" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Indicaciones.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Indicaciones.EnlaceParametro" value="true" />
+
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Plantillas.EnlaceNombre" value="EvolucionPlantillas.Main" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Plantillas.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Plantillas.EnlaceParametro" value="true" />
+
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Certificados.EnlaceNombre" value="VisorDocumentos.Main" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Certificados.EnlaceEsModal" value="false" />
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.Certificados.EnlaceParametro" value="true" />
+
+    <add key="Alemana.Nucleo.AgendaAmbulatoria.RangoDiasAgenda" value="7" />
+    <!-- /END CONFIGURACIONES AGENDA AMBULATORIA -->
+
+
+    <!-- Configuraciones AMB Documentos -->
+    <add key="Alemana.Nucleo.AMBDocumentos.FolderPath" value="C:\\Uploads\\" />
+
+  </appSettings>
+  <!--EXCEPTION HANDLI NG-->
+  <exceptionHandlingSection>
+    <exceptionPolicies>
+      <add name="Alemana.Nucleo.Common" log="true">
+        <exceptionTypes>
+          <add name="DirectoryNotFoundException" type="System.IO.DirectoryNotFoundException" action="Rethrow" newExceptionType="Alemana.Nucleo.Shell.Exceptions.ShellException, Alemana.Nucleo.Shell" newExceptionMessage="Ha ocurrido un error al inicializar el catálogo de módulos. Por favor verifique la ruta configurada donde se encuentran los módulos" />
+          <add name="Exception" type="System.Exception" action="Rethrow" newExceptionType="Alemana.Nucleo.Shell.Exceptions.ShellException, Alemana.Nucleo.Shell" newExceptionMessage="Ha ocurrido un error inesperado al inicializar el catálogo de módulos." />
+        </exceptionTypes>
+      </add>
+      <add name="Alemana.Nucleo.Shell.Bootstrap" log="true">
+        <exceptionTypes>
+          <add name="DirectoryNotFoundException" type="System.IO.DirectoryNotFoundException" action="Rethrow" newExceptionType="Alemana.Nucleo.Shell.Exceptions.ShellException, Alemana.Nucleo.Shell" newExceptionMessage="Ha ocurrido un error al inicializar el catálogo de módulos. Por favor verifique la ruta configurada donde se encuentran los módulos" />
+          <add name="Exception" type="System.Exception" action="Rethrow" newExceptionType="Alemana.Nucleo.Shell.Exceptions.ShellException, Alemana.Nucleo.Shell" newExceptionMessage="Ha ocurrido un error inesperado al inicializar el catálogo de módulos." />
+        </exceptionTypes>
+      </add>
+      <add name="Alemana.Nucleo.Notas" log="true">
+        <exceptionTypes>
+          <add name="DirectoryNotFoundException" type="System.IO.DirectoryNotFoundException" action="Rethrow" newExceptionType="Alemana.Nucleo.Shell.Exceptions.ShellException, Alemana.Nucleo.Shell" newExceptionMessage="Ha ocurrido un error al inicializar el catálogo de módulos. Por favor verifique la ruta configurada donde se encuentran los módulos" />
+          <add name="Exception" type="System.Exception" action="Rethrow" newExceptionType="Alemana.Nucleo.Shell.Exceptions.ShellException, Alemana.Nucleo.Shell" newExceptionMessage="Ha ocurrido un error inesperado al inicializar el catálogo de módulos." />
+        </exceptionTypes>
+      </add>
+      <add name="Alemana.Nucleo.Shell" log="true">
+        <exceptionTypes>
+          <add name="Exception" type="System.Exception" action="JustLog" />
+        </exceptionTypes>
+      </add>
+    </exceptionPolicies>
+  </exceptionHandlingSection>
+
+  <!-- TRACE APLICACION 
+  <system.diagnostics>
+    <sources>
+      <source name="System.ServiceModel.MessageLogging" switchValue="All">
+        <listeners>
+          <add type="System.Diagnostics.DefaultTraceListener" name="Default">
+            <filter type="" />
+          </add>
+          <add name="ServiceModelMessageLoggingListener">
+            <filter type="" />
+          </add>
+        </listeners>
+      </source>
+    </sources>
+    <sharedListeners>
+      <add initializeData="C:\temp\Alemana.Nucleo.Shell_messages.svclog"
+        type="System.Diagnostics.XmlWriterTraceListener, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+        name="ServiceModelMessageLoggingListener" traceOutputOptions="Timestamp">
+        <filter type="" />
+      </add>
+    </sharedListeners>
+    <trace autoflush="true" />
+  </system.diagnostics>
+  TRACE APLICACION -->
+
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="commonWebPortBinding" closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferPoolSize="2147483647" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true" messageEncoding="Text">
+          <readerQuotas maxDepth="32" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="4096" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+      </basicHttpBinding>
+    </bindings>
+    <client>
+
+      <!--WS FERNANDO HERRERA NOTAS-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFechaHoraActualWeb/WsfechahoraactualWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="SysdateOracle.WsfechahoraactualWeb" name="WsfechahoraactualWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndInterfazGestionWeb/WsindinterfazgestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsCategoriaGestion.WsindinterfazgestionWeb" name="WsindinterfazgestionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsGestionIndicacionesWeb/WsgestionindicacionesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsGestionIndicaciones.WsgestionindicacionesWeb" name="WsgestionindicacionesWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsNotasWeb/WsnotasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsServicio.WsnotasWeb" name="WsnotasWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGestionResultadosLabWeb/WsgestionresultadoslabWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsResultadosLab.WsgestionresultadoslabWeb" name="WsgestionresultadoslabWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsSolicitudIndicacionesWeb/WssolicitudindicacionesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsSolicitudLab.WssolicitudindicacionesWeb" name="WssolicitudindicacionesWebPort" />
+
+      <!--WS SESION-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsNucSessionWeb/WsnucsessionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsSession.WsnucsessionWeb" name="WsnucsessionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgFcetmClaseWeb/WsfcepgfcetmclaseWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsFcepgFcetmClase.WsfcepgfcetmclaseWeb" name="WsfcepgfcetmclaseWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsNucSessionWeb/WsnucsessionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsSesWeb.WsnucsessionWeb" name="WsnucsessionWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgFcetmSubclaseWeb/WsfcepgfcetmsubclaseWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsFcepgFcetmSubClase.WsfcepgfcetmsubclaseWeb" name="WsfcepgfcetmsubclaseWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgFcetmCptoTipoDatoWeb/WsfcepgfcetmcptotipodatoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsFcepgFcetmCptoTipoDato.WsfcepgfcetmcptotipodatoWeb" name="WsfcepgfcetmcptotipodatoWebPort" />
+
+      <!--WS FRANCISCO CURAMIL VISOR-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgFcetmAreaWeb/WsfcepgfcetmareaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsAreaLugar.WsfcepgfcetmareaWeb" name="WsfcepgfcetmareaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgFcetmEmpresaWeb/WsfcepgfcetmempresaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsLugar.WsfcepgfcetmempresaWeb" name="WsfcepgfcetmempresaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsMedicosWeb/WsmedicosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsMedicos.WsmedicosWeb" name="WsmedicosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsCmbUrgenciaWeb/WscmburgenciaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsCmbUrgencia.WscmburgenciaWeb" name="WscmburgenciaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFiltrosWeb/WsfiltrosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsFiltro.WsfiltrosWeb" name="WsfiltrosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsUrgenciaWeb/WsurgenciaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsUrgencia.WsurgenciaWeb" name="WsurgenciaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsBoxUrgenciaWeb/WsboxurgenciaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsBoxUrgencia.WsboxurgenciaWeb" name="WsboxurgenciaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsLugaresBoxWeb/WslugaresboxWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsLugaresBox.WslugaresboxWeb" name="WslugaresboxWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsPersistenciaWeb/WspersistenciaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsPersistencia.WspersistenciaWeb" name="WspersistenciaWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/WsAccesoNucleoWeb/WsaccesonucleoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAcceso.WsaccesonucleoWeb" name="WsaccesonucleoWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/WsSuser2RolesWeb/Wssuser2rolesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsSuser2Roles.Wssuser2rolesWeb" name="Wssuser2rolesWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/WsResumenPacienteWeb/WsresumenpacienteWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsResumenPaciente.WsresumenpacienteWeb" name="WsresumenpacienteWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsNosologiaGestionWeb/WsnosologiagestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsAlergias.WsnosologiagestionWeb" name="WsnosologiagestionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsEpisodioCerradoWeb/WsepisodiocerradoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsEpisodioCerrado.WsepisodiocerradoWeb" name="WsepisodiocerradoWebPort" />
+
+      <!--WS JPVILLASECA AUDITORIA -->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsAuditoriaGestionWeb/WsauditoriagestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAuditoriaGestionServiceReference.WsauditoriagestionWeb" name="WsauditoriagestionWebPort" />
+
+      <!--WS JCANDIA CABECERA -->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgFcewsCabeceraWeb/WsfcepgfcewscabeceraWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="CabeceraServiceReference.WsfcepgfcewscabeceraWeb" name="WsfcepgfcewscabeceraWebPort" />
+
+      <!--WS JCANDIA - INDICACIONES-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsGeneralesWeb/WsindpgindwsgeneralesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndpgIndwsGenerales.WsindpgindwsgeneralesWeb" name="WsindpgindwsgeneralesWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsPanelIndicacionesWeb/WsindpgindwspanelindicacionesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndpgIndwsPanelIndicaciones.WsindpgindwspanelindicacionesWeb" name="WsindpgindwspanelindicacionesWebPort" />
+
+      <!-- WS SHARED GENERACION DE ENCUENTROS-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsPanelIndicacionesWeb/WsindpgindwspanelindicacionesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsPanelIndicaciones.WsindpgindwspanelindicacionesWeb" name="WsindpgindwspanelindicacionesWebPort" />
+
+
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsExmimgprocWeb/WsindpgindwsexmimgprocWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndpgIndwsExmimgproc.WsindpgindwsexmimgprocWeb" name="WsindpgindwsexmimgprocWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsMisIndicacionesWeb/WsindpgindwsmisindicacionesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndpgIndwsMisIndicaciones.WsindpgindwsmisindicacionesWeb" name="WsindpgindwsmisindicacionesWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsFarmParametrosWeb/WsindpgindwsfarmparametrosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndpgIndwsFarmParametros.WsindpgindwsfarmparametrosWeb" name="WsindpgindwsfarmparametrosWebPort" />
+      <endpoint address="http://vallenar/TerminologiaWSMultiContexto/TerminologiaWSService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndTerminologia.TerminologiaWS" name="TerminologiaWSPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsFarmacologicasWeb/WsindpgindwsfarmacologicasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndpgIndwsFarmacologicas.WsindpgindwsfarmacologicasWeb" name="WsindpgindwsfarmacologicasWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsRehabilitacionWeb/WsindpgindwsrehabilitacionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndpgIndwsRehabilitacion.WsindpgindwsrehabilitacionWeb" name="WsindpgindwsrehabilitacionWebPort" />
+
+      <!--WS JPVILLASECA FORMULARIOS Y PROTOCOLO-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgFcetrAreaLugarWeb/WsfcepgfcetrarealugarWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsFcepgFcetrAreaLugarWeb.WsfcepgfcetrarealugarWeb" name="WsfcepgfcetrarealugarWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsElepgEleitmInvasivosWeb/WselepgeleitminvasivosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsElepgEleitmInvasivosWeb.WselepgeleitminvasivosWeb" name="WselepgeleitminvasivosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsfcepgfcetmconceptoWeb/WsfcepgfcetmconceptoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsFcepgFcetmConceptoWeb.WsfcepgfcetmconceptoWeb" name="WsfcepgfcetmconceptoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgFormularioWeb/WsfcepgformularioWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsFormulario.WsfcepgformularioWeb" name="WsfcepgformularioWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgFcetmConceptoGrupoWeb/WsfcepgfcetmconceptogrupoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsConceptosGrupo.WsfcepgfcetmconceptogrupoWeb" name="WsfcepgfcetmconceptogrupoWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/WsNosologiaGestionWeb/WsnosologiagestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsNosologiaGestion.WsnosologiagestionWeb" name="WsnosologiagestionWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/wsNslpgFormularioGestionWeb/WsnslpgformulariogestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsFormularioNosologia.WsnslpgformulariogestionWeb" name="WsnslpgformulariogestionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsFormularioConceptoWeb/WsformularioconceptoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding"                 contract="WsFormularioConceptoServiceReference.WsformularioconceptoWeb" name="WsformularioconceptoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsFormularioProtocoloWeb/WsformularioprotocoloWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsFormularioProtocoloServiceReference.WsformularioprotocoloWeb" name="WsformularioprotocoloWebPort" />
+
+      <!--WS CARLOS Terminologia-->
+      <endpoint address="http://vallenar/TerminologiaWSMultiContexto/TerminologiaWSService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsTerm.TerminologiaWS" name="TerminologiaWSPort" />
+      <endpoint address="http://vallenar/TerminologiaWSMultiContexto/TerminologiaWSService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsTermV.TerminologiaWS" name="TerminologiaWSPort1" />
+
+      <!--WS JCANDIA - CIERRE ENCUENTRO-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgEncuentroGestionWeb/WsfcepgencuentrogestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsFcepgEncuentroGestion.WsfcepgencuentrogestionWeb" name="WsfcepgencuentrogestionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgEncuentroGestionWeb/WsfcepgencuentrogestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsCierreEncuentro.WsfcepgencuentrogestionWeb" name="WsfcepgencuentrogestionWebPort" />
+
+      <!--WS MATIAS - TRIAGE - PARAMETROS -->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsNosologiaGestionWeb/WsnosologiagestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsNosologia.WsnosologiagestionWeb" name="WsnosologiagestionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGestionParamClinicosWeb/WsgestionparamclinicosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsParamClinicos.WsgestionparamclinicosWeb"      name="WsgestionparamclinicosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGestionParamClinicosWeb/WsgestionparamclinicosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsParametrosClinicos.WsgestionparamclinicosWeb" name="WsgestionparamclinicosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGestionTriageWeb/WsgestiontriageWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsTriage.WsgestiontriageWeb" name="WsgestiontriageWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGestionEntregaPacienteWeb/WsgestionentregapacienteWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsEntregaRecepcion.WsgestionentregapacienteWeb" name="WsgestionentregapacienteWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsRolProfesionalTratanteWeb/WsrolprofesionaltratanteWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="ProfesionalTratanteServiceReference.WsrolprofesionaltratanteWeb" name="WsrolprofesionaltratanteWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGestionAltaMedicaWeb/WsgestionaltamedicaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding"	contract="wsAltaMedica.WsgestionaltamedicaWeb" name="WsgestionaltamedicaWebPort" />
+
+
+      <!--WS JPVILLASECA - EVOLUCIONES-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFiltrosWeb/WsfiltrosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="FiltrosServiceReference.WsfiltrosWeb" name="WsfiltrosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsParrafosWeb/WsparrafosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="ParrafosServiceReference.WsparrafosWeb" name="WsparrafosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsNosoEvolucionWeb/WsnosoevolucionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="NosologiasEvolucionServiceReference.WsnosoevolucionWeb" name="WsnosoevolucionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGestionParamClinicosWeb/WsgestionparamclinicosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="GestionParametrosClinicosServiceReference.WsgestionparamclinicosWeb" name="WsgestionparamclinicosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsIndicacionesEpisodioWeb/WsindicacionesepisodioWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="IndicacionesEpisodioServiceReference.WsindicacionesepisodioWeb" name="WsindicacionesepisodioWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsDatosEncuentroEvolucionWeb/WsdatosencuentroevolucionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="DatosEncuentroEvolucionServiceReference.WsdatosencuentroevolucionWeb" name="WsdatosencuentroevolucionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsIndicacionInterconsultaWeb/WsindicacioninterconsultaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="InterconsultaServiceReference.WsindicacioninterconsultaWeb" name="WsindicacioninterconsultaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsEvolucionPrivadaWeb/WsevolucionprivadaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsEvolucionPrivadaWebServiceReference.WsevolucionprivadaWeb" name="WsevolucionprivadaWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/WsEvolucionWeb/WsevolucionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="EvolucionesServiceReference.WsevolucionWeb" name="WsevolucionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsEvolucionWeb/WsevolucionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsEvolucion.WsevolucionWeb" name="WsevolucionWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/WsNosologiaGestionWeb/WsnosologiagestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="NosologiaGestionServiceReference.WsnosologiagestionWeb" name="WsnosologiagestionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsEpisodioFichaWeb/WsepisodiofichaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="EpisodioFichaServiceReference.WsepisodiofichaWeb" name="WsepisodiofichaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsAreaGestionWeb/WsareagestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="AreaGestionServiceReference.WsareagestionWeb" name="WsareagestionWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsInterconsultaWeb/WsindpgindwsinterconsultaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndInterconsulta.WsindpgindwsinterconsultaWeb" name="WsindpgindwsinterconsultaWebPort" />
+
+      <!--WS FHERRERA - LUGARES FISICOS-->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsLugaresFisicosWeb/WslugaresfisicosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsLugaresFisicos.WslugaresfisicosWeb" name="WslugaresfisicosWebPort" />
+
+
+      <!--WS Calugas cliente -->
+      <endpoint address="http://pint11g.alemana.cl/admin/wsnucleo/cliente/conindicadores/WsnucleoindicadoresComponentWeb" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndicadoresComerciales.WsnucleoindicadoresComponentWeb" name="WsnucleoindicadoresComponentWebPort" />
+
+
+      <!-- WS lagash control embarazo-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFichaObstetricaWeb/WsFichaObstetricaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsPacientes.WsFichaObstetricaWeb" name="WsFichaObstetricaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsObstetriciaDiagnostico/WsobstetriciadiagnosticoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsDiagnostico.WsobstetriciadiagnosticoWeb" name="WsobstetriciadiagnosticoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsObstetriciaEcografia/WsobstetriciaecografiaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsEcografia.WsobstetriciaecografiaWeb" name="WsobstetriciaecografiaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsObstetriciaGestacion/WsobstetriciagestacionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsGestacion.WsobstetriciagestacionWeb" name="WsobstetriciagestacionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsObstetriciaLaboratorio/WsobstetricialaboratorioWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsLaboratorio.WsobstetricialaboratorioWeb" name="WsobstetricialaboratorioWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsObstetriciaTermino/WsobstetriciaterminoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsTermino.WsobstetriciaterminoWeb" name="WsobstetriciaterminoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsObstetriciaControl/WsobstetriciacontrolWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsControl.WsobstetriciacontrolWeb" name="WsobstetriciacontrolWebPort" />
+
+
+      <!--WS lagash DOCUMENTOS -->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCategoriaWeb/WscategoriaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCategoria.WscategoriaWeb" name="WscategoriaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsDocumentoWeb/WsdocumentoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsDocumento.WsdocumentoWeb" name="WsdocumentoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsDocumentoListaWeb/WsdocumentolistaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsDocumentoLista.WsdocumentolistaWeb" name="WsdocumentolistaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsDocumentoSeguridadWeb/WsdocumentoseguridadWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsDocumentoSeguridad.WsdocumentoseguridadWeb" name="WsdocumentoseguridadWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsListaLinealOrdenWeb/WslistalinealordenwebWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsListaLinealOrden.WslistalinealordenwebWeb" name="WslistalinealordenwebWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsSeguridadWeb/WsseguridadWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsSeguridad.WsseguridadWeb" name="WsseguridadWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsListaLinealWeb/WslistalinealWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsListaLineal.WslistalinealWeb" name="WslistalinealWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsVariableWeb/WsvariableWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsVariable.WsvariableWeb" name="WsvariableWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsListaTipoVariableWeb/WslistatipovariableWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsListaTipoVariable.WslistatipovariableWeb" name="WslistatipovariableWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsDominioWeb/WsdominioWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsDominio.WsdominioWeb" name="WsdominioWebPort" />
+      <endpoint address="http://vallenar/TerminologiaWSMultiContexto/TerminologiaWSService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsTerminologia.TerminologiaWS" name="TerminologiaWSPort1" />
+
+
+      <!--WS lagash PLANTILLAS-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsAgrupadorWeb/WsagrupadorWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding"  contract="WsAgrupador.WsagrupadorWeb" name="WsagrupadorwebWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsModuloWeb/WsmoduloWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsModulo.WsmoduloWeb" name="WsmoduloWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsPlantillasWeb/WsplantillaswebWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsPlantilla.WsplantillaswebWeb" name="WsplantillaswebWebPort" />
+
+      <!--WS VACUNAS - FHERRERA -->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsVacunasWeb/WsvacunasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="Wsvacunas.WsvacunasWeb" name="WsvacunasWebPort" />
+      <endpoint address="http://pint11g.alemana.cl/admin/wsnucleo/vacunatorio/NucleovacunatorioWebPort" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsVacunatorio.NucleovacunatorioWeb" name="NucleovacunatorioWebPort1" />
+
+      <!--WS LAGASH SEGUIMIENTO COHORTES-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCohortesCondicion/WscohortescondicionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCondicion.WscohortescondicionWeb" name="WscohortescondicionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCohortesCohorte/WscohortescohorteWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCohorte.WscohortescohorteWeb" name="WscohortescohorteWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCohortesPlantilla/WscohortesplantillaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsPlantilla.WscohortesplantillaWeb" name="WscohortesplantillaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCohortesPersona/WscohortespersonaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsPersona.WscohortespersonaWeb" name="WscohortespersonaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCohortesContactos/WscohortescontactosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsContacto.WscohortescontactosWeb" name="WscohortescontactosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCohortesEpisodio/WscohortesepisodioWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsEpisodio.WscohortesepisodioWeb" name="WscohortesepisodioWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCohortesCategoria/WscohortescategoriaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCategoria.WscohortescategoriaWeb" name="WscohortescategoriaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCohortesActividad/WscohortesactividadWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsActividad.WscohortesactividadWeb" name="WscohortesactividadWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCohortesHito/WscohorteshitoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsHito.WscohorteshitoWeb" name="WscohorteshitoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCohortesIntervencion/WscohortesintervencionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIntervencion.WscohortesintervencionWeb" name="WscohortesintervencionWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/WsSeguridadWeb/WsseguridadWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsSeguridad.WsseguridadwebWeb" name="WsseguridadwebWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsModuloWeb/WsmoduloWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsModulo.WsmodulowebWeb" name="WsmodulowebWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCategoriaWeb/WscategoriaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCategoria.WscategoriawebWeb" name="WscategoriawebWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsBusquedaVariablesWeb/WsbusquedavariablesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsBusquedaVariables.WsbusquedavariablesWeb" name="WsbusquedavariablesWebPort" />
+
+      <!--WS LAGASH VISOR DOCUMENTOS-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsVisorDocumentosWeb/WsvisordocumentosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsVisorDocumentos.WsvisordocumentosWeb" name="WsvisordocumentosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsVisorDocumentosSeguridadWeb/WsvisordocumentosseguridadWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsVisorDocumentosSeguridad.WsvisordocumentosseguridadWeb"        name="WsvisordocumentosseguridadWebPort" />
+
+      <!--WS LAGASH ESTADISTICA-->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsFiltrosEstadisticas/WsfiltrosestadisticasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsFiltros.WsfiltrosestadisticasWeb" name="WsfiltrosestadisticasWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsindicadoresestadisticasWeb/WsindicadoresestadisticasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndicadores.WsindicadoresestadisticasWeb" name="WsindicadoresestadisticasWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsPlantillaEstadisticaWeb/WsplantillaestadisticaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsPlantilla.WsplantillaestadisticaWeb" name="WsplantillaestadisticaWebPort" />
+
+
+      <!--WS LAGASH REGISTRO ONCOLOGICO -->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsOncologiaAgenda/WsoncologiaagendaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsOncologiaAgenda.WsoncologiaagendaWeb" name="WsoncologiaagendaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsOncologiaRegistro/WsoncologiaregistroWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsOncologiaRegistro.WsoncologiaregistroWeb" name="WsoncologiaregistroWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsOncologiaQuimioterapiaWeb/WsoncologiaquimioterapiaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsOncologiaQuimioterapia.WsoncologiaquimioterapiaWeb" name="WsoncologiaquimioterapiaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsOncologiaToleranciaTTOWeb/WsoncologiatoleranciattoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsOncologiaToleranciaTTO.WsoncologiatoleranciattoWeb" name="WsoncologiatoleranciattoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsOncologiaFarmacoWeb/WsoncologiafarmacoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsOncologiaFarmaco.WsoncologiafarmacoWeb" name="WsoncologiafarmacoWebPort" />
+      <endpoint address="http://pint11g.alemana.cl/admin/wsnucleo/agenda/tuxedo/AgendaServicioPort" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAgenda.AgendaServicio" name="AgendaServicioPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsOncologiaParametroWeb/WsoncologiaparametroWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsOncologiaParametro.WsoncologiaparametroWeb" name="WsoncologiaparametroWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsOncologiaDiagnosticoWeb/WsoncologiadiagnosticoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsOncologiaDiagnostico.WsoncologiadiagnosticoWeb" name="WsoncologiadiagnosticoWebPort" />
+
+      <!--WS LAGASH GRAFICAR -->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGraficarWeb/WsGraficarSvcWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsGraficarSvc.WsGraficarSvcWeb" name="WsGraficarSvcWebPort" />
+
+
+      <!--WS LAGASH - EVOLUCION PLANTILLAS-->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsIncidenciaPlantillaWeb/WsincidenciaplantillaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIncidenciaPlantillas.WsincidenciaplantillaWeb" name="WsincidenciaplantillaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsIncidenciaModuloWeb/WsincidenciamoduloWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIncidenciaModulos.WsincidenciamoduloWeb" name="WsincidenciamoduloWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsIncidenciaHistoricoWeb/WsincidenciahistoricoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIncidenciaHistorico.WsincidenciahistoricoWeb" name="WsincidenciahistoricoWebPort" />
+
+      <!--WS BLOQUEO AGENDA -->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsInterfazAgendaWeb/WsinterfazagendaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsInterfazAgenda.WsinterfazagendaWeb" name="WsinterfazagendaWebPort" />
+
+      <!--WS MAESTRO DE INDICACIONES -->
+      <endpoint address="http://pint11g.alemana.cl/admin/wsnucleo/isp/WSIspNucleoPort" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsRegistrosISP.WSIspNucleo" name="WSIspNucleoPort" />
+      <endpoint address="http://vallenar/TerminologiaWSMultiContexto/TerminologiaWSService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsHibaTerminologia.TerminologiaWS" name="TerminologiaWSPort" />
+      <endpoint address="http://pint11g.alemana.cl/admin/wsnucleo/itserver/WSBuscaSnomedPort" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsSnomed.WSBuscaSnomed" name="WSBuscaSnomedPort" />
+      <endpoint address="http://pint11g.alemana.cl/admin/wsnucleo/isp/WSIspNucleoPort" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsIspRegistrosISP.WSIspNucleo" name="WSIspNucleoPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgComunWeb/WsimipgcomunWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgComun.WsimipgcomunWeb" name="WsimipgcomunWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgListadoConceptosWeb/WsimipglistadoconceptosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgListadoConceptos.WsimipglistadoconceptosWeb" name="WsimipglistadoconceptosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgPanelComunWeb/WsimipgpanelcomunWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgPanelComun.WsimipgpanelcomunWeb" name="WsimipgpanelcomunWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgNavGrupjerWeb/WsimipgnavgrupjerWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgNavGrupjer.WsimipgnavgrupjerWeb" name="WsimipgnavgrupjerWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgFormaFarmaExtendidaWeb/WsimipgformafarmaextendidaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgFormaFarmaExtendida.WsimipgformafarmaextendidaWeb" name="WsimipgformafarmaextendidaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgViasAdminWeb/WsimipgviasadminWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgViasAdmin.WsimipgviasadminWeb" name="WsimipgviasadminWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgMedCliEnvaseWeb/WsimipgmedclienvaseWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgMedCliEnvase.WsimipgmedclienvaseWeb" name="WsimipgmedclienvaseWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgUnidadesWeb/WsimipgunidadesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgUnidades.WsimipgunidadesWeb" name="WsimipgunidadesWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgKairosProductosWeb/WsimipgkairosproductosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgKairosProductos.WsimipgkairosproductosWeb" name="WsimipgkairosproductosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgKairosPresentacionesWeb/WsimipgkairospresentacionesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgKairosPresentaciones.WsimipgkairospresentacionesWeb" name="WsimipgkairospresentacionesWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgKairosLaboratorioWeb/WsimipgkairoslaboratorioWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgKairosLaboratorio.WsimipgkairoslaboratorioWeb" name="WsimipgkairoslaboratorioWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgKairosTextosProductosWeb/WsimipgkairostextosproductosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgKairosTextosProductos.WsimipgkairostextosproductosWeb" name="WsimipgkairostextosproductosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgKairosPrecioWeb/WsimipgkairosprecioWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgKairosPrecio.WsimipgkairosprecioWeb" name="WsimipgkairosprecioWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgSustanciaWeb/WsimipgsustanciaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgSustancia.WsimipgsustanciaWeb" name="WsimipgsustanciaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgKairosWeb/WsimipgkairosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgKairos.WsimipgkairosWeb" name="WsimipgkairosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgKairosImagenesWeb/WsimipgkairosimagenesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgKairosImagenes.WsimipgkairosimagenesWeb" name="WsimipgkairosimagenesWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgRegistrosISP/WsimipgregistrosispWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgRegistrosISP.WsimipgregistrosispWeb" name="WsimipgregistrosispWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgPanelRecomenWeb/WsimipgpanelrecomenWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgPanelRecomen.WsimipgpanelrecomenWeb" name="WsimipgpanelrecomenWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgLaboratorioAuxWeb/WsimipglaboratorioauxWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgLaboratorioAux.WsimipglaboratorioauxWeb" name="WsimipglaboratorioauxWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgMedicamentoBasicoWeb/WsimipgmedicamentobasicoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgMedicamentoBasico.WsimipgmedicamentobasicoWeb" name="WsimipgmedicamentobasicoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgProComEnvaseWeb/WsimipgprocomenvaseWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgProComEnvase.WsimipgprocomenvaseWeb" name="WsimipgprocomenvaseWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgFamiliaProductoWeb/WsimipgfamiliaproductoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgFamiliaProducto.WsimipgfamiliaproductoWeb" name="WsimipgfamiliaproductoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgDicOmsAtcWeb/WsimipgdicomsatcWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgDicOmsAtc.WsimipgdicomsatcWeb" name="WsimipgdicomsatcWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgDicOmsDciWeb/WsimipgdicomsdciWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgDicOmsDci.WsimipgdicomsdciWeb" name="WsimipgdicomsdciWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgDicOmsDddWeb/WsimipgdicomsdddWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgDicOmsDdd.WsimipgdicomsdddWeb" name="WsimipgdicomsdddWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgDicOmsRouteWeb/WsimipgdicomsrouteWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgDicOmsRoute.WsimipgdicomsrouteWeb" name="WsimipgdicomsrouteWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgProductoComercialWeb/WsimipgproductocomercialWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgProductoComercial.WsimipgproductocomercialWeb" name="WsimipgproductocomercialWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgNavImagenologiaWeb/WsimipgnavimagenologiaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgNavImagenologia.WsimipgnavimagenologiaWeb" name="WsimipgnavimagenologiaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgMedicamentoClinicoWeb/WsimipgmedicamentoclinicoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgMedicamentoClinico.WsimipgmedicamentoclinicoWeb" name="WsimipgmedicamentoclinicoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgNavProcedimientosWeb/WsimipgnavprocedimientosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgNavProcedimientos.WsimipgnavprocedimientosWeb" name="WsimipgnavprocedimientosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgNavInterconsultasWeb/WsimipgnavinterconsultasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgNavInterconsultas.WsimipgnavinterconsultasWeb" name="WsimipgnavinterconsultasWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgNavBancoSangreWeb/WsimipgnavbancosangreWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgNavBancoSangre.WsimipgnavbancosangreWeb" name="WsimipgnavbancosangreWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgNavInsumosWeb/WsimipgnavinsumosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgNavInsumos.WsimipgnavinsumosWeb" name="WsimipgnavinsumosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgNavGeneralesWeb/WsimipgnavgeneralesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgNavGenerales.WsimipgnavgeneralesWeb" name="WsimipgnavgeneralesWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgResumenConceptosWeb/WsimipgresumenconceptosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgResumenConceptos.WsimipgresumenconceptosWeb" name="WsimipgresumenconceptosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgNavLaboratorioWeb/WsimipgnavlaboratorioWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgNavLaboratorio.WsimipgnavlaboratorioWeb" name="WsimipgnavlaboratorioWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgNavegadorDominioWeb/WsimipgnavegadordominioWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgNavegadorDominio.WsimipgnavegadordominioWeb" name="WsimipgnavegadordominioWebPort" />
+
+
+
+      <!--WS MMONSALVES - ALTAFISICA-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGestionAltaFisicaWeb/WsgestionaltafisicaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsAltaFisica.WsgestionaltafisicaWeb" name="WsgestionaltafisicaWebPort" />
+
+      <!--WS JGAETE - EVOLUCIONES APOTIMIZADO-->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsEpisodioFichaOptimizaWeb/WsepisodiofichaoptimizaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="EpisodioFichaOptimizaServiceReference.WsepisodiofichaoptimizaWeb" name="WsepisodiofichaoptimizaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGestionTransversalWeb/WsgestiontransversalWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="AmbitoEpisodio.WsgestiontransversalWeb" name="WsgestiontransversalWebPort" />
+
+
+      <!--WS LAGASH - CANALES VIRTUALES-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCanalesVirtualesArchivosWeb/WscanalesvirtualesarchivosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCanalesVirtualesArchivos.WscanalesvirtualesarchivosWeb" name="WscanalesvirtualesarchivosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCanalesVirtualesConversacionWeb/WscanalesvirtualesconversacionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCanalesVirtualesConversacion.WscanalesvirtualesconversacionWeb" name="WscanalesvirtualesconversacionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCanalesVirtualesMensajeWeb/WscanalesvirtualesmensajeWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCanalesVirtualesMensaje.WscanalesvirtualesmensajeWeb" name="WscanalesvirtualesmensajeWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCanalesVirtualesPreferenciasWeb/WscanalesvirtualespreferenciasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCanalesVirtualesPreferencias.WscanalesvirtualespreferenciasWeb" name="WscanalesvirtualespreferenciasWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCanalesVirtualesUsrBloqueadoWeb/WscanalesvirtualesusrbloqueadoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCanalesVirtualesUsrBloqueado.WscanalesvirtualesusrbloqueadoWeb" name="WscanalesvirtualesusrbloqueadoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsParrafosWeb/WsparrafosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsParrafos.WsparrafosWeb" name="WsparrafosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCanalesVirtualesBibliotecaWeb/WscanalesvirtualesbibliotecaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCanalesVirtualesBiblioteca.WscanalesvirtualesbibliotecaWeb" name="WscanalesvirtualesbibliotecaWebPort" />
+      <endpoint address="http://crm-support.alemana.cl/PSIGW/PeopleSoftServiceListeningConnector" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIntegracionCRM.AL_INTEGRACION_NUCLEO_PortType" name="AL_INTEGRACION_NUCLEO_Port" />
+
+      <!--WS LAGASH - GESTOR SERVICIOS / PORTAL ASISTENCIAL-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsPortletUsuarioWeb/WsportletusuarioWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsPortletUsuario.WsportletusuarioWeb" name="WsPortletUsuario" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsAlergias/WsalergiasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAlergias.WsalergiasWeb" name="WsalergiasWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsPortalAsistencialWeb/WsportalasistencialWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsPortal.WsportalasistencialWeb" name="WsportalasistencialWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsGestionParamClinicosWeb/WsgestionparamclinicosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsResumenParametrosClinicos.WsgestionparamclinicosWeb" name="WsgestionparamclinicosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsInterfazIndicacionesWeb/WsindpgindwsinterfazindicacionesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsIndicacionesMedicas.WsindpgindwsinterfazindicacionesWeb" name="WsindpgindwsinterfazindicacionesWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/wsAMBNoticiasWeb/WsambnoticiasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAMBNoticias.WsambnoticiasWeb" name="WsambnoticiasWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/wsComentariosWeb/WscomentariosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsComentarios.WscomentariosWeb" name="WscomentariosWebPort" />
+
+
+      <!--WS LAGASH - AGENDA AMBULATORIA-->
+      <endpoint address="http://pichilemu.alemana.cl/WsAgemed/ws.asmx" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAgendaReserva.saludarSoap" name="saludarSoap" />
+      <endpoint address="http://pint11g.alemana.cl/admin/wsnucleo/agenda/NucleoagendaWebPort" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAgendaListaEspera.NucleoagendaWeb" name="NucleoagendaWebPort" />
+      <endpoint address="http://pint11g.alemana.cl/admin/wsnucleo/agenda/tuxedo/AgendaServicioPort" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAgendaHorarios.AgendaServicio" name="AgendaServicioPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsAgendaAmbulatoriaWeb/WsagendaambulatoriaWebService"  binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAgendaAmbulatoria.WsagendaambulatoriaWeb" name="WsagendaambulatoriaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/WsInterfazAgendaWeb/WsinterfazagendaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsMisAgendas.WsinterfazagendaWeb" name="WsinterfazagendaWebPort" />
+
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgFcewsCabeceraWeb/WsfcepgfcewscabeceraWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsDatosPaciente.WsfcepgfcewscabeceraWeb" name="WsfcepgfcewscabeceraWebPort" />
+
+      <endpoint address="http://pint11g.alemana.cl/admin/wsnucleo/agenda/pkgintenucleo/AgendaintenucleoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAgendaReserva.AgendaintenucleoWeb" name="AgendaintenucleoWebPort" />
+
+      <!--WS LAGASH - MIS PACIENTES-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsCabeceraWeb/WscabeceraWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsCabecera.WscabeceraWeb" name="WscabeceraWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsEtiquetaFichaWeb/WsetiquetafichaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsEtiquetaFicha.WsetiquetafichaWeb" name="WsetiquetafichaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsEtiquetaWeb/WsetiquetaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsEtiqueta.WsetiquetaWeb" name="WsetiquetaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsMisPacientesWeb/WsmispacientesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsPacientes.WsmispacientesWeb" name="WsmispacientesWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsUsrFichaNotaWeb/WsusrfichanotaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsNotaPersonal.WsusrfichanotaWeb" name="WsusrfichanotaWebPort" />
+
+      <!--WS LAGASH SHARED ARCHIVO-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsDocuwareWeb/WsdocuwareWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsDocumentoIndice.WsdocuwareWeb" name="WsdocuwareWebPort" />
+      <endpoint address="http://maiten/Valuetech.Nucleo/NucleoWS.asmx" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsDocuware.NucleoWSSoap" name="NucleoWSSoap" />
+
+      <!--WS VISOR DE INDICACIONES -->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsVisorIndicacionesGestionWeb/WsvisorindicacionesgestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsVinpgVisindGestionServiceReference.WsvisorindicacionesgestionWeb" name="WsvisorindicacionesgestionWebPort" />
+
+      <!--WS NUEVOS LAGASH -->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsAgendaMedicaWeb/WsagendamedicaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAgendaMedica.WsagendamedicaWeb" name="WsagendamedicaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsAgendaAmbulatoriaWeb/WsagendaambulatoriaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsAgendaAmb.WsagendaambulatoriaWeb" name="WsagendaambulatoriaWebPort" />
+
+      <!-- WS REPORTES -->
+      <endpoint address="http://pint11g.alemana.cl/admin/wsnucleo/urgencia/escolar/NucleoUrgenciaEscolarWebPort" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsRepUrgEscolarHistoricoPaciente.NucleourgenciaescolarWeb" name="NucleourgenciaescolarWebPort" />
+
+      <!-- WS CONSENTIMIENTO INFORMADO -->
+      <endpoint address="http://pwsnucleo.alemana.cl//wsConsentimientoWeb/WsconsentimientoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsConsentimiento.WsconsentimientoWeb" name="WsconsentimientoWebPort" />
+
+      <!-- WS VISOR INDICACIONES -->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsPanelIndicacionesWeb/WsindpgindwspanelindicacionesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsPanelIndicacionesService.WsindpgindwspanelindicacionesWeb" name="WsindpgindwspanelindicacionesWebPort" />
+
+      <!-- WS MAESTRO DE INDICACIONES -->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsImipgNavPruRapidasWeb/WsimipgnavprurapidasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsImipgNavPruRapidas.WsimipgnavprurapidasWeb" name="WsimipgnavprurapidasWebPort" />
+
+      <!-- WS EVOLUCIONES -->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsEvolucionGestionWeb/WsevoluciongestionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="EvolucionGestionServiceReference.WsevoluciongestionWeb" name="WsevoluciongestionWebPort" />
+
+      <!-- WS PROTOCOLO FORMATO -->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsProtocoloFormatoWeb/WsprotocoloformatoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsFormatoProtocoloWeb.WsprotocoloformatoWeb" name="WsprotocoloformatoWebPort" />
+
+      <!-- WS EVALUACION PREANESTESICA -->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsEvPreanestesicaWeb/WsevpreanestesicaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsEvPreanestesica.WsevpreanestesicaWeb" name="WsevpreanestesicaWebPort" />
+
+      <!-- WS EVALUACION INDICACIONES SERVICIOS WEB -->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgServiciosWeb/WsindpgserviciosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsIndpgServicios.WsindpgserviciosWeb" name="WsindpgserviciosWebPort" />
+
+      <!-- WS ETIQUETAS CABECERA SERVICIOS WEB -->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsEtiquetasWeb/WsetiquetasWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsEtiqueta.WsetiquetasWeb" name="WsetiquetasWebPort" />
+
+      <!--WS DOCUEMENTOS ESCANEADOS-->
+      <endpoint address="http://maiten/Valuetech.FichaClinica/FichaClinicaWS.asmx" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding"    contract="wsDocuwareFicha.NucleoWSSoap"     name="NucleoWSSoap1" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsScnpgArchivosWeb/WsscnpgarchivosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsScnpgArchivos.WsscnpgarchivosWeb"     name="WsscnpgarchivosWebPort" />
+
+      <!--WS ABM CLASIFICACION Y DOCUMENTOS-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsAbmpgClasificacionesWeb/WsabmpgclasificacionesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsAbmpgClasificaciones.WsabmpgclasificacionesWeb" name="WsabmpgclasificacionesWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsAbmpgDocumentosWeb/WsabmpgdocumentosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsAbmpgDocumentos.WsabmpgdocumentosWeb" name="WsabmpgdocumentosWebPort" />
+
+      <!--WS INDICACIONES DE CANALES VIRTUALES-->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgServiciosWeb/WsindpgserviciosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsServicios.WsindpgserviciosWeb" name="WsindpgserviciosWebPort" />
+
+      <!--WS EDADES GES-->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsReglasGesWeb/WsreglasgesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsReglasGes.WsreglasgesWeb" name="WsreglasgesWebPort" />
+
+      <!--WS JAVIER GAETE  RE-ESTRUCTURACION GENERACION SERVICIOS -->
+      <endpoint address="http://pwsnucleo.alemana.cl/wsEvlpgEvltmGestionevolucionWeb/WsevlpgevltmgestionevolucionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsEvlpgEvltmGestionevolucionReference.WsevlpgevltmgestionevolucionWeb" name="WsevlpgevltmgestionevolucionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsEvlpgPrivadaWsWeb/WsevlpgprivadawsWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsEvlpgPrivadaWsReference.WsevlpgprivadawsWeb" name="WsevlpgprivadawsWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsEvlpgEvltmGrupoprivadaWeb/WsevlpgevltmgrupoprivadaWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsEvlpgEvltmGrupoprivadaReference.WsevlpgevltmgrupoprivadaWeb" name="WsevlpgevltmgrupoprivadaWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsEvlpgEvltrAreaGruposWeb/WsevlpgevltrareagruposWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsEvlpgEvltrAreaGruposReference.WsevlpgevltrareagruposWeb" name="WsevlpgevltrareagruposWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsEvlpgEvltrPersonaGruposWeb/WsevlpgevltrpersonagruposWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsEvlpgEvltrPersonaGruposReference.WsevlpgevltrpersonagruposWeb" name="WsevlpgevltrpersonagruposWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsFcepgEvltmNosoEvolucionWeb/WsfcepgevltmnosoevolucionWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsFcepgEvltmNosoEvolucionReference.WsfcepgevltmnosoevolucionWeb" name="WsfcepgevltmnosoevolucionWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsEvlpgEvltmParrafosWeb/WsevlpgevltmparrafosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsEvlpgEvltmParrafosReference.WsevlpgevltmparrafosWeb" name="WsevlpgevltmparrafosWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsConsentimientoWeb/WsconsentimientoWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsConsentimientoReference.WsconsentimientoWeb" name="WsconsentimientoWebPort" />
+      <endpoint address="http://pwsnucleo.alemana.cl/wsIndpgIndwsInterfazIndicacionesWeb/WsindpgindwsinterfazindicacionesWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="wsIndpgIndwsInterfazIndicacionesReference.WsindpgindwsinterfazindicacionesWeb" name="WsindpgindwsinterfazindicacionesWebPort" />
+      <!-- FIN WS JAVIER GAETE  RE-ESTRUCTURACION GENERACION SERVICIOS -->
+
+      <!-- WS FRANCISCO CURAMIL - DAMIAN BUSTAMANTE TERMINOLOGIA DESDE CONSENTIMIENTO Y EVALUACIÓN PRE-ANESTÉSICA -->
+      <endpoint address="http://pwsnucleo.alemana.cl/WsTerminologiaProcedimientosWeb/WsterminologiaprocedimientosWebService" binding="basicHttpBinding" bindingConfiguration="commonWebPortBinding" contract="WsTerminologiaProcedimientos.WsterminologiaprocedimientosWeb" name="WsterminologiaprocedimientosWebPort" />
+      <!-- FIN WS FRANCISCO CURAMIL - DAMIAN BUSTAMANTE TERMINOLOGIA DESDE CONSENTIMIENTO Y EVALUACIÓN PRE-ANESTÉSICA -->
+      
+    </client>
+
+    <!-- TRACE APLICACION
+    <diagnostics wmiProviderEnabled="true" performanceCounters="All">
+      <messageLogging logEntireMessage="true" logKnownPii="true" logMalformedMessages="true"
+        logMessagesAtServiceLevel="false" logMessagesAtTransportLevel="true"
+        maxSizeOfMessageToLog="2621440" />
+      <endToEndTracing propagateActivity="true" activityTracing="true"
+        messageFlowTracing="true" />
+    </diagnostics>
+    TRACE APLICACION -->
+
+  </system.serviceModel>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+  </startup>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>

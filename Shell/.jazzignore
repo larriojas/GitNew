@@ -1,0 +1,31 @@
+### Jazz Ignore 0
+# Los archivos y las carpetas omitidos no se comprometerán, pero se pueden modificar durante
+# una aceptación o actualización.
+# - Las propiedades de omisión deben contener una lista separada por espacios de patrones de nombre de archivo.  
+# - Cada patrón es sensible a mayúsculas y minúsculas y está entre corchetes ('{' y '}').  
+# - "*" coincide con cero o más caracteres.  
+# - "?" coincide con un solo carácter.  
+# - La lista de patrones se puede dividir entre varias líneas terminando
+#   la línea con una barra invertida e iniciando la línea siguiente con una
+#   tabulación.
+# - Los patrones en core.ignore evitan la confirmación de recursos coincidentes
+#   en el mismo directorio.
+# - Los patrones en core.ignore.recursive evitan la confirmación de recursos
+#   coincidentes en el directorio actual y en todos los subdirectorios.  
+# - El valor predeterminado de core.ignore.recursive es *.class 
+# - El valor predeterminado de core.ignore es bin 
+# 
+# Para ignorar los scripts de shell y los archivos ocultos de este subárbol:
+#     por ejemplo: core.ignore.recursive = {*.sh} {\.*} 
+# 
+# Para ignorar los recursos denominados 'bin' en el directorio actual (pero
+#  permitirlos en los subdirectorios que contenga):
+#     e.g: core.ignore = {bin} 
+# 
+# NOTA: si se modifican los archivos de omisión no cambiará el estado de omisión de
+#     los recursos derivados de Eclipse.
+
+core.ignore.recursive= 
+
+core.ignore= \
+	{Alemana.Nucleo.Common.Tests.dll} 

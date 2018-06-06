@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<authorization>
+    <identities>
+      <identity name="Admin">
+          <features>
+            <feature name="ConsultarDatosPaciente" />
+            <feature name="ActualizarDatosPaciente" />
+            <feature name="VerListadoPacientes" />
+            <feature name="CrearNuevoUsuario" />
+            <feature name="VerListadoUrgenciaAsync" />
+          </features>
+      </identity>
+      <identity name="Operator">
+          <features>
+            <feature name="ConsultarDatosPaciente" />
+            <feature name="ActualizarDatosPaciente" />
+            <feature name="VerListadoPacientes" />
+            <feature name="CrearNuevoUsuario" />
+          </features>
+      </identity>
+      <identity name="Supervisor">
+          <features>
+            <feature name="ConsultarDatosPaciente"/>
+            <feature name="ActualizarDatosPaciente" />
+            <feature name="VerListadoPacientes" />
+            <feature name="CrearNuevoUsuario" />
+            <feature name="AutorizarOperaciones" />
+            <feature name="AutorizarOperaciones.Boton1" />
+          </features>
+      </identity>
+    </identities>
+</authorization>

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Targets>
+  <Target Name="C:\ET_VS_NUCLEO\Fuentes .NET\Modules\Alemana.Nucleo.Nosologia\Alemana.Nucleo.Nosologia.Wpf\bin\Debug\Alemana.Nucleo.Nosologia.Wpf.dll">
+   <Modules>
+    <Module Name="alemana.nucleo.nosologia.wpf.dll">
+     <Namespaces>
+      <Namespace Name="Alemana.Nucleo.Nosologia.Wpf.Controls">
+       <Types>
+        <Type Name="CustomComboBox" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2015-12-15 12:12:21Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implemente IDisposable en 'CustomComboBox' porque crea miembros de los tipos IDisposable siguientes: 'Timer'. Si ya se había distribuido 'CustomComboBox', agregar nuevos miembros que implementen IDisposable en este tipo se considera un cambio rotundo para los consumidores existentes.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="DelayTextBox" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2015-12-15 12:12:21Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implemente IDisposable en 'DelayTextBox' porque crea miembros de los tipos IDisposable siguientes: 'Timer'. Si ya se había distribuido 'DelayTextBox', agregar nuevos miembros que implementen IDisposable en este tipo se considera un cambio rotundo para los consumidores existentes.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Alemana.Nucleo.Nosologia.Wpf.ViewModels">
+       <Types>
+        <Type Name="ConsInformadoViewModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(Microsoft.Practices.Prism.Regions.IRegionManager,Alemana.Nucleo.Common.ComponentModel.IComponentContainer,Microsoft.Practices.Prism.Events.IEventAggregator)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2015-12-15 12:12:21Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="c:\ET_VS_NUCLEO\Fuentes .NET\Modules\Alemana.Nucleo.Nosologia\Alemana.Nucleo.Nosologia.Wpf\ViewModels" File="ConsInformadoViewModel.cs" Line="55">'ConsInformadoViewModel.ConsInformadoViewModel(IRegionManager, IComponentContainer, IEventAggregator)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;ConsInformadoViewModel..ctor(IRegionManager, IComponentContainer, IEventAggregator)&#xD;&#xA;ConsInformadoViewModel.CargarTerminos():Void&#xD;&#xA;ConsInformadoViewModel.set_IsBusy(Boolean):Void&#xD;&#xA;NotificationObject.RaisePropertyChanged(String):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NotificacionesModalViewModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(Microsoft.Practices.Prism.Regions.IRegionManager,Alemana.Nucleo.Common.ComponentModel.IComponentContainer,Microsoft.Practices.Prism.Events.IEventAggregator)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2015-12-15 12:12:21Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="c:\ET_VS_NUCLEO\Fuentes .NET\Modules\Alemana.Nucleo.Nosologia\Alemana.Nucleo.Nosologia.Wpf\ViewModels" File="NotificacionesModalViewModel.cs" Line="62">'NotificacionesModalViewModel.NotificacionesModalViewModel(IRegionManager, IComponentContainer, IEventAggregator)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;NotificacionesModalViewModel..ctor(IRegionManager, IComponentContainer, IEventAggregator)&#xD;&#xA;NotificacionesModalViewModel.set_ErrorResultadosVisibleGES(Visibility):Void&#xD;&#xA;NotificationObject.RaisePropertyChanged(String):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PrincipalViewModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(Microsoft.Practices.Prism.Regions.IRegionManager,Alemana.Nucleo.Common.ComponentModel.IComponentContainer,Microsoft.Practices.Prism.Events.IEventAggregator)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2015-12-15 12:12:21Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="c:\ET_VS_NUCLEO\Fuentes .NET\Modules\Alemana.Nucleo.Nosologia\Alemana.Nucleo.Nosologia.Wpf\ViewModels" File="PrincipalViewModel.cs" Line="34">'PrincipalViewModel.PrincipalViewModel(IRegionManager, IComponentContainer, IEventAggregator)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;PrincipalViewModel..ctor(IRegionManager, IComponentContainer, IEventAggregator)&#xD;&#xA;PrincipalViewModel.set_FarmacosAmbulatorios(ObservableCollection&lt;Med&#xD;&#xA;PrincipalViewModel.set_AccionesSelectedIndex(Int32):Void&#xD;&#xA;NotificationObject.RaisePropertyChanged(String):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TerminologiaModalViewModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(Microsoft.Practices.Prism.Regions.IRegionManager,Alemana.Nucleo.Common.ComponentModel.IComponentContainer,Microsoft.Practices.Prism.Events.IEventAggregator)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2015-12-15 12:12:21Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="c:\ET_VS_NUCLEO\Fuentes .NET\Modules\Alemana.Nucleo.Nosologia\Alemana.Nucleo.Nosologia.Wpf\ViewModels" File="TerminologiaModalViewModel.cs" Line="88">'TerminologiaModalViewModel.TerminologiaModalViewModel(IRegionManager, IComponentContainer, IEventAggregator)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;TerminologiaModalViewModel..ctor(IRegionManager, IComponentContainer, IEventAggregator)&#xD;&#xA;TerminologiaModalViewModel.set_Visible(Boolean):Void&#xD;&#xA;NotificationObject.RaisePropertyChanged(String):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Alemana.Nucleo.Nosologia.Wpf.Views">
+       <Types>
+        <Type Name="NotificarModal" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetWindowLong(System.IntPtr,System.Int32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2015-12-15 12:12:21Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Puesto que es un método P/Invoke, se debe definir 'NotificarModal.GetWindowLong(IntPtr, int)' en una clase con el nombre NativeMethods, SafeNativeMethods o UnsafeNativeMethods.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetWindowLong(System.IntPtr,System.Int32,System.Int32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2015-12-15 12:12:21Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Puesto que es un método P/Invoke, se debe definir 'NotificarModal.SetWindowLong(IntPtr, int, int)' en una clase con el nombre NativeMethods, SafeNativeMethods o UnsafeNativeMethods.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+   <Name>No llamar a métodos reemplazables en constructores</Name>
+   <Description>No debe llamar desde los constructores a los métodos virtuales definidos en la clase. Si una clase derivada invalidó el método, se llamará a la versión de la clase derivada (antes de llamar al constructor de la clase derivada).</Description>
+   <Resolution Name="Default">{0} contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: {1}</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182331(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060">
+   <Name>Mueva P/Invokes a la clase NativeMethods</Name>
+   <Description>Este tipo contiene miembros con el atributo DllImport. Los miembros con el atributo DllImport deben estar contenidos en clases denominadas NativeMethods, SafeNativeMethods o UnsafeNativeMethods.</Description>
+   <Resolution Name="Default">Puesto que es un método P/Invoke, se debe definir {0} en una clase con el nombre NativeMethods, SafeNativeMethods o UnsafeNativeMethods.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182161(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>Los tipos que poseen campos descartables deben ser descartables</Name>
+   <Description>Los tipos que declaran miembros descartables también deben implementar IDisposable. Si el tipo no posee ningún recurso no administrado, no implementar un finalizador.</Description>
+   <Resolution Name="DependsOnFix">Implemente IDisposable en {0} porque crea miembros de los tipos IDisposable siguientes: {1}. Si ya se había distribuido {0}, agregar nuevos miembros que implementen IDisposable en este tipo se considera un cambio rotundo para los consumidores existentes.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+</FxCopReport>
